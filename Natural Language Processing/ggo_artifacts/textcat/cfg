@@ -1,0 +1,10 @@
+{
+  "architechture":"simple_cnn",
+  "labels":[
+    "gratitude",
+    "greeting",
+    "other"
+  ],
+  "pretrained_vectors":null,
+  "pretrained_dims":null
+}

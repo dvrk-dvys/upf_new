@@ -1,0 +1,13 @@
+'sdrn:schibsted:environment:c8077c74-33ce-4c0b-a59f-979558cd8ce6',
+'sdrn:schibsted:environment:5bbc4751-e8f5-478e-a59e-1246d50eea3c',
+'sdrn:schibsted:environment:e432dd16-6d6a-4003-8749-55598de31144',
+'sdrn:schibsted:environment:cacdbce3-c9ce-4aeb-9c3b-1d33e2e85b81',
+'sdrn:schibsted:environment:aa95267c-67b3-4b7e-9cef-943a2ada8516',
+'sdrn:schibsted:environment:3daa4230-8021-4daa-a306-15559698d029',
+'sdrn:schibsted:environment:eeee8ff2-edb3-4fc9-9ce7-a38d94129752',
+'sdrn:schibsted:environment:d8635fc1-4073-4294-b972-1fc5eacc9e20',
+'sdrn:schibsted:environment:1153dc0e-8f0c-48c5-8fc2-cf789c84eb7f',
+'sdrn:schibsted:environment:cf3d8ebe-300e-46a3-b8b7-d548481a759e',
+'sdrn:schibsted:environment:fa473368-314d-4917-83d9-a709615abe58',
+'sdrn:schibsted:environment:ead1e35e-6477-4f0c-b039-d301c754c891',
+'sdrn:schibsted:environment:4b7708ff-1883-4448-ab6e-19d9384bb348'

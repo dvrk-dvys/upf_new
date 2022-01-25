@@ -1,0 +1,1159 @@
+{
+    "viz": "query_table",
+    "requests": [
+        {
+            "formulas": [
+                {
+                    "alias": "id_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query1 / (query2)"
+                },
+                {
+                    "alias": "search_id_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query3 / (query4)"
+                },
+                {
+                    "alias": "search_id_is_valid",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query5 / (query6)"
+                },
+                {
+                    "alias": "search_type_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query7 / (query8)"
+                },
+                {
+                    "alias": "search_type_is_valid",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query9 / (query10)"
+                },
+                {
+                    "alias": "search_source_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query11 / (query12)"
+                },
+                {
+                    "alias": "search_source_is_valid",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query13 / (query14)"
+                },
+                {
+                    "alias": "object_inreplyto_id_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query15 / (query16)"
+                },
+                {
+                    "alias": "object_inreplyto_id_sdrn_pattern",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query17 / (query18)"
+                },
+                {
+                    "alias": "object_inreplyto_category_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query19 / (query20)"
+                },
+                {
+                    "alias": "object_inreplyto_category_follows_pattern",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query21 / (query22)"
+                },
+                {
+                    "alias": "object_url_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query24 / (query26)"
+                },
+                {
+                    "alias": "device_environment_id_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query27 / (query28)"
+                },
+                {
+                    "alias": "device_environment_id_valid_format",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query29 / (query30)"
+                },
+                {
+                    "alias": "device_device_type_not_null_and_not_empty",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query29 / (query30)"
+                },
+                {
+                    "alias": "name_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query31 / (query32)"
+                },
+                {
+                    "alias": "object_type_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query33 / (query34)"
+                },
+                {
+                    "alias": "origin_url_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query35 / (query36)"
+                },
+                {
+                    "alias": "page_page_name_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query37 / (query38)"
+                },
+                {
+                    "alias": "page_page_type_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query39 / (query40)"
+                },
+                {
+                    "alias": "provider_id_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query41 / (query42)"
+                },
+                {
+                    "alias": "provider_id_sdrn_pattern",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query43 / (query44)"
+                },
+                {
+                    "alias": "provider_product_type_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query45 / (query46)"
+                },
+                {
+                    "alias": "published_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query47 / (query48)"
+                },
+                {
+                    "alias": "published_valid_format",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query49 / (query50)"
+                },
+                {
+                    "alias": "type_is_not_null",
+                    "conditional_formats": [
+                        {
+                            "palette": "white_on_green",
+                            "value": 90,
+                            "comparator": ">"
+                        },
+                        {
+                            "palette": "white_on_red",
+                            "value": 70,
+                            "comparator": "<"
+                        },
+                        {
+                            "palette": "white_on_yellow",
+                            "value": 90,
+                            "comparator": "<"
+                        }
+                    ],
+                    "formula": "100 * query51 / (query52)"
+                }
+            ],
+            "queries": [
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:id_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query1",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:id_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query2",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_category_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query3",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_category_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query4",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_category_follows_pattern,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query5",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_category_follows_pattern,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query6",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:locality_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query7",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:locality_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query8",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:locality_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query9",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:locality_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query10",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:query_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query11",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:query_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query12",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:query_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query13",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:query_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query14",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:region_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query15",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:region_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query16",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:region_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query17",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:region_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query18",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:sorting_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query19",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:sorting_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query20",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:sorting_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query21",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:sorting_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query22",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_items_id_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query24",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_items_id_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query26",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_items_id_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query27",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:numFilters_is_present,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query28",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:numFilters_is_present,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query29",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:numItems_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query30",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:numItems_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query31",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:numItems_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query32",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:numItems_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query33",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_elementType_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query34",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_elementType_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query35",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_elementType_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query36",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_elementType_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query37",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_pageType_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query38",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_pageType_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query39",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_pageType_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query40",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_pageType_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query41",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:device_device_type_not_null_and_not_empty,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query42",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:device_device_type_not_null_and_not_empty,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query43",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:device_environment_id_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query44",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:device_environment_id_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query45",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:device_environment_id_valid_format,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query46",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:device_environment_id_valid_format,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query47",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_type_is_not_null,check-result:true,check-impact:blocker} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query48",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_type_is_not_null,check-impact:blocker} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query49",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_url_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query50",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:origin_url_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query51",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:page_page_type_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query52",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:page_page_type_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query25",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:provider_id_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query53",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:provider_id_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query54",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:provider_id_sdrn_pattern,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query55",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:provider_id_sdrn_pattern,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query56",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:provider_product_type_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query57",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:provider_product_type_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query58",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:published_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query59",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:published_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query60",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:published_valid_format,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query61",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:published_valid_format,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query62",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:type_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query63",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:type_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query64",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_id_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query65",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_id_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query66",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_id_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query67",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_id_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query68",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_type_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query69",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_type_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query70",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_type_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query71",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_type_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query72",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_source_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query73",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_source_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query75",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_source_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query76",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_display_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query77",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_display_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query78",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_display_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query79",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_display_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query80",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_filterOrigin_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query81",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_filterOrigin_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query82",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_filterOrigin_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query83",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_filterOrigin_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query84",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_maxRank_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query85",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_maxRank_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query86",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_maxRank_is_valid_number,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query87",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_maxRank_is_valid_number,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query88",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_offset_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query89",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_offset_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query90",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_offset_is_valid_number,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query91",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_offset_is_valid_number,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query92",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_queryOrigin_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query93",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_queryOrigin_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query94",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_queryOrigin_is_valid,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query95",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_queryOrigin_is_valid,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query96",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_rank_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query97",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_rank_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query98",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_rank_is_valid_number,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query99",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_rank_is_valid_number,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query100",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:object_items_id_is_not_null,check-result:true,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query23",
+                    "aggregator": "avg"
+                },
+                {
+                    "query": "sum:com.adevinta.data.duratro.metrics.quality.check{$pipe,$product-type,$tracker,$device-type,check-suite:bic.search.list-view,check-name:search_source_is_not_null,check-impact:critical} by {pipe,tracker,device-type,product-type}.as_count()",
+                    "data_source": "metrics",
+                    "name": "query74",
+                    "aggregator": "avg"
+                }
+            ],
+            "response_format": "scalar"
+        }
+    ],
+    "has_search_bar": "auto"
+}
