@@ -14,6 +14,7 @@ from spacy.util import minibatch, compounding
 import nltk
 # nltk.download('punkt')
 # nltk.download('wordnet')
+# nltk.download('omw-1.4')
 from nltk.stem import WordNetLemmatizer
 lemmatizer = WordNetLemmatizer()
 import json
@@ -30,14 +31,14 @@ chat_model = load_model('chatbot_model.h5')
 
 # use conda base env
 # https://caffeinedev.medium.com/how-to-install-tensorflow-on-m1-mac-8e9b91d93706
-
+# https://github.com/conda-forge/miniforge/releases/tag/4.11.0-0
 # spacy
 # # spacy model
 # https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-2.2.5/en_core_web_sm-2.2.5.tar.gz
 
 # "model_artifacts"
 # "choice_model_artifacts"
-# "both_model_artifacts"
+# "both_model_artifacts_new"
 # 'chatbot_model.h5'
 # TO DO:
 # ADD:
@@ -74,19 +75,17 @@ question_set = {0: ['How do bright lights and loud booms make you feel?',
                     'Have you ever wondered how the surface of our earth was formed?'],
                 3: ['Are you feeling like a mad scientist?',
                     'How do horns, tucks and fangs make you feel?',
-                    'Are you in a relaxed mood?',
-                    ]
+                    'Are you in a relaxed mood?']
                 }
-
-
 
 
 words = []
 classes = []
 documents = []
 
-classes = ['goodbye', 'greeting', 'help', 'map', 'options', 'schedule', 'thanks', 'tickets']
-words = ['again', 'all', 'am', 'and', 'any', 'anyone', 'are', 'art', 'awesome', 'bathroom', 'be', 'begin', 'bye', 'can', 'chatting', 'check', 'close', 'coat', 'contact', 'could', 'day', 'detail', 'discount', 'do', 'done', 'elderly', 'exhibit', 'exhibition', 'exibit', 'exit', 'find', 'food', 'for', 'get', 'good', 'goodbye', 'have', 'hello', 'help', 'helpful', 'helping', 'here', 'hey', 'hi', 'hola', 'how', 'i', 'interactive', 'is', 'jacket', 'kid', 'know', 'later', 'layout', 'like', 'lost', 'main', 'me', 'membership', 'most', 'museum', 'my', 'next', 'nice', 'not', 'offered', 'painting', 'popular', 'provide', 'purchase', 'renew', 'schedule', 'sculpture', 'see', 'show', 'sign', 'sound', 'space', 'start', 'statue', 'support', 'thank', 'thanks', 'that', 'thats', 'the', 'there', 'this', 'three', 'ticket', 'ticketing', 'till', 'time', 'to', 'today', 'up', 'upcoming', 'want', 'week', 'what', 'whats', 'where', 'will', 'work', 'would', 'you']
+classes = ['goodbye', 'greeting', 'help', 'map', 'no_answer', 'options', 'schedule', 'thanks', 'tickets']
+words = ['a', 'again', 'all', 'am', 'and', 'any', 'anyone', 'are', 'art', 'awesome', 'bathroom', 'be', 'begin', 'bye', 'ca', 'can', 'card', 'chatting', 'check', 'close', 'coat', 'contact', 'cool', 'could', 'day', 'decide', 'detail', 'discount', 'do', 'done', 'elderly', 'exhibit', 'exhibition', 'exit', 'find', 'food', 'for', 'get', 'good', 'goodbye', 'have', 'hello', 'help', 'helpful', 'helping', 'here', 'hey', 'hi', 'hola', 'how', 'i', 'interactive', 'is', 'jacket', 'kid', 'know', 'later', 'layout', 'like', 'lost', 'main', 'me', 'membership', 'most', 'museum', 'my', 'need', 'next', 'nice', 'not', 'offered', 'on', 'painting', 'popular', 'pricing', 'provide', 'purchase', 'renew', 'schedule', 'sculpture', 'see', 'show', 'sign', 'something', 'sound', 'space', 'start', 'statue', 'student', 'support', 'sure', 'thank', 'thanks', 'that', 'thats', 'the', 'there', 'this', 'three', 'ticket', 'ticketing', 'till', 'time', 'to', 'today', 'trying', 'up', 'upcoming', 'very', 'visit', 'want', 'week', 'what', 'whats', 'where', 'which', 'will', 'work', 'would', 'you']
+
 
 
 
@@ -166,32 +165,41 @@ def question_asker(model):
     sentiment = test_model(final, model)[0]
 
     if sentiment == 'Positive':
+        choice = Exhibitons[tie_break][0]
         print('We think you may enjoy this exhibition!:' + Exhibitons[tie_break][0])
     else:
+        choice = Exhibitons[tie_break][1]
         print('We think you may enjoy this exhibition!:' + Exhibitons[tie_break][1])
 
     # SpeakText('We think you may enjoy this exhibition!:' + Exhibitons[mode(choices)])
     # MyText = input('We think you may enjoy this exhibition!:' + Exhibitons[mode(choices)])
-    MyText = input('Do you think you would like this choice??')
+    MyText = input('What do you think of this recommendation?')
     GGO = test_model_ggo(MyText, "ggo_artifacts_new")[0]
     sentiment = test_model(MyText, model)[0]
 
     if GGO == 'gratitude':
         print('You are very welcome! You can purchase tickets at the kiosk. We hope you have an amazing time with us here at CosmoCaixa Barcelona!')
-        return 'You are very welcome! You can purchase tickets at the kiosk. We hope you have an amazing time with us here at CosmoCaixa Barcelona!'
+        return False, choice
     elif GGO == 'greeting':
-        print('Hi There! Would you like to try again?')
-        return 'Hi There! Would you like to try again?'
+        MyText = input('Hi There! Would you like to try again?')
+        sentiment = test_model(MyText, model)[0]
+        if sentiment == 'positive':
+            return True, choice
+        else:
+            return False, choice
     elif GGO == 'other' and sentiment == 'Negative':
         print('If you need further assistance you will see the Help Desk <location>!')
-        return 'If you need further assistance you will see the Help Desk <location>!'
+        return False, choice
     elif GGO == 'other' and sentiment == 'Positive':
-        print('Would you like to try again? Also, If you need further assistance you will see the Help Desk <location>!')
-        return 'Would you like to try again? Also, If you need further assistance you will see the Help Desk <location>!'
-    # return mode(choices)
+        MyText = input('Was there anything else I could help you with?')
+        sentiment = test_model(MyText, model)[0]
+        if sentiment == 'positive':
+            return True, choice
+        else:
+            return False, choice
 
 
-def listener(model):
+def listener(model, cont=False):
     # Initialize the recognizer
     # r = sr.Recognizer()  #
 
@@ -203,11 +211,14 @@ def listener(model):
         while (1):
             # SpeakText("You chose text.")
             # SpeakText("Welcome to CosmoCaixa Barcelona!")
-            Hello = input("Hello! Welcome to CosmoCaixa Barcelona!")
+            if cont == True:
+                Hello = input('How can I help you?')
+            else:
+                Hello = input("Hello! Welcome to CosmoCaixa Barcelona!")
             while (1):
                 GGO = test_model_ggo(Hello, "ggo_artifacts_new")[0]
-                # response, tag = chatbot_response(Hello)
-                # print("Chat Model tag: " + tag)
+                response, tag = chatbot_response(Hello)
+                print("Chat Model tag: " + tag)
                 sentiment = test_model(Hello, model)[0]
                 prep = Hello.lower()
                 exit = [prep.split()]
@@ -229,11 +240,16 @@ def listener(model):
                     print(response)
                     Hello = input("I'm here to help you find an exhibition you may like! Would you like to try?\n")
                     sentiment = test_model(Hello, model)[0]
-                    if sentiment == 'Positive':
+                    GGO = test_model_ggo(Hello, "ggo_artifacts_new")[0]
+                    response, tag = chatbot_response(Hello)
+
+                    if sentiment == 'Positive' and GGO == 'other' and tag == "no_answer":
                         break
                     else:
                         if mode == 'speech':
+                            SpeakText(response)
                             SpeakText('Was there something else I could help you with?')
+                        print(response)
                         Hello = input('Was there something else I could help you with?')
                 elif tag == 'thanks':
                     response, tag = chatbot_response(Hello)
@@ -289,7 +305,7 @@ def listener(model):
                     if mode == 'speech':
                         SpeakText(response)
                     print(response)
-                    return 'Thank you for coming to CosmoCaixa!'
+                    return cont, None
 
             if mode == 'speech':
                 SpeakText("Ready to begin?\n")
@@ -300,12 +316,12 @@ def listener(model):
                 if mode == 'speech':
                     SpeakText("Great! You can say DONE at anytime to exit.")
                 print("Great! You can say DONE at anytime to exit.")
-                choice = question_asker('both_model_artifacts_new')
-                return choice
+                cont, choice = question_asker('both_model_artifacts_new')
+                return cont, choice
             else:
                 if mode == 'speech':
                     print('If you need further assistance you will see the Help Desk <location>!')
-                return print('If you need further assistance you will see the Help Desk <location>!')
+                return cont, None
 #### Training Data ####
 
 # A good ratio to start with is 80 percent
@@ -343,10 +359,10 @@ def load_training_data_imdb(
 
 
 def load_training_data_choice():
-    train_neg_file = "/Users/jordan.harris/PycharmProjects/pythonProject/upf/Natural Language Processing/data/archive/train/negative_words_en.txt"
-    train_pos_file = "/Users/jordan.harris/PycharmProjects/pythonProject/upf/Natural Language Processing/data/archive/train/positive_words_en.txt"
-    test_neg_file = "/Users/jordan.harris/PycharmProjects/pythonProject/upf/Natural Language Processing/data/archive/test/negative_words_en.txt"
-    test_pos_file = "/Users/jordan.harris/PycharmProjects/pythonProject/upf/Natural Language Processing/data/archive/test/positive_words_en.txt"
+    train_neg_file = "/Users/jordanharris/upf_new/Natural Language Processing/data/archive/train/negative_words_en.txt"
+    train_pos_file = "/Users/jordanharris/upf_new/Natural Language Processing/data/archive/train/positive_words_en.txt"
+    test_neg_file = "/Users/jordanharris/upf_new/Natural Language Processing/data/archive/test/negative_words_en.txt"
+    test_pos_file = "/Users/jordanharris/upf_new/Natural Language Processing/data/archive/test/positive_words_en.txt"
 
     train_neg = open(train_neg_file, "r")
     train_pos = open(train_pos_file, "r")
@@ -608,7 +624,7 @@ def test_model_ggo(input_data, load):
         score = parsed_text.cats["other"]
     print(
         "_______________________________________________________________\n"
-        f"Review text: {input_data}\nPredicted sentiment: {prediction}"
+        f"Review text: {input_data}\nPredicted GGO: {prediction}"
         f"\tScore: {score}\n"
         f"_______________________________________________________________\n"
     )
@@ -867,8 +883,7 @@ if __name__ == "__main__":
     # # # Simple Binary Choice
     # train_choice, test_choice = load_training_data_choice()
     # train_model(train_choice, test_choice , 20, "choice_model_artifacts_new")
-    test_model('Where is the bathroom', 'choice_model_artifacts_new')
-
+    # test_model('Where is the bathroom', 'choice_model_artifacts_new')
 
     # # IMDB + Simple Binary Choice
     # train_both = train_choice + train_imdb
@@ -878,7 +893,9 @@ if __name__ == "__main__":
     # Greeting, Gratitude, Other
     # train_ggo, test_ggo = load_training_data_ggo()
     # train_model_ggo(train_ggo, test_ggo, 20, "ggo_artifacts_new")
-    test_model_ggo('Where is the bathroom', "ggo_artifacts_new")
+    # test_model_ggo('yes', "ggo_artifacts_new")
+    # test_model_ggo("no i want help with discounts", "ggo_artifacts_new")
+
 
     # Assistance
     # train_assist, test_assist = load_training_data_assist()
@@ -887,26 +904,51 @@ if __name__ == "__main__":
 
     # ________________________________________________________________________________________________________#
 
-    # print("______________________________________")
-    test_model('Yes please', 'both_model_artifacts_new')
-    test_model('Please dont', 'both_model_artifacts_new')
-    test_model(TEST_ART_OPINION, 'both_model_artifacts_new')
-    test_model(TEST_REVIEW, 'both_model_artifacts_new')
+    # print("________________Present______________________")
+    # MyText = "yes, lets try it"
+    # response, tag = chatbot_response(MyText)
+    # print(response, tag)
+    # test_model(MyText, 'both_model_artifacts_new')
+    # test_model_ggo(MyText, "ggo_artifacts_new")
+    #
+    # MyText = "no i want help with discounts"
+    # response, tag = chatbot_response(MyText)
+    # print(response, tag)
+    # test_model(MyText, 'both_model_artifacts_new')
+    # test_model_ggo(MyText, "ggo_artifacts_new")
+    #
+    # MyText = "this is so cool, thank you so much!"
+    # response, tag = chatbot_response(MyText)
+    # print(response, tag)
+    # test_model(MyText, 'both_model_artifacts_new')
+    # test_model_ggo(MyText, "ggo_artifacts_new")
+    #
+    # MyText = "gross and uncomfortable"
+    # response, tag = chatbot_response(MyText)
+    # print(response, tag)
+    # test_model(MyText, 'both_model_artifacts_new')
+    # test_model_ggo(MyText, "ggo_artifacts_new")
+
+    # test_model(TEST_ART_OPINION, 'both_model_artifacts_new')
+    # test_model(TEST_REVIEW, 'both_model_artifacts_new')
 
     # print("______________________________________")
 
     # ________________________________________________________________________________________________________#
     # nlg()
-    # MyText = 'Are there any paintings here?'
+    # MyText = "yes, lets try it"
     # response, tag = chatbot_response(MyText)
     # print(response)
 
+    # ________________________________________________________________________________________________________#
 
+    print('§!Begin!§')
+    cont, recc = listener('both_model_artifacts_new')
+    while (1):
+        if cont == True:
+            cont, recc = listener('both_model_artifacts_new', cont)
+        else:
+            break
+    print('~end~')
 
-    # test = question_asker('both_model_artifacts')
-    # print('§!Begin!§')
-    # listener('both_model_artifacts_new')
-    # print('end')
-
-    # choice = question_asker('both_model_artifacts_new')
 
