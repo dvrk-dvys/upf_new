@@ -1,0 +1,48 @@
+{"intents": [
+        {"tag": "greeting",
+         "patterns": ["Hi there", "How are you", "Is anyone there?", "Hey", "Hola", "Hello", "Good day", "Whats up", "Start", "Begin"],
+         "responses": ["Hello!", "Nice to meet you", "Hi there!"],
+         "context": [""]
+        },
+        {"tag": "goodbye",
+         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time", "Exit", "Close", "Done", "Thats all", "That will work for me."],
+         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
+         "context": [""]
+        },
+        {"tag": "thanks",
+         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me", "That sounds good thank you!", "This could work, thanks again", "Very cool", "Thank you for the help"],
+         "responses": ["Happy to help!", "Any time!", "My pleasure"],
+         "context": [""]
+        },
+        {"tag": "no_answer",
+         "patterns": [""],
+         "responses": ["Sorry, I missed that", "Could you repeat that?", "Not sure I understand. Can you repeat?"],
+         "context": [""]
+        },
+        {"tag": "options",
+         "patterns": ["How you could help me?", "What can you do?", "What help do you provide?", "How you can be helpful?", "What support is offered", "What do you do?", "I don't know what to do", "I can't decide on which exhibit to visit", "I am trying to find something my kids will like.", "I am not sure."],
+         "responses": ["I can help match you to an exhibition the best fits your interests!", "I'm here to help you deep dive into the experiential art we have here at CosmoCaixa!"],
+         "context": [""]
+        },
+        {"tag": "help",
+         "patterns": ["Membership", "Discounts", "contact", "sign up", "I want to renew my membership", "Do I get any discounts?", "I would like to sign up for a student card", "I need elderly pricing"],
+         "responses": ["Here is our general contact info and rates. You can also find more help at the info kiosk behind you!"],
+         "context": [""]
+        },
+        {"tag": "schedule",
+         "patterns": ["Schedule", "Upcoming exhibits", "What do you have today?", "Art details", "Art for kids", "What exhibits are there.", "What sculptures and paintings are here?", "Show me the exhibitions.", "What is the most popular exhibit?", "What interactive art is there this week?"],
+         "responses": ["Here is the exhibition schedule for the week and permanent installations. I can help match you to an exhibition or instillation here at CosmoCaixa."],
+         "context": ["schedule"]
+        },
+        {"tag": "map",
+         "patterns": ["Museum layout", "Where is the bathroom?", "Where is the exit", "Coat check?", "Food?", "I am lost", "Can you help me find my jacket?", "Where can I find statues?", "I cannot see where the main exhibit is."],
+         "responses": ["Here is a map of CosmoCaixa! Including restrooms, shops, concierge services and exits."],
+         "context": ["display_map"]
+        },
+        {"tag": "tickets",
+         "patterns": ["Ticketing", "Three tickets for the space exhibit", "I would like to purchase tickets"],
+         "responses": ["All purchases can be handled at the kiosk to your left or at the help desk at the center of the atrium!"],
+         "context": ["purchase"]
+        }
+   ]
+}

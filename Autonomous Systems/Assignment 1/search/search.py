@@ -11,15 +11,18 @@
 # Student side autograding was added by Brad Miller, Nick Hay, and
 # Pieter Abbeel (pabbeel@cs.berkeley.edu).
 
-from game import Directions
-from queue import PriorityQueue
-import sys
+
+# def my_function(a: int, b: Tuple[int, int], c: List[List], d: Any, e: float=1.0):
+# my_function(1, (2, 3), [['a', 'b'], [None, my_class], [[]]], ('h', 1))
+
 
 
 """
 In search.py, you will implement generic search algorithms which are called by
 Pacman agents (in searchAgents.py).
 """
+import sys
+from queue import PriorityQueue
 
 import util
 
@@ -76,7 +79,7 @@ def tinyMazeSearch(problem):
     w = Directions.WEST
     return  [s, s, w, s, w, w, s, w]
 
-def depthFirstSearch(problem):
+def depthFirstSearch(problem: SearchProblem):
     """
     Search the deepest nodes in the search tree first.
 
@@ -90,54 +93,55 @@ def depthFirstSearch(problem):
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
     """
+
     "*** YOUR CODE HERE ***"
 
     print("Start:", problem.getStartState())
     print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
     print("Start's successors:", problem.getSuccessors(problem.getStartState()))
 
-    def DFSPath(graph, start, goal):
-        visited = []
-        path = []
-        fringe = PriorityQueue()
-        fringe.put((0, start, path, visited))
+    # def my_function(a: int, b: Tuple[int, int], c: List[List], d: Any, e: float = 1.0):
+    # my_function(1, (2, 3), [['a', 'b'], [None, my_class], [[]]], ('h', 1))
 
-        while not fringe.empty():
-            depth, current_node, path, visited = fringe.get()
 
-            if current_node == goal:
-                return path + [current_node]
+    def DFS(int, start, graph, goal, e: float=1.0):
+        # visited = []
+        path = [start]
 
-            visited = visited + [current_node]
+        branches = util.Stack()
+        branches.push((start, path))
 
-            child_nodes = graph[current_node]
-            for node in child_nodes:
-                if node not in visited:
-                    if node == goal:
-                        finalpath = [start] + path + [node]
-                        return finalpath
-                    depth_of_node = len(path)
-                    fringe.put((-depth_of_node, node, path + [node], visited))
+        while branches:
+            (start, path) = branches.pop()
+            graph_prep = set(graph[start]) - set(path)
+            for next in graph_prep:
+
+                if next == goal:
+                    finalpath = path + [next]
+                    return list(finalpath)
+                else:
+                    branches.push((next, path + [next]))
 
         return path
 
-    nodes = set((x, y) for x in range(0, (problem.walls.width-1)) for y in range(0, (problem.walls.height-1)))
+    try:
+        nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
+    except:
+        print()
+
     nodes = sorted(nodes, key=lambda tup: tup[0])
     for each in list(nodes):
         if problem.walls.data[each[0]][each[1]] == True:
             nodes.remove(each)
 
-    if problem.walls.width == problem.walls.height:
-        graph = {k: [] for k in nodes}
+    graph = {k: [] for k in nodes}
 
-        for each in nodes:
-            for every in problem.getSuccessors(each):
-                graph[each].append(every[0])
+    for each in nodes:
+        for every in problem.getSuccessors(each):
+            graph[each].append(every[0])
 
     print(sys.argv)
-    path = DFSPath(graph, problem.startState, problem.goal)
-    print(path)
-
+    path = DFS(0, problem.startState, graph, problem.goal)
 
     output = []
 
@@ -156,21 +160,26 @@ def depthFirstSearch(problem):
 
     return output
 
+
+
     util.raiseNotDefined()
 
-def breadthFirstSearch(problem):
+def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
-    def shortestBFSPath(graph, start, goal):
+    def shortestBFSPath(int, start, graph, goal, e: float=1.0):
         visited = []
-
         # Queue for traversing the
         # graph in the BFS
-        queue = [[start]]
+        # queue = [[start]]
+
+        branches = util.Queue()
+        branches.push([start])
+
 
         # Loop to traverse the graph
         # with the help of the queue
-        while queue:
-            path = queue.pop(0)
+        while branches:
+            path = branches.pop()
             node = path[-1]
 
             # Condition to check if the
@@ -178,12 +187,14 @@ def breadthFirstSearch(problem):
             if node not in visited:
                 neighbours = graph[node]
 
+
                 # Loop to iterate over the
                 # neighbours of the node
+                # util.getSuccessors(node)
                 for neighbour in neighbours:
                     new_path = list(path)
                     new_path.append(neighbour)
-                    queue.append(new_path)
+                    branches.push(new_path)
 
                     # Condition to check if the
                     # neighbour node is the goal
@@ -191,9 +202,7 @@ def breadthFirstSearch(problem):
                         print("Shortest path = ", *new_path)
                         return new_path
                 visited.append(node)
-
         return
-
 
     for check in sys.argv:
         if 'Corners' in check:
@@ -202,35 +211,30 @@ def breadthFirstSearch(problem):
         else:
             prob = None
 
-    nodes = set((x, y) for x in range(0, (problem.walls.width-1)) for y in range(0, (problem.walls.height-1)))
+    nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
     nodes = sorted(nodes, key=lambda tup: tup[0])
-    for each in list(nodes):
+    graph = {}
+
+    for each in list(nodes).copy():
         if problem.walls.data[each[0]][each[1]] == True:
             nodes.remove(each)
-        print()
 
-    if problem.walls.width == problem.walls.height:
-        graph = {k: [] for k in nodes}
+    graph = {k: [] for k in nodes}
 
-        for each in nodes:
-            for every in problem.getSuccessors(each):
-                if 'Corners' == prob:
-                    graph[each].append(every[0][0])
-                else:
-                    graph[each].append(every[0])
-
+    for each in nodes:
+        for every in problem.getSuccessors(each):
+            graph[each].append(every[0][0])
 
     output = []
-
     if prob == 'Corners':
-        goals = list(problem.goal)
+        goals = list(problem.corners)
+        # goals = []
         while goals != []:
-            if len(goals) == len(problem.goal):
-                path = shortestBFSPath(graph, problem.startingPosition, goals[0])
+            if len(goals) == len(problem.corners):
+                path = shortestBFSPath(0, problem.startingPosition, graph, goals[0])
                 new_start = goals.pop(0)
-
             else:
-                path = shortestBFSPath(graph, new_start, goals[0])
+                path = shortestBFSPath(0, new_start, graph, goals[0])
                 new_start = goals.pop(0)
 
             for each in path:
@@ -238,7 +242,6 @@ def breadthFirstSearch(problem):
                     for next in problem.getSuccessors(each):
                         if (next[0][0] in problem.goal):
                             output.append(next[1])
-
                     break
 
                 for next in problem.getSuccessors(each):
@@ -246,7 +249,7 @@ def breadthFirstSearch(problem):
                         output.append(next[1])
 
     else:
-        path = shortestBFSPath(graph, problem.startState, problem.goal)
+        path = shortestBFSPath(0, problem.getStartState(), graph, problem.goal)
 
         for each in path:
             if path[path.index(each) + 1] == problem.goal or (path[path.index(each) + 1] in problem.goal):
@@ -261,11 +264,15 @@ def breadthFirstSearch(problem):
                     output.append(next[1])
 
     print(output)
-
     return output
 
-def uniformCostSearch(problem):
+
+
+    util.raiseNotDefined()
+
+def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
+
     nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
     nodes = sorted(nodes, key=lambda tup: tup[0])
     for each in list(nodes):
@@ -320,6 +327,8 @@ def uniformCostSearch(problem):
                     temp.append(n[0])
                     queue.put((t_cost, temp))
 
+    util.raiseNotDefined()
+
 def nullHeuristic(state, problem=None):
     """
     A heuristic function estimates the cost from the current state to the nearest
@@ -327,8 +336,7 @@ def nullHeuristic(state, problem=None):
     """
     return 0
 
-
-def aStarSearch(problem, heuristic=nullHeuristic):
+def aStarSearch(problem: SearchProblem, heuristic=nullHeuristic):
     """Search the node that has the lowest combined cost and heuristic first."""
     for check in sys.argv:
         if 'Corners' in check:
@@ -365,6 +373,7 @@ def aStarSearch(problem, heuristic=nullHeuristic):
                     open.push((child[0], actionPath + [child[1]]),
                                   problem.getCostOfActions(actionPath) + child[2] + heuristic(child[0], problem))
     return []
+    util.raiseNotDefined()
 
 
 # Abbreviations
@@ -372,8 +381,3 @@ bfs = breadthFirstSearch
 dfs = depthFirstSearch
 astar = aStarSearch
 ucs = uniformCostSearch
-
-
-# !!!! medium doesnt work for dfs: UnboundLocalError: local variable 'graph' referenced before assignment
-
-
