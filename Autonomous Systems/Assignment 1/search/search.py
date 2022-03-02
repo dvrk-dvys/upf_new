@@ -95,237 +95,365 @@ def depthFirstSearch(problem: SearchProblem):
     """
 
     "*** YOUR CODE HERE ***"
+    test = None
+    if str(type(problem)) == '<class \'searchAgents.PositionSearchProblem\'>':
+        test = False
+    elif str(type(problem)) == '<class \'searchTestClasses.GraphSearch\'>':
+        test = True
+    else:
+        print('unknown')
 
-    print("Start:", problem.getStartState())
-    print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
-    print("Start's successors:", problem.getSuccessors(problem.getStartState()))
+
+    # def get_successors(node, test):
+    #     if test == False:
+    #         successors = problem.getSuccessors(node)
+    #     elif test == True:
+    #         successors = problem.successors[each]
+    #     return successors
+
+
+    # print("Start:", problem.getStartState())
+    # print("Is the start a goal?", problem.isGoalState(problem.getStartState()))
+    # print("Start's successors:", problem.getSuccessors(problem.getStartState()))
 
     # def my_function(a: int, b: Tuple[int, int], c: List[List], d: Any, e: float = 1.0):
     # my_function(1, (2, 3), [['a', 'b'], [None, my_class], [[]]], ('h', 1))
 
+    #
+    # def DFS(int, start,  goal, e: float=1.0):
+    #     visited = [start]
+    #     path = []
+    #     c = start
+    #     branches = util.Stack()
+    #     branches.push((start, path))
+    #
+    #     while not branches.isEmpty() and not problem.isGoalState(c):
+    #         node, path = branches.pop()
+    #         visited.append(node)
+    #         succ = problem.getSuccessors(node)
+    #         for next in succ:
+    #             # node = next[0]
+    #             # if next[0] == goal:
+    #             #     finalpath = path + [next[0]]
+    #             #     return list(finalpath)
+    #             if next[0] not in visited:
+    #                 c = next[0]
+    #                 # path = path + [next[1]]
+    #                 branches.push((next[0], path + [next[1]]))
+    #     return path + [next[1]]
+    #
+    #
+    #
+    # if test == False:
+    #     nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
+    #     for each in list(nodes):
+    #         if problem.walls.data[each[0]][each[1]] == True:
+    #             nodes.remove(each)
+    #
+    #     start = problem.getStartState()
+    #     goal = problem.goal
+    # else:
+    # #     nodes = []
+    # #     actions = problem.orderedSuccessorTuples
+    # #     for letter in problem.successors:
+    # #         nodes.append(letter)
+    # #
+    #     start = problem.start_state
+    #     goal = problem.goals[0]
+    #
+    # # nodes = sorted(nodes, key=lambda tup: tup[0])
+    #
+    # # graph = {k: [] for k in nodes}
+    # # output = []
+    #
+    # # for each in nodes:
+    # #     for every in get_successors(each, test):
+    # #         graph[each].append(every[0])
+    #
+    # print(sys.argv)
+    # path = DFS(0, start, goal)
+    #
+    # # for each in path:
+    # #     if each == goal:
+    # #         output.append(next[1])
+    # #         break
+    # #     for a in actions:
+    # #         if (path[path.index(each) + 1] in a) and (each in a):
+    # #             output.append(a[1])
+    # #             break
+    #
+    # print(path)
+    #
+    # return path
 
-    def DFS(int, start, graph, goal, e: float=1.0):
-        # visited = []
-        path = [start]
+    start = problem.getStartState()
 
-        branches = util.Stack()
-        branches.push((start, path))
+    # create fringe stack and visited list
+    fringe = util.Stack()
+    visited = []
 
-        while branches:
-            (start, path) = branches.pop()
-            graph_prep = set(graph[start]) - set(path)
-            for next in graph_prep:
+    # push the start node on the fringe stack
+    fringe.push((start, [], 1))
 
-                if next == goal:
-                    finalpath = path + [next]
-                    return list(finalpath)
-                else:
-                    branches.push((next, path + [next]))
+    while not fringe.isEmpty():
+      n = fringe.pop()
+      actions = n[1]
 
-        return path
+      visited.append(n[0])
 
-    try:
-        nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
-    except:
-        print()
+      # check if goal state found
+      if problem.isGoalState(n[0]):
+        return actions
 
-    nodes = sorted(nodes, key=lambda tup: tup[0])
-    for each in list(nodes):
-        if problem.walls.data[each[0]][each[1]] == True:
-            nodes.remove(each)
+      for successor in problem.getSuccessors(n[0]):
+          if not successor[0] in visited:
+              successorActions = list(n[1])
+              successorActions.append(successor[1])
+              #print "add to fringe: ", (successor[0], testAct, successor[2])
+              fringe.push((successor[0], successorActions, successor[2]))
 
-    graph = {k: [] for k in nodes}
-
-    for each in nodes:
-        for every in problem.getSuccessors(each):
-            graph[each].append(every[0])
-
-    print(sys.argv)
-    path = DFS(0, problem.startState, graph, problem.goal)
-
-    output = []
-
-    for each in path:
-        if path[path.index(each) + 1] == problem.goal:
-            for next in problem.getSuccessors(each):
-                if (problem.goal == next[0]):
-                    output.append(next[1])
-
-            break
-        for next in problem.getSuccessors(each):
-            if (path[path.index(each) + 1] in next) and (path[path.index(each) + 1] == next[0]):
-                output.append(next[1])
-
-    print(output)
-
-    return output
-
-
+    return actions
 
     util.raiseNotDefined()
 
 def breadthFirstSearch(problem: SearchProblem):
     """Search the shallowest nodes in the search tree first."""
-    def shortestBFSPath(int, start, graph, goal, e: float=1.0):
-        visited = []
-        # Queue for traversing the
-        # graph in the BFS
-        # queue = [[start]]
+    # def shortestBFSPath(int, start, graph, goal, e: float=1.0):
+    #     visited = []
+    #     # Queue for traversing the
+    #     # graph in the BFS
+    #     # queue = [[start]]
+    #
+    #     branches = util.Queue()
+    #     branches.push([start])
+    #
+    #
+    #     # Loop to traverse the graph
+    #     # with the help of the queue
+    #     while branches:
+    #         path = branches.pop()
+    #         node = path[-1]
+    #
+    #         # Condition to check if the
+    #         # current node is not visited
+    #         if node not in visited:
+    #             neighbours = graph[node]
+    #
+    #
+    #             # Loop to iterate over the
+    #             # neighbours of the node
+    #             # util.getSuccessors(node)
+    #             for neighbour in neighbours:
+    #                 new_path = list(path)
+    #                 new_path.append(neighbour)
+    #                 branches.push(new_path)
+    #
+    #                 # Condition to check if the
+    #                 # neighbour node is the goal
+    #                 if neighbour == goal or (neighbour in goal):
+    #                     print("Shortest path = ", *new_path)
+    #                     return new_path
+    #             visited.append(node)
+    #     return
+    #
+    # for check in sys.argv:
+    #     if 'Corners' in check:
+    #         prob = 'Corners'
+    #         break
+    #     else:
+    #         prob = None
+    #
+    # # nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
+    # # nodes = sorted(nodes, key=lambda tup: tup[0])
+    # # graph = {}
+    #
+    # # for each in list(nodes).copy():
+    # #     if problem.walls.data[each[0]][each[1]] == True:
+    # #         nodes.remove(each)
+    #
+    # # graph = {k: [] for k in nodes}
+    # #
+    # # for each in nodes:
+    # #     for every in problem.getSuccessors(each):
+    # #         graph[each].append(every[0][0])
+    #
+    # output = []
+    # if prob == 'Corners':
+    #     goals = list(problem.corners)
+    #     # goals = []
+    #     while goals != []:
+    #         if len(goals) == len(problem.corners):
+    #             path = shortestBFSPath(0, problem.startingPosition, goals[0])
+    #             new_start = goals.pop(0)
+    #         else:
+    #             path = shortestBFSPath(0, new_start, goals[0])
+    #             new_start = goals.pop(0)
+    #
+    #         for each in path:
+    #             if path[path.index(each) + 1] in problem.goal:
+    #                 for next in problem.getSuccessors(each):
+    #                     if (next[0][0] in problem.goal):
+    #                         output.append(next[1])
+    #                 break
+    #
+    #             for next in problem.getSuccessors(each):
+    #                 if (path[path.index(each) + 1] == next[0][0]):
+    #                     output.append(next[1])
+    #
+    # else:
+    #     path = shortestBFSPath(0, problem.getStartState(), problem.goal)
+    #
+    #     for each in path:
+    #         if path[path.index(each) + 1] == problem.goal or (path[path.index(each) + 1] in problem.goal):
+    #             for next in problem.getSuccessors(each):
+    #                 if (problem.goal == next[0]) or (next[0] in problem.goal):
+    #                     output.append(next[1])
+    #
+    #             break
+    #
+    #         for next in problem.getSuccessors(each):
+    #             if (path[path.index(each) + 1] in next) and (path[path.index(each) + 1] == next[0]):
+    #                 output.append(next[1])
+    #
+    # print(output)
+    # return output
 
-        branches = util.Queue()
-        branches.push([start])
+    start = problem.getStartState()
 
+    # create fringe queue and visited list
+    fringe = util.Queue()
+    visited = []
+    succeeded = []
 
-        # Loop to traverse the graph
-        # with the help of the queue
-        while branches:
-            path = branches.pop()
-            node = path[-1]
+    # push the start node on the fringe queue
+    fringe.push((start, [], 1))
 
-            # Condition to check if the
-            # current node is not visited
-            if node not in visited:
-                neighbours = graph[node]
+    while not fringe.isEmpty():
+        n = fringe.pop()
+        actions = n[1]
 
+        visited.append(n[0])
 
-                # Loop to iterate over the
-                # neighbours of the node
-                # util.getSuccessors(node)
-                for neighbour in neighbours:
-                    new_path = list(path)
-                    new_path.append(neighbour)
-                    branches.push(new_path)
+        # check if goal state found
+        if problem.isGoalState(n[0]):
+            return actions
 
-                    # Condition to check if the
-                    # neighbour node is the goal
-                    if neighbour == goal or (neighbour in goal):
-                        print("Shortest path = ", *new_path)
-                        return new_path
-                visited.append(node)
-        return
+        for successor in problem.getSuccessors(n[0]):
+            if not successor[0] in visited:
+                if not successor[0] in succeeded:
+                    succeeded.append(successor[0])
+                    successorActions = list(n[1])
+                    successorActions.append(successor[1])
+                    #print "add to fringe: ", (successor[0], successorActions, successor[2])
+                    fringe.push((successor[0], successorActions, successor[2]))
 
-    for check in sys.argv:
-        if 'Corners' in check:
-            prob = 'Corners'
-            break
-        else:
-            prob = None
-
-    nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
-    nodes = sorted(nodes, key=lambda tup: tup[0])
-    graph = {}
-
-    for each in list(nodes).copy():
-        if problem.walls.data[each[0]][each[1]] == True:
-            nodes.remove(each)
-
-    graph = {k: [] for k in nodes}
-
-    for each in nodes:
-        for every in problem.getSuccessors(each):
-            graph[each].append(every[0][0])
-
-    output = []
-    if prob == 'Corners':
-        goals = list(problem.corners)
-        # goals = []
-        while goals != []:
-            if len(goals) == len(problem.corners):
-                path = shortestBFSPath(0, problem.startingPosition, graph, goals[0])
-                new_start = goals.pop(0)
-            else:
-                path = shortestBFSPath(0, new_start, graph, goals[0])
-                new_start = goals.pop(0)
-
-            for each in path:
-                if path[path.index(each) + 1] in problem.goal:
-                    for next in problem.getSuccessors(each):
-                        if (next[0][0] in problem.goal):
-                            output.append(next[1])
-                    break
-
-                for next in problem.getSuccessors(each):
-                    if (path[path.index(each) + 1] == next[0][0]):
-                        output.append(next[1])
-
-    else:
-        path = shortestBFSPath(0, problem.getStartState(), graph, problem.goal)
-
-        for each in path:
-            if path[path.index(each) + 1] == problem.goal or (path[path.index(each) + 1] in problem.goal):
-                for next in problem.getSuccessors(each):
-                    if (problem.goal == next[0]) or (next[0] in problem.goal):
-                        output.append(next[1])
-
-                break
-
-            for next in problem.getSuccessors(each):
-                if (path[path.index(each) + 1] in next) and (path[path.index(each) + 1] == next[0]):
-                    output.append(next[1])
-
-    print(output)
-    return output
-
-
+    return actions
 
     util.raiseNotDefined()
 
 def uniformCostSearch(problem: SearchProblem):
     """Search the node of least total cost first."""
 
-    nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
-    nodes = sorted(nodes, key=lambda tup: tup[0])
-    for each in list(nodes):
-        if problem.walls.data[each[0]][each[1]] == True:
-            nodes.remove(each)
+    # nodes = set((x, y) for x in range(0, (problem.walls.width - 1)) for y in range(0, (problem.walls.height - 1)))
+    # nodes = sorted(nodes, key=lambda tup: tup[0])
+    # for each in list(nodes):
+    #     if problem.walls.data[each[0]][each[1]] == True:
+    #         nodes.remove(each)
 
-    if problem.walls.width == problem.walls.height:
-        graph = {k: [] for k in nodes}
+    # if problem.walls.width == problem.walls.height:
+    #     graph = {k: [] for k in nodes}
+    #
+    #     for each in nodes:
+    #         for every in problem.getSuccessors(each):
+    #             graph[each].append(every[0])
 
-        for each in nodes:
-            for every in problem.getSuccessors(each):
-                graph[each].append(every[0])
+    # visited = set()
+    # path = []
+    # queue = PriorityQueue()
+    #
+    # start = problem.getStartState()
+    #
+    # queue.put((0, [problem.startState]))
+    #
+    # while queue:
+    #     # if no path is present beteween two nodes
+    #
+    #     cost, path = queue.get()
+    #     node = path[len(path) - 1]
+    #     if node not in visited:
+    #         visited.add(node)
+    #         if node == problem.goal or (node in problem.goal):
+    #             path.append(cost)
+    #
+    #             output = []
+    #
+    #             for each in path:
+    #                 if path[path.index(each) + 1] == problem.goal or (path[path.index(each) + 1] in problem.goal):
+    #                     for next in problem.getSuccessors(each):
+    #                         if (problem.goal == next[0]) or (next[0] in problem.goal):
+    #                             output.append(next[1])
+    #
+    #                     break
+    #                 for next in problem.getSuccessors(each):
+    #                     if (path[path.index(each) + 1] in next) and (path[path.index(each) + 1] == next[0]):
+    #                         output.append(next[1])
+    #
+    #             print(output)
+    #
+    #             return output
+    #
+    #
+    #         for n in problem.getSuccessors(node):
+    #             if n[0] not in visited:
+    #                 t_cost = cost + n[2]
+    #
+    #                 temp = path[:]
+    #                 temp.append(n[0])
+    #                 queue.put((t_cost, temp))
 
-    visited = set()
-    path = []
-    queue = PriorityQueue()
-    queue.put((0, [problem.startState]))
+    start = problem.getStartState()
 
-    while queue:
-        # if no path is present beteween two nodes
+    # create fringe queue and visited list
+    fringe = util.PriorityQueue()
+    visited = []
+    succeeded = []
 
-        cost, path = queue.get()
-        node = path[len(path) - 1]
-        if node not in visited:
-            visited.add(node)
-            if node == problem.goal or (node in problem.goal):
-                path.append(cost)
+    # push the start node on the fringe queue
+    fringe.push((start, [], 0), 0)
 
-                output = []
+    while not fringe.isEmpty():
+        n = fringe.pop()
+        print
+        "node: ", n
+        actions = n[1]
 
-                for each in path:
-                    if path[path.index(each) + 1] == problem.goal or (path[path.index(each) + 1] in problem.goal):
-                        for next in problem.getSuccessors(each):
-                            if (problem.goal == next[0]) or (next[0] in problem.goal):
-                                output.append(next[1])
+        visited.append(n[0])
 
-                        break
-                    for next in problem.getSuccessors(each):
-                        if (path[path.index(each) + 1] in next) and (path[path.index(each) + 1] == next[0]):
-                            output.append(next[1])
+        # check if goal state found
+        if problem.isGoalState(n[0]):
+            return actions
 
-                print(output)
+        # print "successors: ", problem.getSuccessors(n[0])
+        # print "current action on node: ", n[1]
 
-                return output
+        for successor in problem.getSuccessors(n[0]):
+            # print "successors on %s : %s" % (str(n[0]), problem.getSuccessors(n[0]))
+            if not successor[0] in visited:
+                if (not successor[0] in succeeded) or (problem.isGoalState(successor[0])):
+                    succeeded.append(successor[0])
+                    successorActions = list(n[1])
+                    successorActions.append(successor[1])
+                    successorCost = n[2] + successor[2]
+                    # print "pushing: ", (successor[0], successorCost)
+                    fringe.push((successor[0], successorActions, successorCost), successorCost)
+        # print "went through successors"
 
+        # check if goal state found
+        if problem.isGoalState(n[0]):
+            return actions
 
-            for n in problem.getSuccessors(node):
-                if n[0] not in visited:
-                    t_cost = cost + n[2]
+    return actions
 
-                    temp = path[:]
-                    temp.append(n[0])
-                    queue.put((t_cost, temp))
 
     util.raiseNotDefined()
 
