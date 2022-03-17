@@ -1,0 +1,7 @@
+sh-4.2# cat out-fd-fdss_M_B_1hmm.1
+(move-monkey-to locale_3 locale_1)
+(move-monkey-to locale_2 locale_3)
+(move-chair locale_3 locale_2)
+(climb-up locale_3)
+(reach-banana locale_3)
+; cost = 5 (unit cost)

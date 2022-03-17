@@ -1,0 +1,210 @@
+Planner: seq-opt-lmcut
+
+levels_solved
+
+Information for          Level 2
+benchmarks/sasquatch/level1.sok
+/Users/mariafernandamancheno/Desktop/downward/fast-downward.py --overall-time-limit 180 --plan-file sas_plan1 --alias seq-opt-lmcut /Users/mariafernandamancheno/Desktop/AS_hw3/sokoban-domain.pddl /Users/mariafernandamancheno/Desktop/AS_hw3/output_2.pddl
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 179.9s
+INFO     translator memory limit: None
+INFO     translator command line string: /Library/Frameworks/Python.framework/Versions/3.7/bin/python3 /Users/mariafernandamancheno/Desktop/downward/builds/release/bin/translate/translate.py /Users/mariafernandamancheno/Desktop/AS_hw3/sokoban-domain.pddl /Users/mariafernandamancheno/Desktop/AS_hw3/output_2.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.020s CPU, 0.030s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.014s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.008s wall-clock]
+Preparing model... [0.030s CPU, 0.046s wall-clock]
+Generated 47 rules.
+Computing model... [6.380s CPU, 6.587s wall-clock]
+185913 relevant atoms
+101565 auxiliary atoms
+287478 final queue length
+858256 total queue pushes
+Completing instantiation... [24.190s CPU, 28.876s wall-clock]
+Instantiating: [30.740s CPU, 35.649s wall-clock]
+Computing fact groups...
+Finding invariants...
+8 initial candidates
+Finding invariants: [0.310s CPU, 0.304s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.002s wall-clock]
+Instantiating groups... [0.010s CPU, 0.011s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.000s wall-clock]
+Choosing groups...
+44 uncovered facts
+Choosing groups: [0.000s CPU, 0.001s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.330s CPU, 0.321s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.000s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [0.670s CPU, 0.691s wall-clock]
+Translating task: [19.110s CPU, 19.303s wall-clock]
+335308 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+5 propositions removed
+Detecting unreachable propositions: [9.170s CPU, 9.239s wall-clock]
+Reordering and filtering variables...
+49 of 49 variables necessary.
+35 of 40 mutex groups necessary.
+179140 of 179140 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [2.890s CPU, 2.894s wall-clock]
+Translator variables: 49
+Translator derived variables: 0
+Translator facts: 283
+Translator goal facts: 4
+Translator mutex groups: 35
+Translator total mutex groups size: 210
+Translator operators: 179140
+Translator axioms: 0
+Translator task size: 1607150
+warning: could not determine peak memory
+Writing output... [4.000s CPU, 4.040s wall-clock]
+Done! [66.980s CPU, 72.207s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 112.42000000000002s
+INFO     search memory limit: None
+INFO     search command line string: /Users/mariafernandamancheno/Desktop/downward/builds/release/bin/downward --search 'astar(lmcut())' --internal-plan-file sas_plan1 < output.sas
+[t=0.00799364s, 4291732 KB] reading input...
+[t=11.8101s, 4358336 KB] done reading input!
+[t=12.2567s, 4423204 KB] Initializing landmark cut heuristic...
+[t=12.2569s, 4423204 KB] Building successor generator...done!
+[t=12.5852s, 4436996 KB] peak memory difference for successor generator creation: 13792 KB
+[t=12.5852s, 4436996 KB] time for successor generation creation: 0.327832s
+[t=12.5901s, 4436996 KB] Variables: 49
+[t=12.5901s, 4436996 KB] FactPairs: 283
+[t=12.5901s, 4436996 KB] Bytes per state: 12
+[t=12.5936s, 4436996 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=12.7069s, 4436996 KB] New best heuristic value for lmcut: 5
+[t=12.707s, 4436996 KB] g=0, 1 evaluated, 0 expanded
+[t=12.707s, 4436996 KB] f = 5, 1 evaluated, 0 expanded
+[t=12.707s, 4436996 KB] Initial heuristic value for lmcut: 5
+[t=12.707s, 4436996 KB] pruning method: none
+[t=12.7867s, 4436996 KB] New best heuristic value for lmcut: 4
+[t=12.7868s, 4436996 KB] g=1, 2 evaluated, 1 expanded
+[t=16.7447s, 4436996 KB] New best heuristic value for lmcut: 3
+[t=16.7448s, 4436996 KB] g=1, 59 evaluated, 1 expanded
+[t=45.7458s, 4437508 KB] f = 6, 554 evaluated, 157 expanded
+Peak memory: 4437508 KB
+caught signal 24 -- exiting
+Time limit has been reached.
+Remove intermediate file output.sas
+search exit code: 23
+
+Information for          Level 14
+benchmarks/sasquatch/level1.sok
+/Users/mariafernandamancheno/Desktop/downward/fast-downward.py --overall-time-limit 180 --plan-file sas_plan1 --alias seq-opt-lmcut /Users/mariafernandamancheno/Desktop/AS_hw3/sokoban-domain.pddl /Users/mariafernandamancheno/Desktop/AS_hw3/output_14.pddl
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 179.91s
+INFO     translator memory limit: None
+INFO     translator command line string: /Library/Frameworks/Python.framework/Versions/3.7/bin/python3 /Users/mariafernandamancheno/Desktop/downward/builds/release/bin/translate/translate.py /Users/mariafernandamancheno/Desktop/AS_hw3/sokoban-domain.pddl /Users/mariafernandamancheno/Desktop/AS_hw3/output_14.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.020s CPU, 0.028s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.020s CPU, 0.008s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.006s wall-clock]
+Preparing model... [0.040s CPU, 0.047s wall-clock]
+Generated 47 rules.
+Computing model... [10.090s CPU, 11.452s wall-clock]
+315773 relevant atoms
+116020 auxiliary atoms
+431793 final queue length
+1404930 total queue pushes
+Completing instantiation... [40.100s CPU, 42.346s wall-clock]
+Instantiating: [50.450s CPU, 54.052s wall-clock]
+Computing fact groups...
+Finding invariants...
+8 initial candidates
+Finding invariants: [0.460s CPU, 0.492s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.002s wall-clock]
+Instantiating groups... [0.000s CPU, 0.008s wall-clock]
+Collecting mutex groups... [0.000s CPU, 0.001s wall-clock]
+Choosing groups...
+49 uncovered facts
+Choosing groups: [0.000s CPU, 0.004s wall-clock]
+Building translation key... [0.000s CPU, 0.001s wall-clock]
+Computing fact groups: [0.480s CPU, 0.512s wall-clock]
+Building STRIPS to SAS dictionary... [0.000s CPU, 0.000s wall-clock]
+Building dictionary for full mutex groups... [0.000s CPU, 0.001s wall-clock]
+Building mutex information...
+Building mutex information: [0.000s CPU, 0.001s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Computing negative axioms... [0.000s CPU, 0.000s wall-clock]
+Processing axioms: [1.220s CPU, 1.233s wall-clock]
+Translating task: [36.090s CPU, 37.881s wall-clock]
+575026 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+0 operators removed
+0 axioms removed
+7 propositions removed
+Detecting unreachable propositions: [16.840s CPU, 17.089s wall-clock]
+Reordering and filtering variables...
+56 of 56 variables necessary.
+36 of 43 mutex groups necessary.
+305932 of 305932 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [5.750s CPU, 5.878s wall-clock]
+Translator variables: 56
+Translator derived variables: 0
+Translator facts: 392
+Translator goal facts: 6
+Translator mutex groups: 36
+Translator total mutex groups size: 288
+Translator operators: 305932
+Translator axioms: 0
+Translator task size: 2747834
+warning: could not determine peak memory
+Writing output... [7.430s CPU, 7.660s wall-clock]
+Done! [118.330s CPU, 124.454s wall-clock]
+translate exit code: 0
+
+INFO     Running search (release).
+INFO     search stdin: output.sas
+INFO     search time limit: 60.7s
+INFO     search memory limit: None
+INFO     search command line string: /Users/mariafernandamancheno/Desktop/downward/builds/release/bin/downward --search 'astar(lmcut())' --internal-plan-file sas_plan1 < output.sas
+[t=0.0131399s, 4299924 KB] reading input...
+[t=21.521s, 4415316 KB] done reading input!
+[t=22.2106s, 4554304 KB] Initializing landmark cut heuristic...
+[t=22.2108s, 4554304 KB] Building successor generator...done!
+[t=22.5937s, 4577180 KB] peak memory difference for successor generator creation: 22876 KB
+[t=22.5938s, 4577180 KB] time for successor generation creation: 0.382823s
+[t=22.5959s, 4577180 KB] Variables: 56
+[t=22.596s, 4577180 KB] FactPairs: 392
+[t=22.596s, 4577180 KB] Bytes per state: 12
+[t=22.5979s, 4577180 KB] Conducting best first search with reopening closed nodes, (real) bound = 2147483647
+[t=22.783s, 4577308 KB] New best heuristic value for lmcut: 8
+[t=22.7831s, 4577308 KB] g=0, 1 evaluated, 0 expanded
+[t=22.7832s, 4577308 KB] f = 8, 1 evaluated, 0 expanded
+[t=22.7833s, 4577308 KB] Initial heuristic value for lmcut: 8
+[t=22.7833s, 4577308 KB] pruning method: none
+[t=25.5023s, 4577308 KB] New best heuristic value for lmcut: 4
+[t=25.5023s, 4577308 KB] g=1, 16 evaluated, 1 expanded
+Peak memory: 4577820 KB
+caught signal 24 -- exiting
+Time limit has been reached.
+Remove intermediate file output.sas
+search exit code: 23

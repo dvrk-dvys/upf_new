@@ -58,10 +58,10 @@ auth.set_access_token(access_token, access_token_secret)
 # 		return False # To continue listening
 
 
-class MyListener(tweepy.StreamListener):
+class MyListener(tweepy.Stream):
 
     def __init__(self, api=None, max_tweets=10, json_tweets_file=None):
-        super(tweepy.StreamListener, self).__init__()
+        super(tweepy.Stream, self).__init__()
         self.num_tweets = 0
         self.max_tweets = max_tweets
         self.json_tweets_file = json_tweets_file

@@ -1,0 +1,41 @@
+
+ff: parsing domain file
+domain 'SOKOBAN_GEN' defined
+ ... done.
+ff: parsing problem file
+problem 'SOKOBAN_GEN' defined
+ ... done.
+
+
+
+Cueing down from goal distance:    9 into depth [1]
+                                   8            [1]
+                                   7            [1]
+                                   6            [1]
+                                   5            [1]
+                                   4            [1]
+                                   3            [1]
+                                   2            [1]
+                                   1            [1]
+                                   0            
+
+ff: found legal plan as follows
+
+step    0: PUSH-TO-GOAL PLAYER-01 BOX-24 POS-1-11 POS-2-4 POS-8-4 TELEPORT
+        1: PUSH-TO-GOAL PLAYER-01 BOX-34 POS-2-4 POS-3-4 POS-8-3 TELEPORT
+        2: PUSH-TO-GOAL PLAYER-01 BOX-27 POS-3-4 POS-2-7 POS-7-3 TELEPORT
+        3: PUSH-TO-GOAL PLAYER-01 BOX-46 POS-2-7 POS-4-6 POS-7-2 TELEPORT
+        4: PUSH-TO-GOAL PLAYER-01 BOX-310 POS-4-6 POS-3-10 POS-6-9 TELEPORT
+        5: PUSH-TO-GOAL PLAYER-01 BOX-39 POS-3-10 POS-3-9 POS-6-5 TELEPORT
+        6: PUSH-TO-GOAL PLAYER-01 BOX-26 POS-3-9 POS-2-6 POS-6-4 TELEPORT
+        7: PUSH-TO-GOAL PLAYER-01 BOX-66 POS-2-6 POS-6-6 POS-6-2 TELEPORT
+        8: PUSH-TO-GOAL PLAYER-01 BOX-69 POS-6-6 POS-6-9 POS-6-1 TELEPORT
+     
+
+time spent:    1.15 seconds instantiating 2636880 easy, 0 hard action templates
+               2.18 seconds reachability analysis, yielding 2113 facts and 2636880 actions
+               3.57 seconds creating final representation with 880 relevant facts
+               3.32 seconds building connectivity graph
+               0.65 seconds searching, evaluating 10 states, to a max depth of 1
+              10.87 seconds total time
+

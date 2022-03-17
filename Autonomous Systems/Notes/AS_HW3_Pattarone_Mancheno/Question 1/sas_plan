@@ -1,0 +1,5 @@
+(move-monkey p2 p1)
+(move-chair p3 p2)
+(climb p3)
+(get-bananas p3)
+; cost = 4 (unit cost)

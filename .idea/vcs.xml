@@ -2,5 +2,11 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PDDL-docker" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/demo-submission" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/pddl-parser" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/planners" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Web Intelligence/hSBM_Topicmodel" vcs="Git" />
   </component>
 </project>
