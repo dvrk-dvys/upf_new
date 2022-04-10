@@ -34,8 +34,7 @@
          ?airplane - airplane
          ?loc - airport)
     :precondition
-        (and
-            (at ?obj ?loc)
+        (and    (at ?obj ?loc)
             (at ?airplane ?loc))
     :effect
            (and 	(not (at ?obj ?loc))

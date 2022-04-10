@@ -1,24 +1,15 @@
 import os
-%pip install --user pandas
+import requests, sys
 from cffi.setuptools_ext import execfile
 import subprocess
 
 # from sokoban import main
 import sys
 
-# directory = 'files'
-
-# iterate over files in
-# that directory
-# for filename in os.listdir(directory):
-#     f = os.path.join(directory, filename)
-#     # checking if it is a file
-#     if os.path.isfile(f):
-#         print(f)
 
 def docker_plan():
-    # directory = '/SOKO_C3/'
-    directory = '../../mnt/mydata/'
+    directory = '/SOKO_C3/'
+    # directory = '../../mnt/mydata/'
     for num in range(1, 51):
         filename = 'level' + str(num) + '.sokproblem.pddl'
         f = os.path.join(directory, filename)
@@ -34,6 +25,15 @@ def docker_plan():
 
 
 if __name__ == '__main__':
+    data = {'domain': open("domain.pddl", 'r').read(),
+            'problem': open("level4.sokproblem.pddl", 'r').read()}
+
+    resp = requests.post('http://solver.planning.domains/solve',
+                         verify=False, json=data).json()
+
+    with open("4_test.ipc", 'w') as f:
+        f.write('\n'.join([act['name'] for act in resp['result']['plan']]))
+
     # directory = '/Users/jordanharris/PythonProject/upf_new/Autonomous Systems/Assignment 3/benchmarks/sasquatch'
     # for filename in os.listdir(directory):
     #     f = os.path.join(directory, filename)

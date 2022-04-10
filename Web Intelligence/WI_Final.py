@@ -2,51 +2,47 @@ from tornado import autoreload
 import os
 import pylab as plt
 import nltk
-from hSBM_Topicmodel import sbmtm
+# from hSBM_Topicmodel import sbmtm
 from bs4 import BeautifulSoup
 import numpy
 import graphlib
-# import graph_tools as gt
-from hSBM_Topicmodel.graph_tool import all as gt
-from hSBM_Topicmodel.sbmtm import sbmtm
-
-
 
 if __name__ == '__main__':
     print()
-    path_data = ''
+    # path_data = 'clean__ukraine_war_omicron_world_crisis.txt'
+    path_data = 'clean__reddit_data_ukraine_test.txt'
 
-    ## texts
-    fname_data = '/hSBM_Topicmodel/corpus.txt'
-    filename = os.getcwd() + fname_data
+    # filename = os.path.join(path_data, 'corpus.txt')
 
-    with open(filename, encoding='utf8') as f:
+    keywords = ["coronavirus", "covid", "omicorn", "ukraine", "russia", "poland",
+                "war", "weapons", "support", "refugees", "usa", "Volodymyr Zelenskyy",
+                "Vladimir Putin", "Joe Biden", "Joe Byron", "China", "Xi Jinping",
+                "Andrzej Duda", "EU", "NATO", "Oil", "Gas", "Sanction", "Subvariant"]
+
+
+    with open('data/' + path_data , 'r', encoding = 'utf8') as f:
         x = f.readlines()
-    texts = [h.split() for h in x]
+    texts = [h.lower().split() for h in x]
 
-    ## titles
-    fname_data2 = '/hSBM_Topicmodel/titles.txt'
-    filename2 = os.getcwd() + fname_data2
 
-    with open(filename2, 'r', encoding='utf8') as f:
-        x = f.readlines()
-    titles = [h.split()[0] for h in x]
-    i_doc = 0
-    print(titles[0])
-    print(texts[i_doc][:10])
+    titles = []
+    for tweet in texts:
+        prep = []
+        for w in keywords:
+            if w.lower() in tweet:
+                prep.append(w)
+        if prep == []:
+            titles.append('ambiguous')
+        else:
+            # prep.join('_')
+            titles.append('_'.join(prep))
 
-    ## we create an instance of the sbmtm-class
-    model = sbmtm()
+    with open('titles__' + path_data, 'a') as f: # You can also print your tweets here
+        for t in titles:
+            f.write(t + "\n")
 
-    ## we have to create the word-document network from the corpus
-    model.make_graph(texts, documents=titles)
 
-    ## we can also skip the previous step by saving/loading a graph
-    # model.save_graph(filename = 'graph.xml.gz')
-    # model.load_graph(filename = 'graph.xml.gz')
 
-    ## fit the model
-    gt.seed_rng(32)  ## seed for graph-tool's random number generator --> same results
-    model.fit()
-    model.plot(nedges=10000)
+
+
 

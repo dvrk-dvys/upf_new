@@ -13,7 +13,6 @@
 	(pallet pallet2)
 	(surface pallet2)
 	(at pallet2 distributor1)
-	(clear pallet2)
 	(truck truck0)
 	(at truck0 distributor1)
 	(truck truck1)

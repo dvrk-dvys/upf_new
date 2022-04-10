@@ -1,5 +1,4 @@
-(define
-	(domain sokoban_gen)
+(define (domain sokoban_gen)
 	(:requirements :strips :typing)
 	(:types
 		box player - thing

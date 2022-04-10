@@ -1,10 +1,3 @@
-;; ###### #####
-;; #    ###   #
-;; # $$     #@#
-;; # $ #...   #
-;; #   ########
-;; #####
-
 (define (problem p006-microban-sequential)
   (:domain sokoban-sequential)
   (:objects

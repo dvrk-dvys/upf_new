@@ -2,9 +2,11 @@ import datetime
 import os, sys
 import time
 
-from problem import *
+# from problem import *
 from collections import defaultdict
 from queue import PriorityQueue
+
+from Planner.problem import *
 
 
 class PriorityQueueing(object):

@@ -5184,13 +5184,15 @@
 		(move-dir pos-10-9 pos-10-8 left)
 		(move-dir pos-10-9 pos-10-10 right)
 		(move-dir pos-10-10 pos-9-10 down)
-		(move-dir pos-10-10 pos-10-9 left))
+		(move-dir pos-10-10 pos-10-9 left)
+	)
 		
 	(:goal (and
 		(at-goal box-45)
 		(at-goal box-33)
 		(at-goal box-54)
-		))
+		)
+	)
 		
 )
 

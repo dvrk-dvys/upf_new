@@ -1,14 +1,14 @@
 13
 (at airplane1 ny-airport)
-(at airplane1 pgh-airport)
+(at airplane1 pgh-airport)  =
 (at ny-truck ny-airport)
-(at ny-truck ny-po)
+(at ny-truck ny-po)  =
 (at package1 ny-airport)
 (at package1 ny-po)
 (at package1 pgh-airport)
-(at package1 pgh-po)
+(at package1 pgh-po)  =
 (at pgh-truck pgh-airport)
-(at pgh-truck pgh-po)
+(at pgh-truck pgh-po) =
 (in package1 airplane1)
 (in package1 ny-truck)
 (in package1 pgh-truck)

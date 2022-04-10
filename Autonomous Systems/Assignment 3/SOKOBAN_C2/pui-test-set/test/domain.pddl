@@ -1,21 +1,15 @@
-;; logistics domain
-;;
-;; logistics-typed-length: strips + simple types
-;;    based on logistics-strips-length.
-;; Tue Dec  1 16:10:25 EST 1998 Henry Kautz
-
 (define (domain logistics)
   (:requirements :strips :typing)
   (:types
       package location vehicle city - object
       truck airplane - vehicle
-      airport - location)
-
+      airport - location
+  )
   (:predicates
         (at ?vehicle-or-package - (either vehicle package)  ?location - location)
         (in ?package - package ?vehicle - vehicle)
-        (in-city ?loc-or-truck - (either location truck) ?citys - city))
-
+        (in-city ?loc-or-truck - (either location truck) ?citys - city)
+  )
   (:action load-truck
     :parameters
          (?obj - package
@@ -26,8 +20,8 @@
             (at ?obj ?loc))
     :effect
         (and 	(not (at ?obj ?loc))
-            (in ?obj ?truck)))
-
+            (in ?obj ?truck))
+  )
   (:action load-airplane
     :parameters
         (?obj - package
@@ -39,8 +33,8 @@
             (at ?airplane ?loc))
     :effect
            (and 	(not (at ?obj ?loc))
-            (in ?obj ?airplane)))
-
+            (in ?obj ?airplane))
+  )
   (:action unload-truck
     :parameters
         (?obj - package
@@ -51,8 +45,8 @@
             (in ?obj ?truck))
     :effect
         (and	(not (in ?obj ?truck))
-            (at ?obj ?loc)))
-
+            (at ?obj ?loc))
+  )
   (:action unload-airplane
     :parameters
         (?obj - package
@@ -64,8 +58,8 @@
     :effect
         (and
             (not (in ?obj ?airplane))
-            (at ?obj ?loc)))
-
+            (at ?obj ?loc))
+  )
   (:action drive-truck
     :parameters
         (?truck - truck
@@ -79,8 +73,8 @@
             (in-city ?loc-to ?city))
     :effect
         (and 	(not (at ?truck ?loc-from))
-            (at ?truck ?loc-to)))
-
+            (at ?truck ?loc-to))
+  )
   (:action fly-airplane
     :parameters
         (?airplane - airplane
@@ -90,5 +84,6 @@
         (at ?airplane ?loc-from)
     :effect
         (and 	(not (at ?airplane ?loc-from))
-        (at ?airplane ?loc-to)))
+        (at ?airplane ?loc-to))
+  )
 )

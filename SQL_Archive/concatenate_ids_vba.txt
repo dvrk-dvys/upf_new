@@ -1,0 +1,39 @@
+Sub concatenate_ids()
+
+Dim last_row As Integer, col As Integer, i As Integer, last_col As Integer, start As Integer
+Dim ws As Worksheet
+Dim divider As Variant
+Dim text As String
+
+Set ws = ActiveSheet
+
+col = 1
+start = 1
+divider = "'"
+
+last_row = ws.Cells(ws.Rows.Count, col).End(xlUp).Row
+last_col = ws.Cells(1, ws.Columns.Count).End(xlToLeft).Column
+
+text = divider + divider
+For i = start To last_row
+    If Not Rows(i).EntireRow.Hidden Then
+        text = text + CStr(ws.Cells(i, col).Value) + divider + "," + divider
+        If Len(text) >= 32700 Then
+            ws.Cells(1, last_col + 2).NumberFormat = "@"
+            ws.Cells(1, last_col + 2).Value = text
+            last_col = last_col + 1
+            text = ""
+        End If
+    End If
+Next i
+text = Left(text, Len(text) - (Len(divider) * 2 + 1))
+text = CStr(text + divider)
+
+ws.Cells(1, last_col + 2).NumberFormat = "@"
+ws.Cells(1, last_col + 2).Value = text
+
+
+
+
+
+

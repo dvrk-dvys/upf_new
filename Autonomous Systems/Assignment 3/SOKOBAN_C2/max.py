@@ -75,8 +75,16 @@ class Astar:
 
     # set hmax to zero  and upload?
 
-    def functionA_Star(self, fn_strips):
-        p = Strips(fn_strips)
+    def functionA_Star(self, fn1, fn2=''):
+        if 'strips' in fn1:
+            p = Strips(fn1)
+        elif 'pddl' in fn1:
+            p = PDDL(fn1, fn2)
+        else:
+            p = fn1
+
+
+        # p = Strips(fn_strips)
         self.p = p
         start = sorted(p.init)
         goal = sorted(p.goal)
@@ -239,11 +247,13 @@ class Astar:
             # self.optimal_cost += self.p.operators[cameFrom[current][1]].cost
         return total_path
 
-    def Hmax(self, fn_strips, currentState=[]):
-        if type(fn_strips) == str:
-            p = Strips(fn_strips)
+    def Hmax(self, fn1, fn2='', currentState=[]):
+        if 'strips' in fn1:
+            p = Strips(fn1)
+        elif 'pddl' in fn1:
+            p = PDDL(fn1, fn2)
         else:
-            p = fn_strips
+            p = fn1
 
 
         delta = {}
@@ -314,11 +324,15 @@ if __name__ == '__main__':
     # for each in sys.argv:
     #     print('Usage: {0} problem.strips problem.fdr'.format(sys.argv[0]))
     #     # sys.exit(-1)
+    strips = sys.argv[1]
+    domain = sys.argv[2]
+    prob = sys.argv[3]
+
 
     Astar = Astar()
-
-    Astar.hmax = Astar.Hmax(sys.argv[1])
-    path = Astar.functionA_Star(sys.argv[1])
+    Astar.hmax = Astar.Hmax(strips)
+    Astar.hmax = Astar.Hmax(domain, prob)
+    path = Astar.functionA_Star(domain, prob)
     print(';; Cost: ' + str(Astar.optimal_cost))
     print(';; Init: ' + str(Astar.hmax))
     print('')

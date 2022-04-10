@@ -16,6 +16,12 @@ sh-4.2# readlink -e ./p01-domain.pddl\
 docker run -p 5000:5000 -v $\{PWD\}/SOKO_C3:/mnt/mydata azathoth/pddl --platform linux/amd64\
 docker run -p 5000:5000 -v $\{PWD\}/SOKOBAN_C2:/mnt/mydata azathoth/pddl --platform linux/amd64\
 docker run -p 5000:5000 -v $\{PWD\}/M_B_C1:/mnt/mydata azathoth/pddl --platform linux/amd64\
+\
+\
+\
+docker run -p 5000:5000 -v $\{PWD\}/SOKO_C3:/mnt/mydata aiplanning/planutils --platform linux/amd64\
+\
+\
 \'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\'97\
 \
 af958a8676479c5c8da361ce0b7e47b3ac997702f3f405efd93830462623e739\
@@ -51,11 +57,15 @@ sh-4.2# ./plan-fd-fdss ../../mnt/mydata/M_B_domain.pddl ../../mnt/mydata/M_B_pro
 /plan-ff ../../mnt/mydata/c2b/domain.pddl ../../mnt/mydata/c2b/problem_test.pddl ./out_test.sas > ./log-fd-fdss\
 \
 \
-./plan-fd-fdss ../../mnt/mydata/c2b/sokoban_domain.pddl ../../mnt/mydata/c2b/output_1.pddl ./out_soko_m > ./log-fd-fdss\
+./plan-fd-fdss ../../mnt/mydata/c2b/sokoban_domain.pddl ../../mnt/mydata/c2b/output_1.pddl ./out_soko_5 > ./log-fd-fdss\
+\
+../../mnt/mydata/c2b/sokoban_domain.pddl ../../mnt/mydata/SOKO_C3/level5.sokproblem.pddl ./out_soko_5 > ./log-fd-fdss\
+\
+./plan-lama ../../mnt/mydata/domain.pddl ../../mnt/mydata/level6.sokproblem.pddl ./out_soko_6 > ./log-fd-fdss\
 \
 \
 \
-\
+~/planners/FF/ff -o ../../mnt/mydata/domain.pddl -f ../../mnt/mydata/level6.sokproblem.pddl\
 \
 \
 \

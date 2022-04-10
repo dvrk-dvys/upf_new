@@ -1,0 +1,13 @@
+INFO     Running translator.
+INFO     translator inputs: ['../../../mnt/mydata/domain.pddl', '../../../mnt/mydata/level6.sokproblem.pddl']
+INFO     translator arguments: []
+Parsing...
+Parsing: [0.560s CPU, 0.714s wall-clock]
+Normalizing task... [0.020s CPU, 0.015s wall-clock]
+Instantiating...
+Generating Datalog program... [0.140s CPU, 0.135s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.012s wall-clock]
+Preparing model... [1.010s CPU, 1.008s wall-clock]
+Generated 47 rules.
+Computing model... Command '['/root/planners/FD/src/translate/translate.py', '../../../mnt/mydata/domain.pddl', '../../../mnt/mydata/level6.sokproblem.pddl']' returned non-zero exit status -9

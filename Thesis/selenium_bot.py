@@ -3,11 +3,11 @@ from time import sleep
 # from secrets import
 from selenium.webdriver.common.keys import Keys
 from random import randint
-# email: ayannatun9@outlook.com
+# email: rochelle_tunti@outlook.com
 # password: S7ixKqK5Eg
-# fullname: Ayanna Tun
-# username: ayannatun99
-# dob: 8/8/08  too young???
+# fullname: Rochelle Tunti
+# username: RochelleTunti
+# dob: 8/8/98  too young???
 
 
 # https://generated.photos/faces/

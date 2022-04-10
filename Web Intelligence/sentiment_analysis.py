@@ -9,84 +9,102 @@ nltk.download('stopwords')
 from collections import Counter
 import liwc
 import urllib
-
+from nltk.tokenize import word_tokenize
 
 if __name__ == '__main__':
 
 
     # Load the JSON lines file as a dataframe
-    with open('coronavirus.jsonl') as f:
+    with open('./data/clean__reddit_data_ukraine_test.txt') as f:
         lines = f.read().splitlines()
-    df_inter = pd.DataFrame(lines)
-    df_inter.columns = ['json_element']
-    df_inter['json_element'].apply(json.loads)
-    df = pd.json_normalize(df_inter['json_element'].apply(json.loads))
-
-    # Keep only the tweets in English
-    df = df[df.lang=='en']
+    # df_inter = pd.DataFrame(lines)
+    # df_inter.columns = ['json_element']
+    # # df_inter['json_element'].apply(json.loads)
+    # df = pd.json_normalize(df_inter['json_element'])
+    #
+    # # Keep only the tweets in English
+    # df = df[df.lang=='en']
 
     # Create URL field for tweets
-    df['url'] = 'https://twitter.com/_/status/'+df['id_str']
+    # df['url'] = 'https://twitter.com/_/status/'+df['id_str']
 
-    print(df.head(5))
+    # print(df.head(5))
 
     # Extract tokens, generate count vectors and remove stopwords
     tokenizer = RegexpTokenizer(r'[a-zA-Z]+')
-    word_vec = df['text'].apply(str.lower).apply(tokenizer.tokenize).apply(pd.value_counts).fillna(0)
-    word_vec = word_vec.drop(stopwords.words('english') + ['https', 'co'], axis=1, errors='ignore').fillna(0)
-    word_vec
+    # word_vec = df['text'].apply(str.lower).apply(tokenizer.tokenize).apply(pd.value_counts).fillna(0)
+    word_vec = ''
+    # flat_list = [item for sublist in lines for item in lines]
 
-    # Compute term frequencies
-    tf = word_vec.divide(np.sum(word_vec, axis=1), axis=0)
+    for sublist in lines:
+        # for item in sublist:
+        word_vec = word_vec + sublist
 
-    tf_dict = {}
-    for column in tf:  tf_dict[column] = tf[column].sum()
-    tf_words = sorted(tf_dict.items(), key=lambda item: item[1], reverse=True)[:10]
+    # for sentence in word_vec:
+    #     word_vec.append(word_tokenize(sentence))
+    tokens = word_tokenize(word_vec)
 
-    labels = [w[0] for w in tf_words]
-    values = [w[1] for w in tf_words]
-    indexes = np.arange(len(labels))
 
-    f, ax = plt.subplots(figsize=(20, 5))
-    cmap = plt.cm.tab10
-    plt.bar(indexes, values, color=cmap(np.arange(len(df)) % cmap.N))
-    plt.xticks(indexes, labels)
-    plt.title('Coronavirus/COVID19 Tweets: Words by TF', fontsize=20)
-    plt.show()
-    plt.savefig(r'tweet_words_by_TF.png')
-    plt.clf()
-    plt.cla()
-    plt.close()
+    # word_vec = word_vec.drop(stopwords.words('english') + ['https', 'co'], axis=1, errors='ignore').fillna(0)
+    word_vec_clean = []
+    for w in tokens:
+        if w.lower() not in stopwords.words('english') + ['https', 'co']:
+            word_vec_clean.append(w.lower())
 
-# Term Frequency - Inverse Document Frequency (TF-IDF)
-    # Compute inverse document frequencies
-    idf = np.log10(len(tf) / word_vec[word_vec > 0].count())
+    df = pd.DataFrame(word_vec_clean)
 
-    # Compute TF-IDF vectors
-    tfidf = np.multiply(tf, idf.to_frame().T)
 
-    tfidf_dict = {}
-    for column in tfidf:  tfidf_dict[column] = tfidf[column].sum()
-    tfidf_words = sorted(tfidf_dict.items(), key=lambda item: item[1], reverse=True)[:10]
-
-    labels = [w[0] for w in tfidf_words]
-    values = [w[1] for w in tfidf_words]
-    indexes = np.arange(len(labels))
-
-    f, ax = plt.subplots(figsize=(20, 5))
-    cmap = plt.cm.tab10
-    plt.bar(indexes, values, color=cmap(np.arange(len(df)) % cmap.N))
-    plt.xticks(indexes, labels)
-    plt.title('Coronavirus/COVID19 Tweets: Words by TF-IDF', fontsize=20)
-    plt.show()
-    plt.savefig(r'tweet_words_by_TF-IDF.png')
-    plt.clf()
-    plt.cla()
-    plt.close()
-
+    # # Compute term frequencies
+    # tf = word_vec_clean.divide(np.sum(word_vec, axis=1), axis=0)
+    #
+    # tf_dict = {}
+    # for column in tf:  tf_dict[column] = tf[column].sum()
+    # tf_words = sorted(tf_dict.items(), key=lambda item: item[1], reverse=True)[:10]
+    #
+    # labels = [w[0] for w in tf_words]
+    # values = [w[1] for w in tf_words]
+    # indexes = np.arange(len(labels))
+    #
+    # f, ax = plt.subplots(figsize=(20, 5))
+    # cmap = plt.cm.tab10
+    # plt.bar(indexes, values, color=cmap(np.arange(len(lines)) % cmap.N))
+    # plt.xticks(indexes, labels)
+    # plt.title('Coronavirus/COVID19 Tweets: Words by TF', fontsize=20)
+    # plt.show()
+    # plt.savefig(r'tweet_words_by_TF.png')
+    # plt.clf()
+    # plt.cla()
+    # plt.close()
+#
+# # Term Frequency - Inverse Document Frequency (TF-IDF)
+#     # Compute inverse document frequencies
+#     idf = np.log10(len(tf) / word_vec[word_vec > 0].count())
+#
+#     # Compute TF-IDF vectors
+#     tfidf = np.multiply(tf, idf.to_frame().T)
+#
+#     tfidf_dict = {}
+#     for column in tfidf:  tfidf_dict[column] = tfidf[column].sum()
+#     tfidf_words = sorted(tfidf_dict.items(), key=lambda item: item[1], reverse=True)[:10]
+#
+#     labels = [w[0] for w in tfidf_words]
+#     values = [w[1] for w in tfidf_words]
+#     indexes = np.arange(len(labels))
+#
+#     f, ax = plt.subplots(figsize=(20, 5))
+#     cmap = plt.cm.tab10
+#     plt.bar(indexes, values, color=cmap(np.arange(len(lines)) % cmap.N))
+#     plt.xticks(indexes, labels)
+#     plt.title('Ukraine_War_Omicron: Words by TF-IDF', fontsize=20)
+#     plt.show()
+#     plt.savefig(r'ukraine_omicron_words_by_TF-IDF.png')
+#     plt.clf()
+#     plt.cla()
+#     plt.close()
+    #
     # Home-made dictionary (tweets about German issues)
-    german_dictionary = ['germany', 'merkel']
-    df[df.text.str.lower().str.contains('|'.join(german_dictionary))].text
+    # german_dictionary = ['germany', 'merkel']
+    # df[df.text.str.lower().str.contains('|'.join(german_dictionary))].text
 
     # Sentiment nanalysis with VADER(Valence Aware Dictionary and sEntiment Reasoner)
 
@@ -109,10 +127,13 @@ if __name__ == '__main__':
     for entry in lowest[:10]: print(entry[0], " :", entry[1], " ")
 
     # Compute VADER scores
-    df['scores'] = df['text'].apply(lambda text: sid.polarity_scores(text))
+    df['scores'] = df[0].apply(lambda text: sid.polarity_scores(text))
     df['compound'] = df['scores'].apply(lambda score_dict: score_dict['compound'])
     df['comp_score'] = df['compound'].apply(lambda c: 'pos' if c > 0 else 'neg' if c < 0 else 'neu')
-    df[['url', 'text', 'scores', 'compound', 'comp_score']].head(100)
+    # df[['url', 'text', 'scores', 'compound', 'comp_score']].head(100)
+    print(df[[0, 'scores', 'compound', 'comp_score']].head(100))
+
+
 
     # Sentiment analysis with LIWC(Linguistic Inquiry and Word Count)
 
@@ -132,6 +153,8 @@ if __name__ == '__main__':
     sample_text = "Today's coronavirus stats in Alabama: 5,498 new COVID-19 cases, more than 3,000 hospitalizations. https://t.co/lAWmpt8xwj"
     words = tokenizer.tokenize(sample_text)
     for word in words:
+
+    # for word in word_vec_clean:
         for category in parse(word):
             print(word, category)
 

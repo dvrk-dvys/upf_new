@@ -1,0 +1,391 @@
+Sub Email_Formatting()
+
+'Purpose is to clean up the external matches so they can be sent to the recruiter on the req without violating GDPR regulations. (Remove test score, make sure only recruiters that are involved get the notification rather than the entire distribution list.)
+
+Dim lastrow As Long
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+lastrow = Worksheets("SHL Test Results").Cells(Rows.Count, "A").End(xlUp).Row
+
+'Sorts the data based on recruiter name
+Worksheets("SHL Test Results").Select
+
+'Only grabs records two days back (New test takers) (otherwise recruiters will be notified daily of old scores and that's just spam.)
+Range("L2") = "=IF(TODAY() - 2 > H2, ""Exclude"", ""Include"")"
+Worksheets("SHL Test Results").Range("L2").Copy Destination:=Range("L2:L" & lastrow)
+
+'Removes all records that were not taken in the last 3 days
+    With Sheets("SHL Test Results").UsedRange
+    .AutoFilter Field:=12, Criteria1:="Exclude"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+
+Range("L:L").Delete
+
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+
+With Sheets("SHL Test Results").Range("A1:K" & lastrow)
+    .Cells.Sort Key1:=.Columns("J"), Order1:=xlAscending, _
+        Key2:=.Columns("H"), Order2:=xlDescending, Orientation:=xlTopToBottom, Header:=xlYes
+End With
+
+'Determines the last cell of the data.
+lastrow = Range("A" & Rows.Count).End(xlUp).Row
+'Creates a formula that tells if the recruiter name  has changed, so multiple recruiters are not included in the email.
+Range("L1") = "Split the Email?"
+Range("L2") = "=IF(J2="""","""",IF(J2=J3,""NO"",""YES""))"
+Range("L2").Copy Destination:=Range("L2:L" & lastrow)
+
+
+ScreenUpdating = False
+'Copies to final sheet
+Worksheets("SHL Test Results").UsedRange.SpecialCells(xlCellTypeVisible).Copy _
+Destination:=Worksheets("Final Sheet").Range("A1")
+ScreenUpdataing = False
+Worksheets("Final Sheet").Select
+Cells.Select
+    Selection.Copy
+    Selection.PasteSpecial Paste:=xlPasteValues, Operation:=xlNone, SkipBlanks _
+        :=False, Transpose:=False
+        
+        
+ThisWorkbook.Sheets("Final Sheet").Select
+ThisWorkbook.Sheets("Final Sheet").UsedRange.Borders.LineStyle = xlContinuous
+ThisWorkbook.Sheets("Final Sheet").Rows(1).Font.Bold = True
+ThisWorkbook.Sheets("Final Sheet").Range("A1:L1").Interior.ColorIndex = 15
+ThisWorkbook.Sheets("Final Sheet").Columns("A:L").HorizontalAlignment = xlCenter
+
+        
+Call Create_Recruiter_Email
+
+End Sub
+Private Sub Create_Recruiter_Email()
+Sheets("SHL Test Results").Activate
+    Dim pObj As PublishObject
+    Dim sndRange As Range
+    Dim OutApp As Object
+    Dim OutMail As Object
+ScreenUpdating = False
+'K3 = Recruiter name
+    Range("K2").Select
+'sname = Range(Selection, Selection.End(xlDown))
+    k = 0
+    rundate = Format(Date, "mm-dd-yy")
+ScreenUpdating = False
+    Do Until ActiveCell.Offset(k, 0) = ""
+    '<a href="https://yourhyperlink.com">Your Hyperlink</a>
+'1 cells from K3 is the YES NO Filter in L
+        If ActiveCell.Offset(k, 1) = "YES" Then
+            SnameToUse = UCase(ActiveCell.Offset(k, 0))
+            SnameToUse2 = UCase(ActiveCell.Offset(k, -8)) & " " & UCase(ActiveCell.Offset(k, -7))
+            
+    'Email contacts are in K
+            ToEmail = ActiveCell.Offset(k, 0)
+            Sheets("Final Sheet").Activate
+     ScreenUpdating = False
+            Cells.Select
+            'Autofilter is the recruiter email so it keeps recruiter's candidates together.
+            Range("K1").AutoFilter Field:=11, _
+                Criteria1:="=" & SnameToUse
+            ScreenUpdataing = False
+            Range("A1").CurrentRegion.Copy Destination:=Sheets("Blank").Range("A1")
+            Sheets("Blank").Activate
+                If Range("A1") <> "" Then
+                    ActiveSheet.UsedRange.Columns.AutoFit
+                    'Deletes columns that can't be sent due to GDPR regulations
+                    Range("L:L").Delete
+                    Range("B:B").Delete
+                    Range("E:F").Delete
+                    Range("F:F").Delete
+             
+               ScreenUpdating = False
+                    Set sndRange = ActiveSheet.UsedRange
+                    Set OutApp = CreateObject("Outlook.Application")
+                    Set OutMail = OutApp.CreateItem(0)
+                    ScreenUpdataing = False
+                    On Error Resume Next
+                    With OutMail
+                        .SentOnBehalfOfName = ""
+                        .bcc = ToEmail
+                        .cc = ""
+                        .Subject = "New SHL External Test Scores - Candidate - " & SnameToUse2 & " - " & Format(Date, "mmmm-d-yyyy")
+                        .HTMLBody = _
+                            "<p> Hello Team, </p><p> The following candidates have taken an SHL test within the last 2 days and you are listed as the recruiter on the requisition. The results are in process of being loaded to ICIMS." & _
+                           "</p><p> If you can't find your candidate's result, they may have used different email address for SHL, meaning the result will not upload. Check the ""Unmatched External SHL Scores List"".  If you find a result there please insert the date/score manually into the EXP/EDU field." & _
+                            "</p><p><a href=""\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Unmatched External SHL Scores\"">Unmatched External Scores List</a></p><p>" & RangetoHTML(sndRange) & "</p><p> Thanks ," & "</p><p> Email:eu-ops-ta@amazon.com "
+                            'If you want to have this to display without sending, change to .display
+                           .send
+                    ScreenUpdating = False
+                    End With
+                    On Error GoTo 0
+                    Set OutMail = Nothing
+                    Set OutApp = Nothing
+                Else: Cells.Delete
+                End If
+            Cells.Delete
+            Sheets("Final Sheet").Activate
+            ScreenUpdataing = False
+            ActiveSheet.AutoFilterMode = False
+            Sheets("SHL Test Results").Activate
+            ScreenUpdataing = False
+        End If
+        k = k + 1
+    Loop
+ScreenUpdating = False
+
+Call Internals_Score_Email
+
+End Sub
+Sub Internals_Score_Email()
+ScreenUpdating = False
+Sheets("Blank").Activate
+On Error Resume Next
+    Dim pObj As PublishObject
+
+    Dim OutApp As Object
+    Dim OutMail As Object
+    
+'Purpose is to email the internal team that they've got people taking the test.
+ScreenUpdating = False
+
+                    Set OutApp = CreateObject("Outlook.Application")
+                    Set OutMail = OutApp.CreateItem(0)
+                    ScreenUpdataing = False
+                    On Error Resume Next
+                    With OutMail
+                        .SentOnBehalfOfName = ""
+                        .To = "eu-iteam-hyd@amazon.com "
+                        .cc = ""
+                        .Subject = "Internal SHL Scores - No Degree" & " " & Format(Date, "mmmm - dd - yyyy")
+                        .HTMLBody = _
+                            "<p> Hello Team, </p><p> Please see attached for Internal SHL Test Scores. The scores are in process of being uploaded to ICIMS." & _
+                            "</p><p><a href=""\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Internal SHL Scores\"">Internal SHL Scores </a></p><p>" & _
+                            "</p><p> Thanks," & "</p><p> Email: eu-ops-ta@amazon.com" & ""
+                        .Attachments.Add "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Internal SHL Scores\" & Format(Now, "yyyymmdd") & " Internals with Degree Export File.xlsb"
+                        .Attachments.Add "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Internal SHL Scores\" & Format(Now, "yyyymmdd") & " Internals without Degree Export File.xlsb"
+                        .send
+'If you want to have this to display without sending, change to .display
+                    ScreenUpdating = False
+                    End With
+                    On Error GoTo 0
+                    Set OutMail = Nothing
+                    Set OutApp = Nothing
+                    
+Call Remove_Current_Files
+
+End Sub
+
+Sub Remove_Current_Files()
+
+On Error Resume Next
+'Purpose is to wipe all the files used for the day, including the ones in the remote directories, that way an older file isn't synced by accident.
+
+Set objFSO = CreateObject("Scripting.FileSystemObject")
+Dim objFolder As Object
+Dim OldPath As String
+Dim NewPath As String
+Dim objFile As Object
+Dim Pspath As String
+
+Dim OldPath1 As String
+Dim NewPath1 As String
+
+OldPath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Input\ICIMS.txt"
+NewPath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Input\Archive\ICIMS.txt"
+
+objFSO.CopyFile OldPath, NewPath
+
+With New FileSystemObject
+    If .FileExists(OldPath) Then
+        .DeleteFile OldPath
+    End If
+End With
+
+OldPath1 = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Input\SHLFile.txt"
+NewPath1 = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Input\Archive\SHLFile.txt"
+
+objFSO.CopyFile OldPath1, NewPath1
+
+With New FileSystemObject
+    If .FileExists(OldPath1) Then
+        .DeleteFile OldPath1
+    End If
+End With
+
+Call Remove_Previous_Days
+
+End Sub
+Sub Remove_Previous_Days()
+
+'Purpose is to move all previous day's file down into the archive to avoid uploading the wrong item and having a messy folder.
+On Error Resume Next
+
+
+Dim oFSO, oFolder, sSrcDirectoryPath, sDstDirectoryPath
+Dim oFileCollection, oFile, sDir
+Dim iDaysOld
+
+sSrcDirectoryPath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\" 'Source folder location
+sDstDirectoryPath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Historical Data\" ' archive folder location
+iDaysOld = 1
+
+Set oFSO = CreateObject("Scripting.FileSystemObject")
+Set oFolder = oFSO.GetFolder(sSrcDirectoryPath)
+Set oFileCollection = oFolder.Files
+
+For Each oFile In oFileCollection
+    If (oFile.DateLastModified <= (Date)) Then
+        oFile.Move (sDstDirectoryPath & "\" & oFile.Name)
+        End If
+Next
+
+Set oFSO = Nothing
+Set oFolder = Nothing
+Set oFileCollection = Nothing
+Set oFile = Nothing
+
+Call Script_Done
+
+End Sub
+
+
+
+Sub Script_Done()
+
+
+'Since everything is running in the background, this is an email to the team to notify them that everything is finished and to upload the ICIMS file.
+'Below is to get the current username, so then it's not hardcoded based on the team at the time.
+ Dim OL, olAllUsers, oExchUser, oentry, myitem As Object
+    Dim User As String
+    Set OL = CreateObject("outlook.application")
+    Set olAllUsers = OL.Session.AddressLists.Item("All Users").AddressEntries
+    User = OL.Session.CurrentUser.Name
+    Set oentry = olAllUsers.Item(User)
+    Set oExchUser = oentry.GetExchangeUser()
+
+
+ScreenUpdating = False
+Sheets("Blank").Activate
+On Error Resume Next
+    Dim pObj As PublishObject
+
+    Dim OutApp As Object
+    Dim OutMail As Object
+    
+'Purpose is to email whomever is running this that the macro has completed and it's ready to be uploaded to ICIMS.
+ScreenUpdating = False
+
+                    Set OutApp = CreateObject("Outlook.Application")
+                    Set OutMail = OutApp.CreateItem(0)
+                    ScreenUpdataing = False
+                    On Error Resume Next
+                    With OutMail
+                        .SentOnBehalfOfName = ""
+                        .To = OL.Session.CurrentUser.Name
+                        .cc = ""
+                        .Subject = "SHL Upload File is Ready " & " " & Format(Date, "mmmm - dd - yyyy")
+                        .HTMLBody = _
+                            "<p> Hello Team, </p><p> The macro has completed for today, please see attached for the SHL ICIMS Upload File. It includes external and internal candidates" & "</p><p> Thanks," & "</p><p> Email: eu-ops-ta@amazon.com"
+                        .Attachments.Add "\\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\" & Format(Now, "yyyymmdd") & "ICIMS Upload File.csv"
+                        .send
+
+                        
+'Automatic sending is turned on.
+                    ScreenUpdating = False
+                    End With
+                    On Error GoTo 0
+                    Set OutMail = Nothing
+                    Set OutApp = Nothing
+                    
+                    
+Call Done
+
+End Sub
+
+Sub Done()
+'Purpose is to wipe older data from all sheets except the remove emails list. (Keeps macro small and easier to open.)
+'Remove email list is to wipe senior leaders who may have tried the test and we don't want to expose their scores.
+'Can add emails, if we need a manual override. (Otherwise the manual override will be wiped daily.)
+On Error Resume Next
+
+    Dim cs As Worksheet
+    Set cs = Sheets("Remove Emails List")
+    Dim ws As Worksheet
+
+    For Each ws In Sheets
+        If ws.Name <> cs.Name Then
+            ws.UsedRange.Delete
+        End If
+    Next ws
+    
+    
+    '--------------------------------------
+ '------------------------------------------
+ '--Powershell script to wipe the remote drive.It's not in the macros and scripts folder as the space wasn't working with calling powershell.
+    
+Pspath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\DeleteOldFiles.ps1"
+x = Shell("POWERSHELL.exe " & Pspath, 1)
+
+Application.Wait Now + #12:00:10 AM#
+
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+
+End Sub
+Private Function RangetoHTML(rng As Range)
+'DO NOT DELETE
+'DO NOT DELETE
+'DO NOT DELETE
+'Required for the emails to work.
+'Purpose is to convert the table to HTML Format so it can be included in the email.
+'Part of Email Macros, do not remove.
+' Works in Excel 2000, Excel 2002, Excel 2003, Excel 2007, Excel 2010, Outlook 2000, Outlook 2002, Outlook 2003, Outlook 2007, and Outlook 2010.
+    Dim fso As Object
+    Dim ts As Object
+    Dim TempFile As String
+    Dim TempWB As Workbook
+    TempFile = Environ$("temp") & "/" & Format(Now, "dd-mm-yy h-mm-ss") & ".htm"
+    ' Copy the range and create a workbook to receive the data.
+    rng.Copy
+    Set TempWB = Workbooks.Add(1)
+    With TempWB.Sheets(1)
+        .Cells(1).PasteSpecial Paste:=8
+        .Cells(1).PasteSpecial xlPasteValues, , False, False
+        .Cells(1).PasteSpecial xlPasteFormats, , False, False
+        .Cells(1).Select
+        Application.CutCopyMode = False
+        On Error Resume Next
+        .DrawingObjects.Visible = True
+        .DrawingObjects.Delete
+        On Error GoTo 0
+    End With
+    ' Publish the sheet to an .html file.
+    With TempWB.PublishObjects.Add( _
+         SourceType:=xlSourceRange, _
+         Filename:=TempFile, _
+         Sheet:=TempWB.Sheets(1).Name, _
+         Source:=TempWB.Sheets(1).UsedRange.Address, _
+         HtmlType:=xlHtmlStatic)
+        .Publish (True)
+    End With
+    ' Read all data from the .htm file into the RangetoHTML subroutine.
+    Set fso = CreateObject("Scripting.FileSystemObject")
+    Set ts = fso.GetFile(TempFile).OpenAsTextStream(1, -2)
+    RangetoHTML = ts.ReadAll
+    ts.Close
+    RangetoHTML = Replace(RangetoHTML, "align=center x:publishsource=", _
+                          "align=left x:publishsource=")
+    ' Close TempWB.
+    TempWB.Close savechanges:=False
+    ' Delete the htm file.
+    Kill TempFile
+    Set ts = Nothing
+    Set fso = Nothing
+    Set TempWB = Nothing
+End Function
+
+
+
+
+
