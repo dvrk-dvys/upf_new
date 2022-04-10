@@ -1,0 +1,278 @@
+Function Internals_ICIMS_Lookup()
+
+'Purpose it to just seperate external vs internal code, it's doing literally the same thing of comparing the SHL email address against peoplesoft/icims.
+Dim x, x2, y, y2()
+    Dim i As Long
+    Dim dict As Object
+    Dim lastrow As Long, shtOrders As Worksheet, shtReport As Worksheet
+
+
+    
+'Purpose is to move anyone in Project Name Onsite supervised SHL assessment 8 June 2018
+With Sheets("SHL File").UsedRange
+    .AutoFilter Field:=1, Criteria1:="Onsite supervised SHL assessment 8 June 2018", Operator:=xlOr, Criteria2:="Internals with degree (no email) 27 March 2019"
+End With
+Worksheets("SHL File").UsedRange.SpecialCells(xlCellTypeVisible).Copy _
+Destination:=Worksheets("Internals File").Range("A1")
+
+'Goes back to SHL File and deletes all internals
+With Sheets("SHL File").UsedRange
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+    
+End With
+
+Sheets("Internals File").Select
+'Compares the email address against ICIMS to pull back information
+Application.Calculation = xlAutomatic
+    
+Columns("A:A").Insert
+Range("A1") = "Candidate ID"
+
+
+
+    Set shtOrders = Worksheets("Internals File")
+    Set shtReport = Worksheets("ICIMS Data")
+    Set dict = CreateObject("Scripting.Dictionary")
+
+    'get the lookup dictionary from Report
+    With shtReport
+        lastrow = .Range("A" & Rows.Count).End(xlUp).Row
+        x = .Range("E2:E" & lastrow).Value
+        x2 = .Range("A2:A" & lastrow).Value
+        For i = 1 To UBound(x, 1)
+            dict.Item(x(i, 1)) = x2(i, 1)
+        Next i
+    End With
+
+    'map the values
+    With shtOrders
+        lastrow = .Range("E" & Rows.Count).End(xlUp).Row
+        y = .Range("F2:F" & lastrow).Value    'looks up to this range
+        ReDim y2(1 To UBound(y, 1), 1 To 1)   '<< size the output array
+        For i = 1 To UBound(y, 1)
+            If dict.exists(y(i, 1)) Then
+                y2(i, 1) = dict(y(i, 1))
+            Else
+                y2(i, 1) = "NA"
+            End If
+        Next i
+        .Range("A2:A" & lastrow).Value = y2  '<< place the output on the sheet
+    End With
+    
+
+
+End Function
+Function Move_Internals()
+
+'Moves internals out of the way and seperates people who have a 4 year degree from those who do not.
+'If people have a degree, recruiters don't need to verify they passed the test. See procedures for what cell values it counts as degrees > \\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\MacrosandScripts
+
+ Dim x, x2, y, y2()
+    Dim i As Long
+    Dim dict As Object
+    Dim lastrow As Long, shtOrders As Worksheet, shtReport As Worksheet
+    Dim rng As Range
+
+    Set shtOrders = Worksheets("Internals File")
+    Set shtReport = Worksheets("ICIMS Data")
+    Set dict = CreateObject("Scripting.Dictionary")
+    
+
+    'get the lookup dictionary from Report
+    With shtReport
+        lastrow = .Range("A" & Rows.Count).End(xlUp).Row
+        x = .Range("E2:E" & lastrow).Value
+        x2 = .Range("G2:G" & lastrow).Value
+        For i = 1 To UBound(x, 1)
+            dict.Item(x(i, 1)) = x2(i, 1)
+        Next i
+    End With
+
+    'map the values
+    With shtOrders
+        lastrow = .Range("B" & Rows.Count).End(xlUp).Row
+        y = .Range("F2:F" & lastrow).Value    'looks up to this range
+        ReDim y2(1 To UBound(y, 1), 1 To 1)   '<< size the output array
+        For i = 1 To UBound(y, 1)
+            If dict.exists(y(i, 1)) Then
+                y2(i, 1) = dict(y(i, 1))
+            Else
+                y2(i, 1) = "NA"
+            End If
+        Next i
+        .Range("E2:E" & lastrow).Value = y2  '<< place the output on the sheet
+    End With
+    
+Sheets("Internals File").Select
+Range("E1") = "Degree Listed in ICIMS?"
+Range("K1") = "Degree or No Degree?"
+    'Set the range in column A you want to loop through
+    Set rng = Range("E2:E" & lastrow)
+    For Each cell In rng
+        'test if cell is empty
+        If cell.Value <> "G" _
+        And cell.Value <> "H" _
+         And cell.Value <> "I" _
+          And cell.Value <> "J" _
+           And cell.Value <> "K" _
+            And cell.Value <> "L" Then
+        
+            'write to adjacent cell (K)
+            cell.Offset(0, 6).Value = "No Degree or The job they applied to has closed"
+            
+        Else
+        cell.Offset(0, 6).Value = "Degree"
+        
+        End If
+
+Next
+
+'Begins creating the export files for the recruiters.
+Call InternalNewTestFix
+Call Export_Internal_Degree_Candidates
+Call Export_No_Degree_Candidates
+
+
+'Removes all records that did not have an active ICIMS job application.
+    With Sheets("Internals File").UsedRange
+    .AutoFilter Field:=1, Criteria1:="NA"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+    
+
+End Function
+Sub InternalNewTestFix()
+'Purpose is to add in the new SHL test and avoid rewriting the other code.
+'These people may not have degrees listed in the system, but based on resume they say they have degrees.
+
+Worksheets("Internals File").Select
+    Dim x As Long, lastrow As Long
+    lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+    For x = lastrow To 1 Step -1
+        If Cells(x, 2).Value = "Internals with degree (no email) 27 March 2019" Then
+        Cells(x, 2).Activate
+        ActiveCell.Offset(0, 9).Formula = "Degree"
+        End If
+    Next x
+
+
+End Sub
+Function Export_Internal_Degree_Candidates()
+
+'Moves anyone with a degree into a file. (Recruiters don't need to look at scores if they've already got a degree.)
+
+    Dim Fname         As String
+    Dim Fpath         As String
+    Dim NewBook       As Workbook
+    
+Application.DisplayAlerts = False
+Set NewBook = Workbooks.Add
+'On Error Resume Next
+
+
+Fpath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Internal SHL Scores\"
+'File Naming Conventions
+    Fname = Format(Now, "yyyymmdd") & " Internals with Degree Export File"
+    
+'Sheet it copies over and saves in front of
+    ThisWorkbook.Sheets(Array("Internals File")).Copy Before:=NewBook.Sheets(1)
+    NewBook.SaveAs Filename:=Fpath & Fname, FileFormat:=50, CreateBackup:=False
+    Sheets("Sheet1").Delete
+
+    
+'Removes internals without a degree.
+    With Sheets("Internals File").UsedRange
+    .AutoFilter Field:=11, Criteria1:="No Degree or The job they applied to has closed"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+With Sheets("Internals File").Range("A1:K" & lastrow)
+    .Cells.Sort Key1:=.Columns("I"), Order1:=xlDescending, _
+                Orientation:=xlTopToBottom, Header:=xlYes
+End With
+                
+    
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+End Function
+
+Function Export_No_Degree_Candidates()
+
+    Dim Fname         As String
+    Dim Fpath         As String
+    Dim NewBook       As Workbook
+    Dim lastrow As Long
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+
+'Moves anyone without a degree into a file. Recruiters will check the test since no degree.
+
+Application.DisplayAlerts = False
+Set NewBook = Workbooks.Add
+On Error Resume Next
+    
+Fpath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Internal SHL Scores\"
+'File Naming Conventions
+    Fname = Format(Now, "yyyymmdd") & " Internals without Degree Export File"
+    
+'Sheet it copies over and saves in front of
+    ThisWorkbook.Sheets(Array("Internals File")).Copy Before:=NewBook.Sheets(1)
+    NewBook.SaveAs Filename:=Fpath & Fname, FileFormat:=50, CreateBackup:=False
+    Sheets("Sheet1").Delete
+
+    
+'Removes internals that have a degree
+    With Sheets("Internals File").UsedRange
+    .AutoFilter Field:=11, Criteria1:="Degree"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+With Sheets("Internals File").Range("A1:K" & lastrow)
+    .Cells.Sort Key1:=.Columns("I"), Order1:=xlDescending, _
+                Orientation:=xlTopToBottom, Header:=xlYes
+End With
+    
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+End Function
+
+Sub Internal_Icims_Upload()
+
+'Jams this back into the orignial file and pastes it after all of the external candidate records.
+'ICIMS can actually take the test date as a parameter, doesn't have to be the upload date.
+
+
+'Creates a last row so the internals ICIMS upload can be updated as well.
+lastrow = Worksheets("ICIMS Upload").Cells(Rows.Count, 1).End(xlUp).Row
+lastrow2 = Worksheets("Internals File").Cells(Rows.Count, 1).End(xlUp).Row
+
+
+'Grabs Internal Candidate ID
+Worksheets("Internals File").Select
+Range("A2:A" & lastrow2).Copy
+Worksheets("ICIMS Upload").Range("A" & lastrow + 1).PasteSpecial Paste:=xlPasteValues
+
+'Grabs the Test Date
+Worksheets("Internals File").Select
+Range("I2:I" & lastrow2).Copy
+Worksheets("ICIMS Upload").Range("B" & lastrow + 1).PasteSpecial Paste:=xlPasteValues
+
+'Grabs Internal Score
+Worksheets("Internals File").Select
+Range("J2:J" & lastrow2).Copy
+Worksheets("ICIMS Upload").Range("C" & lastrow + 1).PasteSpecial Paste:=xlPasteValues
+
+Worksheets("ICIMS Upload").Select
+Columns("C:C").Select
+Selection.NumberFormat = "0"
+
+
+End Sub
+

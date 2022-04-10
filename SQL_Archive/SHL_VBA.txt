@@ -1,0 +1,662 @@
+Sub Powershell()
+
+'Wipes the older files, before grabbing a new one.
+Pspath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\DeleteOldFiles.ps1"
+x = Shell("POWERSHELL.exe " & Pspath, 1)
+
+Application.Wait Now + #12:00:03 AM#
+
+'Purpose is to run a powershell script that picks up the SHL file from a remote directory, drops it and renames it in a local shared folder.
+Pspath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\TaskScheduler.ps1"
+x = Shell("POWERSHELL.exe " & Pspath, 1)
+
+'Has the macro wait for a bit, otherwise it'll try and run without both input files being there.
+Application.Wait Now + #12:01:10 AM#
+
+Call Clear
+
+End Sub
+Sub Clear()
+
+'Purpose is to wipe older data from all sheets except the remove emails list.
+'Remove email list is to wipe senior leaders who may have tried the test and we don't want to expose their scores.
+'It also is a way for recruiters to bypass the process and allow certain scores to be uploaded manually prior to the 6 month score. (Special one off cases)
+
+    Dim cs As Worksheet
+    Set cs = Sheets("Remove Emails List")
+    Dim ws As Worksheet
+
+    For Each ws In Sheets
+        If ws.Name <> cs.Name Then
+            ws.UsedRange.Delete
+        End If
+    Next ws
+
+Call Get_ICIMS
+
+End Sub
+
+Function Get_ICIMS()
+
+'Gets the ICIMS datanetjob export - https://datanet.amazon.com/dw-platform/servlet/dwp/template/EtlViewExtractJobs.vm/job_profile_id/7069233
+Dim wb As Workbook, sh As Worksheet
+Dim path As String
+Dim qt As QueryTable
+
+Application.DisplayAlerts = False
+    ScreenUpdating = False
+    Application.Calculation = xlManual
+
+ThisWorkbook.Sheets(Array("ICIMS Data")).Select
+
+path = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Input\ICIMS.txt"
+Set wb = ThisWorkbook
+Set sh = wb.Worksheets("ICIMS Data")
+
+'Clear existing Query Tables
+  Application.Calculation = xlAutomatic
+For Each qt In sh.QueryTables
+    qt.Delete
+Next qt
+
+With ActiveSheet.QueryTables.Add(Connection:= _
+    "TEXT;" & path, Destination:=Range( _
+    "$A$1"))
+    .Name = "Data"
+    .FieldNames = True
+    .RowNumbers = False
+    .FillAdjacentFormulas = False
+    .PreserveFormatting = True
+    .RefreshOnFileOpen = False
+    .RefreshStyle = xlInsertDeleteCells
+    .SavePassword = False
+    .SaveData = True
+    .AdjustColumnWidth = True
+    .RefreshPeriod = 0
+    .TextFilePromptOnRefresh = False
+    .TextFilePlatform = 850
+    .TextFileStartRow = 1
+    .TextFileParseType = xlDelimited
+    .TextFileTextQualifier = xlTextQualifierDoubleQuote
+    .TextFileConsecutiveDelimiter = False
+    .TextFileTabDelimiter = True
+    .TextFileSemicolonDelimiter = False
+    .TextFileCommaDelimiter = False
+    .TextFileSpaceDelimiter = False
+    .TextFileColumnDataTypes = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, _
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+    .TextFileTrailingMinusNumbers = True
+    .Refresh BackgroundQuery:=False
+End With
+sh.QueryTables(1).Delete
+
+ThisWorkbook.Sheets("ICIMS Data").Select
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+'Trimmed preferred email address
+Worksheets("ICIMS Data").Select
+    Columns("F:F").Insert
+        Range("F1") = "Trimmed Amazon Email"
+        Range("F2") = "=trim(E2)"
+        Range("F2").Copy Destination:=Range("F2:F" & lastrow)
+        
+'Trimed work email address
+Worksheets("ICIMS Data").Select
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+    Columns("H:H").Insert
+        Range("H1") = "Trimmed ICIMS Email"
+        Range("H2") = "=trim(G2)"
+        Range("H2").Copy Destination:=Range("H2:H" & lastrow)
+        
+    Application.Calculation = xlAutomatic
+'Pastes everything as values
+Sheets("ICIMS Data").Range("F:F").Copy
+Sheets("ICIMS Data").Range("F:F").PasteSpecial xlPasteValues
+
+Sheets("ICIMS Data").Range("H:H").Copy
+Sheets("ICIMS Data").Range("H:H").PasteSpecial xlPasteValues
+    
+'Deletes untrimmed rows
+    Range("E:E, G:G").Delete
+    
+Call Get_SHL_File
+
+End Function
+
+Sub Get_SHL_File()
+'Gets the SHL file that the earlier powershell dropped in the local drive.
+
+Dim wb As Workbook, sh As Worksheet
+Dim path As String
+Dim qt As QueryTable
+
+Application.DisplayAlerts = False
+    ScreenUpdating = False
+    Application.Calculation = xlManual
+
+ThisWorkbook.Sheets(Array("SHL File")).Select
+
+path = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Input\SHLFile.txt"
+Set wb = ThisWorkbook
+Set sh = wb.Worksheets("SHL File")
+
+'Clear existing Query Tables
+  Application.Calculation = xlAutomatic
+For Each qt In sh.QueryTables
+    qt.Delete
+Next qt
+
+With ActiveSheet.QueryTables.Add(Connection:= _
+    "TEXT;" & path, Destination:=Range( _
+    "$A$1"))
+    .Name = "Data"
+    .FieldNames = True
+    .RowNumbers = False
+    .FillAdjacentFormulas = False
+    .PreserveFormatting = True
+    .RefreshOnFileOpen = False
+    .RefreshStyle = xlInsertDeleteCells
+    .SavePassword = False
+    .SaveData = True
+    .AdjustColumnWidth = True
+    .RefreshPeriod = 0
+    .TextFilePromptOnRefresh = False
+    .TextFilePlatform = 850
+    .TextFileStartRow = 1
+    .TextFileParseType = xlDelimited
+    .TextFileTextQualifier = xlTextQualifierDoubleQuote
+    .TextFileConsecutiveDelimiter = False
+    .TextFileTabDelimiter = True
+    .TextFileSemicolonDelimiter = False
+    .TextFileCommaDelimiter = False
+    .TextFileSpaceDelimiter = False
+    .TextFileColumnDataTypes = Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, _
+    1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1)
+    .TextFileTrailingMinusNumbers = True
+    .Refresh BackgroundQuery:=False
+End With
+sh.QueryTables(1).Delete
+
+
+  
+Call Remove_Tests
+  
+End Sub
+
+Private Sub Remove_Tests()
+'Purpose is to remove other tests from the spreadsheet.
+On Error Resume Next
+ScreenUpdating = False
+Worksheets("SHL File").Select
+    Dim x As Long, lastrow As Long
+    lastrow = Cells(Rows.Count, 2).End(xlUp).Row
+    For x = lastrow To 1 Step -1
+        If Cells(x, 4).Value <> "Amazon SHL Default Drop in" And Cells(x, 4).Value <> "Onsite supervised SHL assessment 8 June 2018" And Cells(x, 4).Value <> "Internals with degree (no email) 27 March 2019" And Cells(x, 4).Value <> "ProjectName" Then
+            Rows(x).Delete
+        End If
+    Next x
+  Call SHL_Formatting
+
+End Sub
+
+
+Function SHL_Formatting()
+
+Application.ScreenUpdating = True
+Application.Calculation = xlAutomatic
+
+Dim lastrow As Long
+lastrow = Cells(Rows.Count, 2).End(xlUp).Row
+
+
+'Deletes uneeded columns
+Range("A:C").Delete
+
+'Deletes fake candidate id - this is SHL internal reference, not ours.
+Range("B:B").Delete
+    
+'Gets the corrected timestamp.
+Columns("E:E").Insert
+            Range("H:H").NumberFormat = "[$-en-US,1]m/d/yyyy h:mm:ss AM/PM"
+            
+'Deletes units charged/Sten Score Ranking
+Range("I:J").Delete
+
+Application.DisplayAlerts = False
+
+
+'Creates a trimmed email address.
+    Range("E1") = "Email (t)"
+    Range("E2") = "=trim(D2)"
+    Range("E2").Copy Destination:=Range("E2:E" & lastrow)
+        Columns("E:E").Copy
+        Columns("E:E").PasteSpecial Paste:=xlPasteValues
+
+'Exports the file before further formatting happens. (Export runs Michelangelo's dashboard)
+'All scores are included at this point. Not just the 6 month rule one. Allows us to verify macro works and have it for audit purposes.
+Call Export_SHL_Export_File
+
+
+'Deletes anything prior to 2018 (B/c then whatever score they've got will be more than the 6 month rule and good to go.)
+With Sheets("SHL File").UsedRange
+    .AutoFilter Field:=8, Criteria1:="<01/01/2018"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+
+
+'Renames the email column to something clearer. (SHL tableau dashboard is keying off headers, but they're unclear to recruiters)
+Range("E1") = "Email Address Entered on SHL Test"
+
+'Brings up the correct score based on logic determined by managers. (6 months has to have elapsed by the time they take the test again. If not, the original score is kept and the new deleted.)
+Call Score_Logic
+ 
+'Matches the amazon email address to a candidate id
+Call Internals_ICIMS_Lookup
+ 
+'Moves the internals out of the main page.
+Call Move_Internals
+
+
+'Makes a space for the Candidate Icims ID lookup
+Sheets("SHL File").Select
+Application.Calculation = xlAutomatic
+Columns("A:A").Insert
+Range("A1") = "Lookup"
+
+'Compares the email address against ICIMS to pull back candidate and recruiter information
+Call Icims_lookup
+
+'Pastes all the matching ICIMS records to the SHL Test results, so that it can be matched on recruiter name and eventually uploaded.
+'Leaves the unmatched records on the SHL File page.
+ThisWorkbook.Sheets("SHL File").Select
+ActiveSheet.Range("A1:J1" & lastrow).AutoFilter Field:=1, Criteria1:="<>NA", Operator:=xlAnd
+ActiveSheet.Range("A1:J1" & lastrow).SpecialCells(xlCellTypeVisible).Copy
+Sheets("SHL Test Results").Range("A1").PasteSpecial
+
+ActiveSheet.Range("A1:I1" & lastrow).Offset(1, 0).SpecialCells _
+    (xlCellTypeVisible).EntireRow.Delete
+    
+    ActiveSheet.Range("A1:J1" & lastrow).AutoFilter
+    
+    
+Worksheets("SHL Test Results").Range("E:E").Delete
+Worksheets("SHL Test Results").Range("G:G").NumberFormat = "[$-en-US,1]m/d/yyyy h:mm:ss AM/PM"
+
+'Does the lookup to get the recruiter on the req.
+Call Recruiter_Name
+Call Create_Icims_upload
+
+End Function
+Function Export_SHL_Export_File()
+
+    Dim Fname         As String
+    Dim Fpath         As String
+    Dim NewBook       As Workbook
+    
+    
+'Spits out the unfiltered export file, prior to all of the filtering/deletion.
+'Allows us to go back and review if certain people should not be deleted.
+'Runs SHL dashboard - hence keeping the weird sheet names etc.
+
+Application.DisplayAlerts = False
+Set NewBook = Workbooks.Add
+On Error Resume Next
+    
+Fpath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\"
+'File Naming Conventions
+    Fname = Format(Now, "yyyymmdd") & " Unfiltered SHL Export File"
+    
+'Sheet it copies over and saves in front of
+    ThisWorkbook.Sheets(Array("SHL File")).Copy Before:=NewBook.Sheets(1)
+    NewBook.SaveAs Filename:=Fpath & Fname, FileFormat:=xlOpenXMLWorkbook, CreateBackup:=False
+    Sheets("Sheet1").Delete
+    Sheets("SHL File").Name = "V"
+
+    Sheets("V").Range("D:D").Delete
+    Sheets("V").Range("A:A").Delete
+    
+
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+
+End Function
+Function Score_Logic()
+
+'Purpose is to remove duplicate test takers. (People trying to game the system and take the test before the 6 months has passed.)
+'It organizes it by email address/test date. If the subsequent test date is less than 6 months from their last test date, it is excluded.
+'It re-sorts again afterwards to grab the latest score .(If they take in Jan then July, we want the July score, otherwise ICIMS input file would override first the July score, then again to Jan since it's the same candidate id)
+
+Dim lastrow As Long
+lastrow = Cells(Rows.Count, 2).End(xlUp).Row
+
+Sheets("SHL File").Select
+
+'Order by the email address and the test date
+With Sheets("SHL File").Range("A1:K" & lastrow)
+    .Cells.Sort Key1:=.Columns("E"), Order1:=xlAscending, _
+    Key2:=.Columns("H"), Order2:=xlDescending, _
+                Orientation:=xlTopToBottom, Header:=xlYes
+End With
+
+'Decides if it is the same person now that all email addresses are lined up then by the date the test was taken.
+Range("J1") = "Same Email Address?"
+Range("J2") = "=IF(CONCATENATE(E2) = CONCATENATE(E3), ""Same Person"", ""Different Person"")"
+Range("J2").Copy Destination:=Range("J2:J" & lastrow)
+
+'If the person has multiple test rows, then it sees if the most recent one is 182 days (6 months) from the last test score. If it is, it labels it valid, otherwise it says it's invalid.
+'Internals are now excluded from this rule, we only take the latest score.
+Range("K1") = "Is Score Valid?"
+Range("K2") = "=IF(A2=""Onsite supervised SHL assessment 8 June 2018"",""Valid Score"",IF(J2=""Same Person"",IF(H2-H3<182,""Invalid Score - Test Taken Before 6 Month Has Passed from 1st Test Date"",""Valid Score""),""Valid Score""))"
+Range("K2").Copy Destination:=Range("K2:K" & lastrow)
+
+'Pastes as values to avoid something being incorrectly deleted.
+Columns("J:K").Copy
+Columns("J:K").PasteSpecial Paste:=xlPasteValues
+
+'Deletes all invalid test scores. If there is an issue with how this is occurring, go check the unfiltered export and use that to verify what score should have gotten in, then contact jkjames.
+With Sheets("SHL File").UsedRange
+    .AutoFilter Field:=11, Criteria1:="Invalid Score - Test Taken Before 6 Month Has Passed from 1st Test Date"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+
+'Remove sensitive test takers (senior mgmt/leaders who are just taking test for fun and may have gotten a bad score. Also where manual overrides can occur.
+'Occasionally senior mgmt will approve someone to take the test before 6 months has elapsed. As the macro will continually override the score, by putting in the email address the macro will stop loading that score and recruiters can manually update it in ICIMS.
+'If the candidate ever needs to take the test again, they'll have to wipe the email address.
+Range("L1") = "Remove Scores?"
+Range("L2") = "=VLOOKUP(E2,'Remove Emails List'!A:A,1,FALSE)"
+Range("L2").Copy Destination:=Range("L2:L" & lastrow)
+
+'Pastes as values
+Columns("L:L").Copy
+Columns("L:L").PasteSpecial Paste:=xlPasteValues
+
+'Removes anything that is not "#N/A" (The email addresses that should be wiped.)
+With Sheets("SHL File").UsedRange
+    .AutoFilter Field:=12, Criteria1:="<>#N/A"
+    .Offset(1).SpecialCells(xlCellTypeVisible).EntireRow.Delete
+    .AutoFilter
+End With
+
+'Deletes the extra NA rows that extend down to the bottom.
+Columns("A:A").SpecialCells(xlCellTypeBlanks).EntireRow.Delete
+
+Range("J:L").Delete
+
+'Reorders the scores to find the latest one. (So if people took it 6 months ago and failed, took it 6 months later and passed it takes the latest one.)
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+With Sheets("SHL File").Range("A1:K" & lastrow)
+    .Cells.Sort Key1:=.Columns("E"), Order1:=xlAscending, _
+    Key2:=.Columns("H"), Order2:=xlDescending, _
+                Orientation:=xlTopToBottom, Header:=xlYes
+End With
+
+
+Application.Wait Now + #12:00:05 AM#
+
+'Removes the oldest score. (It's searching based on the eamil address, since it's ordered newest to oldest, it finds the oldest and deletes it. Otherwise Icims will read the top score in July, write it, then find the same candidate id in Jan and override it to that score)
+ActiveSheet.UsedRange.RemoveDuplicates Columns:=5, Header:=xlYes
+
+
+'Reorders again
+lastrow = Cells(Rows.Count, 1).End(xlUp).Row
+With Sheets("SHL File").Range("A1:K" & lastrow)
+    .Cells.Sort Key1:=.Columns("H"), Order1:=xlDescending, Header:=xlYes
+End With
+
+End Function
+
+Function Icims_lookup()
+
+'Scripting dictionary to lookup the Candidate ICIMS ID.
+'Didn't use indexmatch/vlookup as the file was hundreds of thousands of rows and it is too slow.
+'Likely can combine this and recruiter emails/name, but didn't have time.
+
+    Dim x, x2, y, y2()
+    Dim i As Long
+    Dim dict As Object
+    Dim lastrow As Long, shtOrders As Worksheet, shtReport As Worksheet
+
+    Set shtOrders = Worksheets("SHL File")
+    Set shtReport = Worksheets("ICIMS Data")
+    Set dict = CreateObject("Scripting.Dictionary")
+
+    'get the lookup dictionary from Report
+    With shtReport
+        lastrow = .Range("A" & Rows.Count).End(xlUp).Row
+        x = .Range("F2:F" & lastrow).Value
+        x2 = .Range("A2:A" & lastrow).Value
+        For i = 1 To UBound(x, 1)
+            dict.Item(x(i, 1)) = x2(i, 1)
+        Next i
+    End With
+
+    'map the values
+    With shtOrders
+        lastrow = .Range("E" & Rows.Count).End(xlUp).Row
+        y = .Range("F2:F" & lastrow).Value    'looks up to this range
+        ReDim y2(1 To UBound(y, 1), 1 To 1)   '<< size the output array
+        For i = 1 To UBound(y, 1)
+            If dict.exists(y(i, 1)) Then
+                y2(i, 1) = dict(y(i, 1))
+            Else
+                y2(i, 1) = "NA"
+            End If
+        Next i
+        .Range("A2:A" & lastrow).Value = y2  '<< place the output on the sheet
+    End With
+    
+    End Function
+Function Recruiter_Name()
+
+'Scripting Dictionary to lookup the recruiter name based on the candidate Icims ID.
+Worksheets("SHL Test Results").Select
+Range("A1") = "Candidate ICIMS ID"
+Range("J1") = "Recruiter Name"
+Range("K1") = "Recruiter Email"
+
+Dim x, x2, y, y2()
+    Dim i As Long
+    Dim dict As Object
+    Dim lastrow As Long, shtOrders As Worksheet, shtReport As Worksheet
+
+    Set shtOrders = Worksheets("SHL Test Results")
+    Set shtReport = Worksheets("ICIMS Data")
+    Set dict = CreateObject("Scripting.Dictionary")
+
+    'get the lookup dictionary from Report
+    With shtReport
+        lastrow = .Range("A" & Rows.Count).End(xlUp).Row
+        x = .Range("F2:F" & lastrow).Value
+        x2 = .Range("L2:L" & lastrow).Value
+        For i = 1 To UBound(x, 1)
+            dict.Item(x(i, 1)) = x2(i, 1)
+        Next i
+    End With
+
+    'map the values
+    With shtOrders
+        lastrow = .Range("D" & Rows.Count).End(xlUp).Row
+        y = .Range("E2:E" & lastrow).Value    'looks up to this range
+        ReDim y2(1 To UBound(y, 1), 1 To 1)   '<< size the output array
+        For i = 1 To UBound(y, 1)
+            If dict.exists(y(i, 1)) Then
+                y2(i, 1) = dict(y(i, 1))
+            Else
+                y2(i, 1) = "NA"
+            End If
+        Next i
+        .Range("J2:J" & lastrow).Value = y2  '<< place the output on the sheet
+    End With
+
+Call Recruiter_Email_Address
+
+End Function
+
+Sub Recruiter_Email_Address()
+
+'Scripting Dictionary to lookup the recruiter email based on the candidate Icims ID.
+
+Dim x, x2, y, y2()
+    Dim i As Long
+    Dim dict As Object
+    Dim lastrow As Long, shtOrders As Worksheet, shtReport As Worksheet
+
+    Set shtOrders = Worksheets("SHL Test Results")
+    Set shtReport = Worksheets("ICIMS Data")
+    Set dict = CreateObject("Scripting.Dictionary")
+
+    'get the lookup dictionary from Report
+    With shtReport
+        lastrow = .Range("A" & Rows.Count).End(xlUp).Row
+        x = .Range("F2:F" & lastrow).Value
+        x2 = .Range("M2:M" & lastrow).Value
+        For i = 1 To UBound(x, 1)
+            dict.Item(x(i, 1)) = x2(i, 1)
+        Next i
+    End With
+
+    'map the values
+    With shtOrders
+        lastrow = .Range("D" & Rows.Count).End(xlUp).Row
+        y = .Range("E2:E" & lastrow).Value    'looks up to this range
+        ReDim y2(1 To UBound(y, 1), 1 To 1)   '<< size the output array
+        For i = 1 To UBound(y, 1)
+            If dict.exists(y(i, 1)) Then
+                y2(i, 1) = dict(y(i, 1))
+            Else
+                y2(i, 1) = "NA"
+            End If
+        Next i
+        .Range("K2:K" & lastrow).Value = y2  '<< place the output on the sheet
+    End With
+
+End Sub
+Sub Create_Icims_upload()
+
+'Purpose is to create the ICIMS upload which contains today's date, the candidate ID and their score.
+
+Dim Fname         As String
+Dim Fpath         As String
+Dim NewBook       As Workbook
+Dim lastrow3      As Long
+
+
+'Grabs the External candidate ID
+Worksheets("SHL Test Results").Select
+Columns("A:A").Copy
+Worksheets("ICIMS Upload").Columns("A:A").PasteSpecial Paste:=xlPasteValues
+
+'Grabs the test date
+Columns("H:H").Copy
+Worksheets("ICIMS Upload").Columns("B:B").PasteSpecial Paste:=xlPasteValues
+
+'Grabs the External Score
+Columns("I:I").Copy
+Worksheets("ICIMS Upload").Columns("C:C").PasteSpecial Paste:=xlPasteValues
+
+
+'Macro is processing too quickly,
+Application.Wait Now + #12:00:05 AM#
+
+'Grabs Internal Candidate ID
+Call Internal_Icims_Upload
+
+
+Worksheets("ICIMS Upload").Range("A1") = "SystemID"
+Worksheets("ICIMS Upload").Range("B1") = "rcf2702"
+Worksheets("ICIMS Upload").Range("C1") = "rcf2700"
+
+Worksheets("ICIMS Upload").Select
+Columns("B:B").Select
+Selection.NumberFormat = "m/d/yyyy"
+
+'Macro is processing too quickly,slows it down, so it can correctly drag the today function down.
+Application.Wait Now + #12:00:01 AM#
+
+
+Application.DisplayAlerts = False
+Set NewBook = Workbooks.Add
+On Error Resume Next
+
+'Saves the ICIMS export file.
+Fpath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\"
+'File Naming Conventions
+    Fname = Format(Now, "yyyymmdd") & "ICIMS Upload File"
+    
+'Sheet it copies over and saves in front of
+    ThisWorkbook.Sheets(Array("ICIMS Upload")).Copy Before:=NewBook.Sheets(1)
+    NewBook.SaveAs Filename:=Fpath & Fname, FileFormat:=xlCSV, CreateBackup:=False
+    Sheets("Sheet1").Delete
+  
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+Call Export_SHL_Test_Results
+
+End Sub
+
+Sub Export_SHL_Test_Results()
+
+Dim Fname         As String
+Dim Fpath         As String
+Dim NewBook       As Workbook
+
+'Purpose is to export the Matching Test results, should the ICIMS upload fail, recruiters can look here for the scores.
+
+Application.DisplayAlerts = False
+Set NewBook = Workbooks.Add
+On Error Resume Next
+    
+Fpath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Matched External SHL Scores\"
+'File Naming Conventions
+    Fname = Format(Now, "yyyymmdd") & "Matching External SHL Test Scores"
+    
+'Sheet it copies over and saves in front of
+    ThisWorkbook.Sheets(Array("SHL Test Results")).Copy Before:=NewBook.Sheets(1)
+    NewBook.SaveAs Filename:=Fpath & Fname, FileFormat:=50, CreateBackup:=False
+    Sheets("Sheet1").Delete
+  
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+Call Export_Unmatched_File
+
+End Sub
+
+Sub Export_Unmatched_File()
+
+Dim Fname         As String
+Dim Fpath         As String
+Dim NewBook       As Workbook
+
+Application.DisplayAlerts = False
+Set NewBook = Workbooks.Add
+On Error Resume Next
+
+'Purpose is to drop the unmatched SHL scores. People can be unmatched if they use an email address that is not in Peoplesoft/ICIMS, typos or the req they originally did the test for has closed.
+'Recruiters can go in here and verify if there is a candidate that they are looking for.
+    
+Fpath = "\\ant\dept-eu\LUX5-2\Operations\EU-Ops-TA-Projects\Reporting\SHL Automation\Output\Unmatched External SHL Scores\"
+'File Naming Conventions
+    Fname = Format(Now, "yyyymmdd") & "Unmatched External Test Results"
+    
+'Sheet it copies over and saves in front of
+    ThisWorkbook.Sheets(Array("SHL File")).Copy Before:=NewBook.Sheets(1)
+    NewBook.SaveAs Filename:=Fpath & Fname, FileFormat:=xlCSV, CreateBackup:=False
+    Sheets("Sheet1").Delete
+    Sheets(1).Name = "Unmatched External SHL Scores"
+    
+'Deletes the name of the test and the email address as it is confusing to recruiters. (Keeps the trimmed email address.)
+    Sheets("Unmatched External SHL Scores").Range("E:E").Delete
+    Sheets("Unmatched External SHL Scores").Range("B:B").Delete
+  
+ActiveWorkbook.Save
+ActiveWorkbook.Close
+
+
+
+Call Email_Formatting
+
+End Sub

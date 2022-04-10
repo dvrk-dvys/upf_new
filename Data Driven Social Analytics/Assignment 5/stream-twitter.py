@@ -26,7 +26,7 @@ consumer_secret = 'T2RFmZkewXdBLqSOJoLQpvf2G7SFkLvTNyJPrq4u61RNO0hFJc'
 access_token = '1351603554499387394-SU9nNEsqejhkebtQ1lrDNzIIl0TyyA'
 access_token_secret = 'atWRVcwlHYJEb2lcQCNObm1Yau3jlCwq9Cngg7UWvWMnI'
 
-class StdOutListener(tweepy.StreamListener):
+class StdOutListener(tweepy.Stream):
 
 	def on_status(self, status):
 		try:

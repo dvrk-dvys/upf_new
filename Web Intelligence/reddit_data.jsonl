@@ -1,0 +1,2684 @@
+
+I mainly want to learn/use python for trading crypto eventually on google collab/cloud. Anaconda, the last time I tried it was too big, too slow, and way to bloated for my taste. I was thinking trying the winpython or python(x,y). 
+
+it seem python(x,,y) uses pyqt which is no longer free or something. 
+
+is there any other options for python anyone can suggest?
+
+Use this thread to talk about anything Python related! Questions, news,  projects and any relevant discussion around Python is permitted!
+Since they are both similar to the Django ORM, then they can be clasified as active record ORMs right?
+
+Have you used any or both? If so how was your experience and which would you recommend?
+
+Python Arcade, a library for creating 2D arcade games, has released version 2.6.11.
+
+Website: [https://arcade.academy](https://arcade.academy)
+
+Release notes: [https://api.arcade.academy/en/latest/development/release\_notes.html](https://api.arcade.academy/en/latest/development/release_notes.html)
+
+Demo video: [https://www.youtube.com/watch?v=QClDvEwcxmg](https://www.youtube.com/watch?v=QClDvEwcxmg)
+
+&amp;#x200B;
+
+**Release notes**
+
+* Sections - Add support to divide window into sections. (Thanks [janscas](https://github.com/janscas) for the contribution.)  
+   * Add [arcade.Section](https://api.arcade.academy/en/latest/api/window.html#arcade.Section) to the API.
+   * Add [arcade.SectionManager](https://api.arcade.academy/en/latest/api/window.html#arcade.SectionManager) to the API.
+   * Add examples on how to use: [Dividing a View Into Sections](https://api.arcade.academy/en/latest/examples/index.html#section-examples)
+* New Example Code:  
+   * Add parallax example: [Parallax](https://api.arcade.academy/en/latest/examples/parallax.html#parallax).
+   * Add GUI flat button styling example: [Flat Text Button Styled](https://api.arcade.academy/en/latest/examples/gui_flat_button_styled.html#gui-flat-button-styled).
+   * Add [Perspective](https://api.arcade.academy/en/latest/examples/perspective.html#perspective) example.
+* New functionality:  
+   * Add [arcade.get\_angle\_degrees()](https://api.arcade.academy/en/latest/api/geometry.html#arcade.get_angle_degrees) function.
+   * Add easing functions and example. See [Easing Example 1](https://api.arcade.academy/en/latest/examples/easing_example_1.html#easing-example-1) and [Easing Example 2](https://api.arcade.academy/en/latest/examples/easing_example_2.html#easing-example-2).
+   * Add arcade.Sprite.facePoint()  
+ to face sprite towards a point.
+* Fixes:  
+   * Fixed issue [\#1074](https://github.com/pythonarcade/arcade/issues/1074) to prevent a crash when opening a window.
+   * Fixed issue [\#978](https://github.com/pythonarcade/arcade/issues/978), copy button in examples moved to the left to prevent it disappearing.
+   * Fixed issue [\#967](https://github.com/pythonarcade/arcade/issues/967), CRT example now pulls from resources so people don’t have to download image to try it out.
+   * PyMunk sample map now in resources so people don’t have to download it.
+   * [arcade.draw\_points()](https://api.arcade.academy/en/latest/api/drawing_primitives.html#arcade.draw_points) no longer draws the points twice, improving performance.
+* Documentation:  
+   * Update [Pygame Comparison](https://api.arcade.academy/en/latest/pygame_comparison.html#pygame-comparison).
+   * Improve Sprite.texture  
+ docs.
+   * When building Arcade docs, script now lets us know what classes don’t have docstrings.
+   * Spelling/typo fixes in docs.
+* Misc:  
+   * Update arcade.Sprite  
+ to use decorators to declare properties instead of the older method.
+   * [\#1095](https://github.com/pythonarcade/arcade/issues/1095), Improvements to [arcade.Text](https://api.arcade.academy/en/latest/api/text_pyglet.html#arcade.Text) and its documentation. We can now also get the pixel size of a Text contents though content\_width, content\_height and content\_size.
+   * Force GDI text on windows until direct write is more mature.
+   * Optimized text rendering and text rotation
+   * [arcade.draw\_text()](https://api.arcade.academy/en/latest/api/text_pyglet.html#arcade.draw_text) and [arcade.Text](https://api.arcade.academy/en/latest/api/text_pyglet.html#arcade.Text) objects now accepts any python object as text and converts it into a string internally if needed.
+   * [SpriteList](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList) now exposes several new members that used to be private. These are lower level members related to the underlying geometry of the spritelist and can be used by custom shaders to do interesting things blazingly fast. SpriteList interaction example with shaders can be found in the experimental directory. Members include [write\_sprite\_buffers\_to\_gpu()](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.write_sprite_buffers_to_gpu), [geometry](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.geometry), [buffer\_positions](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.buffer_positions), [buffer\_sizes](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.buffer_sizes), [buffer\_textures](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.buffer_textures), [buffer\_colors](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.buffer_colors), [buffer\_angles](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.buffer_angles) and [buffer\_indices](https://api.arcade.academy/en/latest/api/sprite_list.html#arcade.SpriteList.buffer_indices)
+* OpenGL:  
+   * Added support for indirect rendering. This is an OpenGL 4.3 feature. It makes us able to render multiple meshes in the the same draw call providing significant speed increases in some use cases. See [arcade.gl.Geometry.render\_indirect()](https://api.arcade.academy/en/latest/gl/geometry.html#arcade.gl.Geometry.render_indirect) and examples in the experimental directory.
+   * Added support for unsigned integer uniform types
+   * arcade.gl.Geometry.transform  
+ no longer takes a mode parameter.
+
+Special thanks to [einarf](https://github.com/einarf), [eruvanos](https://github.com/eruvanos), [janscas](https://github.com/janscas), [MrWardKKHS](https://github.com/MrWardKKHS), [DragonMoffon](https://github.com/DragonMoffon), [pvcraven](https://github.com/pvcraven), for their contributions to this release. Also, thanks to everyone on the Pyglet team! We depend heavily on Pyglet’s continued development.
+I've been coding in Python for years now &amp; I've done a wide range of projects from discord bots to analysing CO2 data but now I'm at a loose end.
+
+Ideally either I'd help open source projects or I'd help specific people, the problem is I've never done open source stuff before &amp; all the active projects I can find are big, complex projects which are daunting by themselves.
+
+Does anyone know any smaller open source projects that need/want help or specifically where to find them or where I can work with a small group of people on a project?
+My largest project so far, pretty happy with what I learned about passwords/account creation, and what felt like a decent intro to databases. 
+
+&amp;#x200B;
+
+This program will let you make an account, save bookmarks to a database, and then reference only the bookmarks saved to the logged in account, along with a few other features listed in the github readme.
+
+&amp;#x200B;
+
+Goal of this program was to get some idea of how to use a database, figure out how to create a user account system, and to work on my code readability and structure.
+
+&amp;#x200B;
+
+Please hit me with some feedback! Questions or criticism on anything would be much appreciated.
+
+&amp;#x200B;
+
+&amp;#x200B;
+
+[landing page after login, with access to the other pages of the program.](https://preview.redd.it/d6gbs4qq1zn81.png?width=428&amp;format=png&amp;auto=webp&amp;s=79c59bccb5171aee8742d13e7edb0e183df17ff4)
+
+&amp;#x200B;
+
+the project: [https://github.com/ZG34/Bookmarkus](https://github.com/ZG34/Bookmarkus)
+As a quick introduction:
+
+I'm making my own writing software to write my science fiction story with. As I started out knowing nothing about the language back in August, I made the foolish decision to use as little third party libraries as possible (where sensible). This made me learn quite a lot about the language and how certain things work in the world of programming.
+
+Last week I decided to replace my dependency on Colorama with my own package: **AthenaColor**
+
+The library supports the same structure as Colorama (Fore, Back, Style), but with a much expanded color base. Namely I have chosen to predefine all expanded html colors in the Fore and Back colors.
+
+All ANSI Select Graphic Rendition parameters are also implemented, yet most of them do not work in PyCharm. I've decided to put the ones that don't work in the PyCharm console under Style.Unverfified.
+
+I'm also working on the capabilities to put in blinking text, and other similar methods, but these aren't within the project yet. When they are, I will update this post.
+
+[A limited view of all predefined colors and all the Stylings you can do](https://preview.redd.it/s2is7qs2zyn81.png?width=1007&amp;format=png&amp;auto=webp&amp;s=c36ca104e1a04d41bd89d339d9932b32b2c68301)
+
+&amp;#x200B;
+
+[All predefined colors](https://preview.redd.it/0l2f2moe0zn81.png?width=367&amp;format=png&amp;auto=webp&amp;s=0d118d58c979b3c6065ce3a310964c55a75498bd)
+
+The library also allows you to define custom RGB objects to use within the library, allowing you to print all 16.777.216 possible colors.   
+(I've tried to make a print out in PyCharm of all these colors for fun, to see what would happen, and PyCharm doesn't like it when you try to do this)
+
+&amp;#x200B;
+
+Source code: [https://github.com/DirectiveAthena/AthenaColor](https://github.com/DirectiveAthena/AthenaColor)  
+PyPi link: [https://pypi.org/project/AthenaColor/](https://pypi.org/project/AthenaColor/)
+
+&amp;#x200B;
+
+Small addendum: I'm a hobbyist Developer who only uses PyCharm as my development environment, so if there are any issues with another program, I will happily try to solve them, but cannot promise that these issues will be fixed as soon as possible
+I started learning python around 5 months ago, with some breaks and inconsistency but for the last 2 months I have been steadily learning it, 4-10 hours daily. I am in a position where I am being mentored for a business sector that is really technology-based, so I am familiar with 'professional' programming costs and time frames.
+
+One time, the owner talked about hiring a company to make a program/web app, so I took it as an opportunity to attempt to do the project myself, just as a learning opportunity. 
+
+The quote was like tens of thousands of $$$, and they say it will take multiple months to do (not because they're booked up).
+
+And this is something simple like following docs of another service to integrate with a very simple front-end and a decent SQL database. I just feel like I must be doing something wrong if it only takes me, a single person, a month and a half to have a complete product that works. 
+
+I just don't understand how I can do it so quickly, but professional programmers take way longer and charge so much. Is there a reason? Such as multiple layers of protection from hiccups and bugs, etc.?Could it also be that I understand the software and they would need to delve into it more? Am I some genius programmer? /s but seriously, very curious and confused. (And I understand this can be a question that seems like a brag or something)
+
+The owner even brought up when I showed him the software that it must be programmed wrongly if it could be done so quickly.
+I have been looking for project inspirations, I ended up creating this template engine https://github.com/mauro-balades/yate
+&amp;#x200B;
+
+Frelatage is a coverage-based Python fuzzing library which can be used to fuzz python code. The development of Frelatage was inspired by various other fuzzers, including [AFL](https://github.com/google/AFL)/[AFL++](https://github.com/AFLplusplus/AFLplusplus), [Atheris](https://github.com/google/atheris) and [PyFuzzer](https://github.com/eerimoq/pyfuzzer).The main purpose of the project is to take advantage of the best features of these fuzzers and gather them together into a new tool in order to efficiently fuzz python applications.
+
+Github repo: [https://github.com/Rog3rSm1th/Frelatage](https://github.com/Rog3rSm1th/Frelatage)
+
+PyPi: [https://pypi.org/project/frelatage/](https://pypi.org/project/frelatage/)
+
+Demo: 
+
+https://i.redd.it/anvsvnedmyn81.gif
+
+
+Hello,
+
+we're looking for an online environment to let students (age 11-13) play with Python. We need an online resource to avoid installing anything on Chromebooks.
+
+Ideally this would work with Google Drive to save projects.
+
+For now I've found this simple tool: [https://www.online-python.com/](https://www.online-python.com/)
+
+Is there anything better you would suggest?
+
+Thanks!
+
+
+It’s pretty clear Elden Ring is a contender for Game of the Year, leaving an impression firmly in the gaming history books.
+
+In a few short weeks, it has racked up a lot of silverware.
+
+* 5th best selling game in the past 12 months
+* Achieved a 95/100 aggregate rating on MetaCritic
+* 2nd most reviewed game on OpenCritic
+* 3rd highest amount of viewers (900k) on Twitch within 24 hours of release
+* Occupied 4 out of the top 5 highest sold games on the weekly Steam charts.
+* Reached a peak of 953k concurrent players on Steam, the sixth highest of all time on the platform
+
+No doubt it's influence will be felt on how developers design their future games IMO.
+
+Despite the popularity, it is also a polarizing game that doesn’t have a universally positive experience as it suffered from some issues at launch (we see you Cyberpunk 2077)
+
+Some gamers love the open ended nature that allows you to skip content, go at your own pace, exploring your own way, whilst others despised the difficulty, lack of UI and dying as a feature that is inherent in the Soulsbourne series.
+
+All this got my curiosity. I wanted to determine exactly what was loved and hated about Elden Ring in the early phase of the release.
+
+Gathering up a dataset of 20k reviews scraped from Steam, these were cluster analysed then interpreted. I present to you...
+
+**What gamers hate and love about Elden Ring.**  
+Interested to follow along the results while you read?- [https://cloud.relevance.ai/dataset/elden\_ring\_sentiment/deploy/cluster/517b37aee3ebc3920275/NnBwSWRuOEI4X2lpWW1za1lURHc6UDYwOWxpaHlSRnlvbkJZbFZxZmp6UQ/s34vbX8Bcq7cRGk1wH3A/us-east-1/](https://cloud.relevance.ai/dataset/elden_ring_sentiment/deploy/cluster/517b37aee3ebc3920275/NnBwSWRuOEI4X2lpWW1za1lURHc6UDYwOWxpaHlSRnlvbkJZbFZxZmp6UQ/s34vbX8Bcq7cRGk1wH3A/us-east-1/)
+
+**Overall Analysis**
+
+* The review dataset was grouped into 240 clusters by review content similarity. If a review complained about lag, then it was extremely likely to be clustered with other reviews about lag.
+* The most positive reviews were one to four words long, across 9 different review clusters.
+   * These reviews didn’t have a large amount of upvotes and were low effort reviews
+   * These reviews labelled the game as “great”, “very good”, “excellent”, “fantastic”
+* The most upvoted reviews (suggesting others in agreement) were as follows.
+   * 42 reviewers took the opportunity begged FromSoftware to release Bloodborne on the PC with an average of 88.3 upvotes.
+   * 108 reviewers mentioned Soulsborne by name, and gave mildly positive assessments of the performance, with an average of 81 upvotes.
+   * 116 reviewers left their slightly negative sentiment reviews about how the Elden Ring performs on an RTX 3080, with an average of 74.14 upvotes.
+   * 77 reviewers asked or made reference to maidens or the game being maidenless, with 31.38 upvotes on average.
+   * 107 review contained Miyazaki - specifically thanking him or mentioning the director of Elden Ring, Hidetaka Miyazaki which attracted 21.36 upvotes on average.
+
+**Most popular things people love about Elden Ring**
+
+* “**Absolutely amazing” - 84 reviewers**
+   * 84 reviewers declared Elden Ring as “absolutely amazing so far”, “So Far amazing”, “Its absolutely fantastic” etc
+   * Only 67 of these reviews are verified as being purchased by the reviewer
+   * This attracted a positive sentiment score of 0.52 - ranked 9th / top 1% across all review clusters.
+   * Average upvotes for **“absolutely amazing”** reviews was 0.33 upvotes, ranking in the bottom 40%.
+* **“Best game I ever played” - 273 reviewers**
+   * Across 4 different clusters, 273 reviewers (41+64+102+66) made the bold statement that this was the “best game I have ever played” or “greatest game of all time”
+   * 52 of these reviews are verified as being purchased by the reviewer
+   * This attracted a positive sentiment score of 0.42 - ranked 11th or in the top 1% across all review clusters
+   * Average upvotes for these reviews was 0.27 upvotes, ranking in the bottom 40%.
+   * Some of these reviews referenced games like “Zelda”
+* **Performance Issues but Positive Review - 52 reviewers**
+   * 52 reviews made mention of performance issues but generally were positive in sentiment and forgiving of the game at launch.
+   * Reviews mentioned “It's incredible. There's performance issues that need addressed but I'm having a great time.” or “Pretty amazing. Performance issues have not been as bad as expected from the number of negative reports. works fine.”
+   * 42 of these reviews were verified as being purchased by the reviewer.
+   * This attracted a positive sentiment score of 0.3 - ranked 12th / top 3%
+   * These reviews attracted on average upvotes 0.21 upvotes / bottom 40%
+* **Everything I wanted and more - 36 reviewers**
+   * 36 reviewers mentioned this game was “Everything I wanted and more”
+   * 33 of these reviews were verified as being purchased by the reviewer.
+   * This attracted a positive sentiment score of 0.26 - ranked 17th / top 6%
+   * Average upvotes for these reviews - 0.21 upvotes - ranked 162nd / bottom 40%
+* **Melina - 16 reviewers**
+   * 16 reviewers made a specific mention of the NPC guide Melina in their review
+   * 11 of these reviews were verifiable as purchases
+   * Average positive sentiment was 0.24 - ranked 19th / top 12%
+   * Average upvotes were 0.56 - ranked 142nd / bottom 41%
+* “**10/10 would die again” - 143 reviewers**
+   * 143 reviewers gave Elden Ring a 10/10 in their text review . Some others gave “10/10 would die again” in this group.
+   * These reviews attracted below average upvotes suggesting some agreed with these assessments.
+   * 107 of these reviews were verifiable as being purchased by reviewers.
+   * Average positive sentiment was 0.08 - ranked 62nd / top 41%
+   * Average upvotes were 0.55 - ranked 148th / bottom 41%
+* "**Great" -** 52 reviewers
+   * This achieved the highest positive sentiment of 0.86
+   * Only 39 of these reviews left could be verifiable as being purchased in the account
+   * This cluster only attracted 0.21 upvotes, ranking in the bottom 40% across all review clusters.
+* **"Very Good" -** 90 reviewers
+   * Only 67 of these reviews left could be verifiable as being purchased by the reviewer
+   * This cluster attracted 0.33 upvotes, ranking in the bottom 40% across all review clusters.
+
+**What people hate about Elden Ring**
+
+* **Unplayable - 106 Reviewers**
+   * 106 reviewers made complaints about the game being unplayable.
+   * These extremely negative in sentiment and attracted an above average amount of upvotes.
+   * Average negative sentiment was -0.25 - ranked 237th / bottom 4%
+   * Average upvotes were 3.51 - ranked 27th / top 48%
+   * 73 of these reviews were verifiable as being purchased by reviewers.
+* **Boss Fight - 113 Reviewers**
+   * Oh boy. 133 reviewers mostly complained about the bossfights and bosses in the game.
+* **PC Port - 139 reviewers**
+   * 139 reviewers complained about the quality of the PC port version with mentions of “frame rates”, “joypad”, “port issues”, “emulator”
+   * These were mostly negative in sentiment and attracted an average amount of upvotes.
+   * Average negative sentiment was -0.04 - ranked 190th / bottom 29%
+   * Average upvotes were 2.64 - ranked 38th / bottom 49%
+   * 88 of these reviews were verifiable as being purchased by reviewers.
+* **Bad Porting  - 121 reviewers**
+   * 121 reviewers left one to five word text reviews relating to “ports” “bad port” “porting.
+   * These were extremely negative in sentiment and attracted an large amount of upvotes.
+   * Average negative sentiment was -0.2 - ranked 236th / bottom 7%
+   * Average upvotes were 4.06 - ranked 26th / top 46%
+   * 86 of these reviews were verifiable as being purchased by reviewers.
+* **Lack of Ultrawide Screen Support - 37 reviewers**
+   * 37 reviewers complained about a lack of ultrawide screen support mentioning “ultrawide”, “ultrawidescreen” or “1440p”
+   * These were extremely negative in sentiment and attracted a large amount of upvotes.
+   * Average negative sentiment was -0.17 - ranked 232nd / bottom 9%
+   * Average upvotes were 1.32 - ranked 77th / bottom 44%
+   * 24 of these reviews were verifiable as being purchased by reviewers.
+* **Refund - 52 reviewers**
+   * 52 reviewers made reviews requesting a refund.
+   * An example of this was “Refunded after less than an hour. Game looks terrible on PC and will not go above 45 FPS. Everything is grainy, choppy, and game frequently stutters.”
+   * These were extremely negative in sentiment and attracted an average amount of upvotes.
+   * Average negative sentiment was -0.16 - ranked 231st / bottom 11%
+   * Average upvotes were 2.4 - ranked 41st / bottom 48%
+   * 35 of these reviews were verifiable as being purchased by reviewers.
+* **Controllers &amp; Gamepad  - 147 reviewers**
+   * 147 reviewers mentioned “controllers”, “joysticks” and “gamepads”.
+   * These were mostly negative in sentiment, focused on complaints about specific compatibility.
+   * These reviews were also upvoted more than average as other reviewers agreed about these issues.
+   * 101 of these were verifiable as purchased.
+   * Average negative sentiment was -0.13 - ranked 226th / bottom 15%
+   * Average upvotes were 3.12 - ranked 30th / top 49%
+* **FPS &amp; Frame Rate Stuttering - 148 reviewers**
+   * 148 reviewers complained about FPS &amp; Frame Rate Stuttering or game crashes.
+   * These were mostly negative in sentiment.
+   * These reviews attracted below average upvotes suggesting some agreed with these assessments.
+   * 114 of these reviews were verifiable as being purchased by reviewers.
+   * Average negative sentiment was -0.02 - ranked 165th / bottom 35%
+   * Average upvotes were 1.95 - ranked 53rd / bottom 46%
+
+**What I would like to do with more time, resources and less limitations**
+
+* Due to difficult with the data scrape, I wasn’t able to give analysis on the review awards that were given on Steam. This would’ve been great to dive into but may have made the insights more complicated to understand and scan.
+* I’d love to have added commentary on the amount of time played per review cluster. This would help determine whether these reviews are early game or late game.
+* Downvotes. This isn’t possible to comment on from scrape point of view as Steam doesn’t list them, but would’ve been incredibly beneficial for insights.
+* Performing an analysis on how many click on a reviews “found this funny”, would also help understand the intent and context of a review.
+
+**Technical Breakdown**
+
+By using the all-MiniLM-L6-v2 encoder, 20000 reviews on the Elden ring game have been first downloaded using the Steam API, then converted to 786-dimensional vectors. Afterward, a clustering algorithm (K-means) has been applied to check which reviews were most similar to each other with a total of 240 clusters.
+
+Because there were other features in correspondence with every sample, such as the votes for each review, and the sentiment analysis applied on the reviews, we have been using this extra data to exploit the best from the clustering relevanceai application to show additional data.
+
+**Solution**
+
+The clustering app shows what are the representative samples for every cluster, including all the corresponding metrics that can be used as additional insights.
+
+By using textual data, we are able to extract zero-shots labels to build a WordCloud of the most significant words for every cluster, which makes it much easier for us to identify the content of each cluster.
+
+**Dataset**
+
+The Steam API provides a limit of 20.000 reviews for a single game. This amount of reviews have been downloaded with a simple python code and then saved as a csv file.
+
+**Credits**
+
+**View the Elden Ring review results here - -**[https://cloud.relevance.ai/dataset/elden\_ring\_sentiment/deploy/cluster/517b37aee3ebc3920275/NnBwSWRuOEI4X2lpWW1za1lURHc6UDYwOWxpaHlSRnlvbkJZbFZxZmp6UQ/s34vbX8Bcq7cRGk1wH3A/us-east-1/](https://cloud.relevance.ai/dataset/elden_ring_sentiment/deploy/cluster/517b37aee3ebc3920275/NnBwSWRuOEI4X2lpWW1za1lURHc6UDYwOWxpaHlSRnlvbkJZbFZxZmp6UQ/s34vbX8Bcq7cRGk1wH3A/us-east-1/)
+
+**If you would like to DIY this data experiment, feel free to check out the following links:Download the Dataset here -** [https://github.com/arditoibryan/datasets/tree/main/220226\_steam](https://github.com/arditoibryan/datasets/tree/main/220226_steam)
+
+**View the Juypiter Notebook Here -** [https://drive.google.com/file/d/1GLzGoD70iFQUVkabVfRCdO0jUloMXzQa/view?usp=sharing](https://drive.google.com/file/d/1MNzj7oNXUDn8Ka22xz3NlOSMAMAOXuAU/view?usp=sharing)
+Recently when looking to deploy a simple pastebin onto my self hosted server I found it difficult to find any modern docker deploy-able pastebins what were secure by default. This inspired me to create my own.
+
+Paaster is a secure by default end to end encrypted pastebin built with Svelte, Vite, Typescript, Python, Starlette, rclone  &amp; Docker.
+
+[Github](https://github.com/WardPearce/paaster) (Any stars or merges appreciated)
+
+[paaster.io](https://paaster.io)
+
+[Example paste](https://paaster.io/NqU-4gSo2SSWXhIBSct9l#hD8y8CEr4JjRpuo2nrdL6xGtBIP17QPbpGv2Ld1jlMA)
+
+# Preview
+
+[Preview](https://i.redd.it/oskt8a6upun81.gif)
+
+# Features
+
+* End to end encryption.
+* Rate limiter (with redis).
+* Shortcuts.
+* Rclone supported.
+* Nano IDs.
+* Paste history.
+* Auto code highlighting.
+* Memory efficient file handling .
+* Server secrets bcrypt hashing.
+
+# Future plans
+
+* Unit tests
+* File uploading
+I've found the needed components to potentially put \_ctypes.c code into python scripts. I've also found the needed preprocessor to make such work.
+Discussion of using Python in a professional environment, getting jobs in Python as well as ask questions about courses to further your python education!
+
+**This thread is not for recruitment, please see** r/PythonJobs **or the thread in the sidebar for that.**
+
+
+hello guys i’m new here and I have question about python. what exactly you guys doin at work ? i’m bout to apply for a job and I have no idea what to do or what they’re expecting me to do.
+
+Hey all!
+
+We're excited to release Composer ([https://github.com/mosaicml/composer](https://github.com/mosaicml/composer)), an open-source library to speed up training of deep learning models!
+
+https://preview.redd.it/87if2pufdsn81.png?width=3009&amp;format=png&amp;auto=webp&amp;s=0238e6bf3050be3e4db27ca07dbbea80a16a7f49
+
+Composer lets you train:
+
+* A ResNet-101 to 78.1% accuracy on ImageNet in 1 hour and 30 minutes ($49 on AWS), **3.5x faster and 71% cheaper than the baseline.**
+* A ResNet-50 to 76.51% accuracy on ImageNet in 1 hour and 14 minutes ($40 on AWS), **2.9x faster and 65% cheaper than the baseline.**
+* A GPT-2 to a perplexity of 24.11 on OpenWebText in 4 hours and 27 minutes ($145 on AWS), **1.7x faster and 43% cheaper than the baseline.**
+
+https://preview.redd.it/hf8u1mk1esn81.png?width=10008&amp;format=png&amp;auto=webp&amp;s=a5606571bf6a23c607d58648e654bdd2184afd83
+
+Composer features a **functional interface** (similar to torch.nn.functional), which you can integrate into your own training loop, and a **trainer,** which handles seamless integration of efficient training algorithms into the training loop for you.
+
+**Industry practitioners:** leverage our 20+ vetted and well-engineered implementations of speed-up algorithms to easily reduce time and costs to train models. Composer's built-in trainer makes it easy to **add multiple efficient training algorithms in a single line of code.** Trying out new methods or combinations of methods is as easy as changing a single list, and [we provide training recipes](https://github.com/mosaicml/composer#resnet-101) that yield the best training efficiency for popular benchmarks such as ResNets and GPTs.
+
+**ML scientists:** use our two-way callback system in the Trainer **to easily prototype algorithms for wall-clock training efficiency.**[ Composer features tuned baselines to use in your research](https://github.com/mosaicml/composer/tree/dev/composer/yamls), and the software infrastructure to help study the impacts of an algorithm on training dynamics. Many of us wish we had this for our previous research projects!
+
+**Feel free check out our GitHub repo:** [https://github.com/mosaicml/composer](https://github.com/mosaicml/composer), and star it ⭐️ to keep up with the latest updates!
+&amp;#x200B;
+
+https://reddit.com/link/tfny9g/video/nvbynxiyasn81/player
+
+Making my phone as an Extension of the camera I can detect objects in my laptop by streaming feed into OpenCV sing YOLO
+
+[source](https://github.com/Aaris-Kazi/Tool-Detection-using-YOLO/)
+&amp;#x200B;
+
+https://preview.redd.it/yqvg54ml9sn81.png?width=2000&amp;format=png&amp;auto=webp&amp;s=575484421b18464c240d3f384d3a1c7e3f4e3a34
+
+    yourprog = "whatever.py"
+    
+    from subprocess import check_output, STDOUT
+    
+    def abrT(r):
+      return r
+      o = ""
+      # I don't care about unreadable code I am writing this during lunch break
+      for line in r.split("\n"):
+        if "Traceback" in line:
+          o += "Traceback:\n\n"
+        elif "File" in line:
+          a = line[line.find(", ")+2:] + "\n"
+          a = a.replace(", in &lt;module&gt;", "")
+          o += "  " + a
+        elif ":" in line:
+          o += "\n  " + line.split(": ")[0] + ":\n    " + line.split(": ")[1] + "\n"
+        else:
+          o += line + "\n"
+      return o[:-1]
+    
+    result = str(check_output(f"python3 {yourprog}; echo -n", shell=1, stderr=STDOUT), 'utf-8')
+    print(abrT(result))
+This blog post uses [`parsel`](https://parsel.readthedocs.io/) as an HTML/XML parser that supports full XPath, instead of [`bs4`](https://www.crummy.com/software/BeautifulSoup/bs4/doc/).
+
+Shows how to scrape:
+- title
+- link
+- displayed link
+- snippet
+- author
+- publication date
+- thumbnail
+- preview, and more editions.
+
+If you need a step-by-step explanation, you can visit [Scrape Google Books in Python](https://serpapi.com/blog/scrape-google-books-in-python/) blog post at SerpApi, otherwise:
+
+```python
+from parsel import Selector
+import requests, json, re
+
+params = {
+    "q": "richard branson",
+    "tbm": "bks",
+    "gl": "us",
+    "hl": "en"
+}
+
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/98.0.4758.87 Safari/537.36",
+}
+
+html = requests.get("https://www.google.com/search", params=params, headers=headers, timeout=30)
+selector = Selector(text=html.text)
+
+books_results = []
+
+# https://regex101.com/r/mapBs4/1
+book_thumbnails = re.findall(r"s=\\'data:image/jpg;base64,(.*?)\\'", str(selector.css("script").getall()), re.DOTALL)
+
+for book_thumbnail, book_result in zip(book_thumbnails, selector.css(".Yr5TG")):
+    title = book_result.css(".DKV0Md::text").get()
+    link = book_result.css(".bHexk a::attr(href)").get()
+    displayed_link = book_result.css(".tjvcx::text").get()
+    snippet = book_result.css(".cmlJmd span::text").get()
+    author = book_result.css(".fl span::text").get()
+    author_link = f'https://www.google.com/search{book_result.css(".N96wpd .fl::attr(href)").get()}'
+    date_published = book_result.css(".fl+ span::text").get()
+    preview_link = book_result.css(".R1n8Q a.yKioRe:nth-child(1)::attr(href)").get()
+    more_editions_link = book_result.css(".R1n8Q a.yKioRe:nth-child(2)::attr(href)").get()
+
+    books_results.append({
+        "title": title,
+        "link": link,
+        "displayed_link": displayed_link,
+        "snippet": snippet,
+        "author": author,
+        "author_link": author_link,
+        "date_published": date_published,
+        "preview_link": preview_link,
+        "more_editions_link": f"https://www.google.com{more_editions_link}" if more_editions_link is not None else None,
+        "thumbnail": bytes(bytes(book_thumbnail, "ascii").decode("unicode-escape"), "ascii").decode("unicode-escape")
+    })
+```
+
+
+Just wondering what's your favorite module and package which you like to use them? Mine is re.
+
+You can tell multiple, by the way.
+While Pandas is incredibly flexible and easy to get started with, it doesn't lend itself to writing good quality, extensible code. This is usually fine. Lots of it is thrown away -- written in notebooks and never seen again. However, a  lot amount of it ends up making it into production ETLs, services, etc..
+
+At Stitch Fix, we had a *lot* of monolithic, messy pandas scripts. We built [hamilton](https://github.com/stitchfix/hamilton/) to solve this problem. A programmer represents transforms on dataframes as a series of python functions. The parameter names are used to specify upstream dependencies, and the whole thing gets wired into a dependency graph.
+
+In short -- instead of writing:
+
+    df['a'] = df['b'] + df['c']
+
+You'd write:
+
+    def a(b: pd.Series, c: pd.Series) -&gt; pd.Series:
+        return b+c
+
+Then you use a *driver* to customize execution, pass in paraemeters, etc... Note that its not at all limited to pandas -- while that was the initial use-case, it can handle any sort of python datatype!
+
+We've opened up this internal tool we're excited about to the outside world -- we'd love feedback, contribution, and use-cases!
+
+[https://github.com/stitchfix/hamilton/](https://github.com/stitchfix/hamilton/)
+I'm coding with python for half a month now, in the beginning I was a bit sceptical what I would use it for but today I used it for the first time. 
+
+To cure boredom, me and my friends are doing typeraces where we have to type as fast as possible. I'm pretty good at that but there is someone in my class that is just a little better. Its just because I type upper cases with shiftlock and she types with shift. 
+
+So I wanted to learn to type with shift so I could type faster. But because I never did it that way I had to practice it so I wrote a little python program that generates a letter and then you have to type that letter. 
+
+I was very happy how it turned out and I now I understand python can and will be very useful .
+Hey r/Python! Just wanted to share our open source project launching today. Thought some of you might find it useful, and we would love to hear your feedback.
+
+As devs, we often want our frontend to reflect the permissions enforced by the backend - i.e. if a user is not allowed to run the action behind a button - don't show the button.
+
+[OPToggles](https://github.com/permitio/OPToggles) uses[ Open Policy Agent](https://github.com/open-policy-agent/opa) to automatically enhance feature flag solutions by creating user-targeted feature flags. It already supports LaunchDarkly and a generic REST API.
+Assuming i have a package i created who get input text, and return a huge dictionary with 50+ keys.
+
+Since *all other packages* in the program are using this dictionary and play with those keys,  I don't want to hard code the keys, but keep them as global **constants**.
+
+So here are my options and i feel uncomfortable with both of them:
+
+1. Put all constants vars in a separate folder/package in root folder, and *import them to each package* that use them. To my eyes it makes the code **hairy and uncapsulated.** I love the SW engineering where you have a package that depend on nothing outside.
+2. Pass all arguments in this config package to *each* package who need it - which also make things ugly hairy and confusing, and require putting all constants in a class(there are no structures.)
+
+&amp;#x200B;
+
+I know that most people go with **1**, but my code has like 10+ packages i wrote, each package has multiple files, ***each*** depend on these constants(50+), and if i import the constants (even with **absolute import**) to each, it makes me feel uncomfortable.
+
+What if i want to give my package to another developer ? i need to gather all these dependencies?
+
+**How is this done in huge multi developers programs ?**
+I am importing the following modules/libraries which is causing the exe to take a few minutes to start. How can I store them locally or what can I do differently so that the exe starts quickly? When I run this from the Notebook it the application runs without any delay. I wonder if there is a way to speed up the exe.
+
+import time                                                  
+import openpyxl                                               
+from os import path                                           
+from selenium import webdriver                                
+from openpyxl.styles import Alignment                         
+from webdriver\_manager.chrome import ChromeDriverManager      
+from openpyxl.styles.borders import Border, Side              
+from selenium.webdriver.support.ui import Select  
+import os  
+import math  
+import win32com.client as client  
+from PIL import ImageGrab
+
+&amp;#x200B;
+
+Thank you in advance.
+Hey all! Got a question. I’m working on a validation script for work verifying some supplied input against required values. I’m wondering, stylistically, if there’s a “preferred way” to write these functions. 
+
+An example function… 
+
+    
+
+    Def name_max_length(name): 
+        if 1 &lt; len(name) &lt;= 128:
+             return None
+        else: 
+             raise     ValidationError(“Names length fell outside of max range.”) 
+
+
+
+Apologies if Reddit mobile mangled that code but it’s short enough that I think everyone can still grok it. 
+
+If you were working on a project would you want to see the above? Or would you rather read a single if statement, without an else, checking to see if it fell outside of the valid range and if so raise the exception. 
+
+I thought PEP-8 had a stylistic recommendation about positive vs negative checking for if statements but I gave it a quick scan and didn’t see anything. I’m going to be writing a lot of these, so I’d like to get a solid stylistic choice under me. 
+
+I’m also curious, would you rather see these ranges hard coded in the if statement, or see two local variables (min/max) and have “if”compare against those?
+Helo I'm a beginner and I've finished the exercises from practice python org and I m clueless as to what my next step should be. What do you recommend, I tried advent of code but a lot of the exercises are way too hard for me. thanks very much
+
+I saw a twitter post the other day "Is there a tool that I can get meta tags off of a web site? I couldn't find any".  
+
+
+I thought to myself, there probably is, but I should do one too for at least practice.  
+
+
+So I made this small script called tagsearch, basically it collects wanted tags off a site. It can also scrape certain tags that have a wanted attribute, like span tags but only if they have class attr.  
+
+
+I also added regex support meaning one can make regex search on the scraped tags. My GitHub repo:
+
+[https://github.com/teooman/tagsearch](https://github.com/teooman/tagsearch)
+
+Example image
+
+https://preview.redd.it/5ic7krt7aqn81.png?width=1419&amp;format=png&amp;auto=webp&amp;s=afabf3817e73dc2075bbf2be6017c2bc76d36298
+
+Any feedback would be highly appreciated!!
+[https://github.com/tvaintrob/auto-poetry-env](https://github.com/tvaintrob/auto-poetry-env)
+
+tested only on MacOS with zsh, heavily inspired by pyenv-venv's auto activation, please share any thoughts and suggestions!
+
+The logic between f1 and f2 is exactly the same, but the syntax is slightly different. This type of function shows up everywhere. Is one easier to read, or preferred in some way?
+
+Side note: I thought it was interesting that f2 is slightly faster than f1.
+
+    import numpy as np
+    
+    arr = np.random.choice(['a','b','c'],100)
+    
+    def f1(cond):
+        if cond == 'a':
+            return 'a' 
+        if cond == 'b':
+            return 'b' 
+        return 'c'
+    
+    def f2(cond):
+        if cond == 'a':
+            return 'a' 
+        elif cond == 'b': 
+            return 'b' 
+        else:
+            return 'c'
+
+f1 timeit:
+
+    In [1]: %%timeit
+        ...: for i in arr:
+        ...:     f1(i)
+        ...: 
+    40.6 µs ± 804 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+f2 timeit:
+
+    In [2]: %%timeit
+        ...: for i in arr:
+        ...:     f2(i)
+        ...: 
+    40.2 µs ± 729 ns per loop (mean ± std. dev. of 7 runs, 10000 loops each)
+
+edit: u/hai_wim pointed out that the speeds are fully equal (difference is within stdev tolerance), as the byte code is exactly the same. So the question really comes down to readability and standardization.
+ This [**python certification online**](https://www.h2kinfosys.com/courses/python-online-training) course  is created for complete beginners, so you don't need any prior programming experience to complete it. The outline is designed to cover the basics of the programming language as well as some advanced topics.
+
+I found a tool that you can paste JSON into, provide the key to look for, and the value expected for the key (partial values works too). The result is the path to the value.
+
+Wanted to share as I found this useful.
+
+https://xenosoftwaresolutions.com/json
+
+sample JSON:
+                
+    {
+        "test": [
+            {
+                "item": true,
+                "checked": false,
+                "info": {
+                    "hello": "world"
+                },
+                "products": []
+            }
+        ]
+    }        
+
+result when looking for hello as key and world as value:
+   
+    ["test"][0]["info"]["hello"]
+New to Python and have questions? Use this thread to ask anything about Python, there are no bad questions!
+
+This thread may be fairly low volume in replies, if you don't receive a response we recommend looking at r/LearnPython or joining the Python Discord server at [https://discord.gg/python](https://discord.gg/python) where you stand a better chance of receiving a response.
+[https://www.youtube.com/watch?v=h63eSCNtJLg](https://www.youtube.com/watch?v=h63eSCNtJLg)
+
+    if event_region in match regions:
+        return True
+    else:
+        return False`
+Or...
+
+`Return True if event_region in match_regions else False`
+
+Or...
+
+`return event_region in match_regions`
+
+Where "event_region" is a string and "match_regions" is a list of strings
+In my workplace we make a lot of Django apps and for a number of these Django apps, we configure a lots of emails to be sent.
+
+Whenever something changes in the database that meets some condition we send an email. The emails have their own context and each email can be a time consuming to setup.
+
+There has to be a better way I thought. And so, I built [django-email-signals](https://github.com/Salaah01/django-email-signals).
+
+I build this app to be as plug-and-play as possible with minimal configuration. This Django app allows you to setup email signals right from the admin page
+
+Here is a breakdown of what the app currently lets you do:
+
+* Configure emails to be sent when some data in some model is changed.
+* Set some constraints to determine if indeed an email can be sent.
+* Either write up your email content when setting up a new email signal, or provide a path to a template.
+* Be able to reference objects and attributes such  `instance.user.first_name`  right from where you would set your constraints or the email HTML itself.
+## What
+
+Typesplainer is a Python type hint explainer that explains python type hints in plain English. It is very fast, accurate, and easy to use and understand. Available as a CLI, on the web, and as a Visual Studio Code extension
+
+## Where
+
+Website: https://typesplainer.herokuapp.com/\
+CLI: https://pypi.org/project/typesplainer/\
+Visual Studio Code extension (Alpha): https://marketplace.visualstudio.com/items?itemName=WasiMaster.typesplainer
+
+## Why
+
+Wondering WTF is an `Callable[[List[int]], Dict[int, List[Union[str, None]]]]`? typesplainer has got you covered. It's a callable that accepts a list of integers and returns a dictionary that maps integers onto a list of optional strings. Understanding type hints can be hard and time-consuming, especially if they are very big like the example above. This tool helps you understand things like that more easily and faster.
+
+## How
+
+Just use the cli if you want to use it anytime and anywhere. Use the website to test the tool before installing or if you want a graphical interface. And since the vscode extension is still in development, I won't recommend that at the moment.
+
+
+## Use this logging template in your next big project
+
+Finding bugs is a common problem in any programming project. To make it easier to find bugs, you probably want to write some print statements to help you debug.
+
+Is it helpful? yes. Is it the right way to track events in your code, especially in a big project? no.
+
+Python has a built-in logging module that you can use to log messages. Logging not only helps you debug the issues in your code. It also helps you understand the flow of your code especially when you ship to production.
+
+It is a very useful tool to identify how your code is behaving whether it is working as expected or not. If not, it can show you different hierarchies of how severe the issue is whether it is an error, a warning, or a debug mode.
+
+Without having logging, it's difficult to keep your code maintainable for a long time. Especially when this code is mature.
+
+In this tutorial, I'll show you a boilerplate for logging that you can use in your next project. Instead of looking at the documentation every time.
+
+## Division Example
+Let's take this division example especially when we divide by zero:
+```python
+def divide(dividend, divisor):
+    try:
+        return dividend / divisor
+    except ZeroDivisionError:
+        return "Zero Division error."
+
+print(divide(6, 0))
+```
+In this case, when we divided 6 by 0 we returned a message string. This message shows that a zero division error during the `ZeroDivisionError` exception occurred.
+
+What's the problem with that? The issue here is that we don't know when that happened and how severe the issue is. Is it a warning? an error? or just a piece of information you're printing to the console?
+
+The built-in Python's `logging` module helps you better log your code with its features. Let's see how we can use it in this context:
+```python
+import logging
+
+# Define a logger instance
+logger = logging.getLogger(__name__)
+# Define a stream handler for the console output
+handler = logging.StreamHandler()
+
+# Customize the formatter on the console
+formatter = logging.Formatter(
+    "%(asctime)s -  %(name)s: %(levelname)s - %(message)s",
+    datefmt="%Y-%m-%d %H:%M:%S"
+    )
+# Add the formatter to the handler
+handler.setFormatter(formatter)
+
+# Add the stream handler to the logger that we will use
+logger.addHandler(handler)
+# Set the level of logging to be INFO instead of the default WARNING
+logger.setLevel(logging.INFO)
+
+def divide(dividend, divisor):
+    try:
+        logger.info(f"Dividing {dividend} by {divisor}")
+        return dividend / divisor
+    except ZeroDivisionError:
+        logger.info("Zero Division error.")
+
+print(divide(6, 0))
+```
+which would return helpful information like this:
+```
+2022-02-23 13:24:41 -  __main__: INFO - Dividing 6 by 0
+2022-02-23 13:24:41 -  __main__: INFO - Zero Division error.
+```
+## Wrap Up
+In this boilerplate, you've seen how to log messages to the console. You've formatted the logs to start with a date and time followed by the name of the module, level of logging, and the log message itself.
+
+Check out the [logger module here](https://gist.github.com/EzzEddin/0e8c517a47e678da6a60cc21fdbc5788) and let me know if you have any feedback, thanks!
+The clean division of data analysis labor between Python and SQL seems to be fading with tools like dbt, Snowpark and dask-sql. The article shared below compares the two languages in terms of performance, functionality and developer XP. 
+
+Quick summary:
+
+**Performance**  
+Running SQL code on data warehouses is generally faster than Python for querying data and doing basic aggregations. This is because SQL queries move code to data instead of data to code. That said, parallel computing solutions like Dask and others that scale Python code to larger-than-memory datasets can significantly lower processing times compared to traditional libraries like pandas.
+
+**Functionality**  
+SQL’s greatest strength is also its weakness: simplicity. For example, writing SQL code to perform iterative exploratory data analysis, data science or machine learning tasks can quickly get lengthy and hard to read. Python lets you write free-form experimental data analysis code and complex mathematical and/or ML code. The absence of a vibrant and reliable third-party library community for SQL is also a problem compared to Python.
+
+**Developer XP**  
+Python makes debugging and unit-testing a lot easier and more reliable. While dbt has added code versioning by forcing the use of Git, SQL diffs are still harder to read and manipulate than diffs in Python IMO.
+
+**Conclusion**  
+While it's tempting to frame the debate between SQL and Python as a stand-off, the two languages in fact excel at different parts of the data-processing pipeline. One potential rule of thumb to take from this is to **use SQL for simple queries that need to run fast** on a data warehouse, **dbt for organizing more complex SQL models**, and **Python with distributed computing libraries like Dask for free-form exploratory analysis and machine learning code** and/or code that needs to be reliably unit tested.   
+
+
+Full article:  
+[https://airbyte.com/blog/sql-vs-python-data-analysis](https://airbyte.com/blog/sql-vs-python-data-analysis)
+Hey guys! I wrote a [mini-article](https://www.assemblyai.com/blog/transcribing-audio-files-in-an-s3-bucket-with-assemblyai/) on **how to transcribe an audio file in an S3 bucket in 3 simple steps**.
+
+Figured it might be helpful for people learning to use Python, JSON, AWS, etc.!
+
+
+
+Hello. I wrote about my package that supports developing program around BigQuery a little. It includes brief introduction to some basic meta programming ideas. I hope this would be a help for someone.
+
+[Automatically Generate Type information from BigQuery schema](https://medium.com/@hotoku/automatically-generate-type-information-from-bigquery-schema-4beaa53d8d3d)
+
+
+I have been using TestContainers for my Java projects for a while now with great success and my plan is to use it for some Python projects. I notice that the [https://github.com/testcontainers/testcontainers-python](https://github.com/testcontainers/testcontainers-python) project doesn't seem to be under active development. Are there any alternatives out there the community is using/developing?
+Hi,
+
+After writing a fun set of NumPy Practice Questions, I wanted to try the same thing for Pandas to brush up my skills there.  Had a ball doing this one as well:
+
+[Pandas Practice Questions: Forty-Eight Examples to Make You an Expert](https://codesolid.com/pandas-practice-examples/)
+
+Enjoy!
+
+Hey!  
+
+
+TLDR: Is there any cargo/deno/dotnet experience in python?  
+
+
+Long version:
+
+What I like is the extreme productivity it brings to (without any config whatsoever, and only using 1 command).  
+
+
+* 0-config format via: `cargo fmt`, `deno fmt`,`dotnet format`,`go fmt`
+* 0-config linting via: `cargo clippy`, `deno lint`
+* 0-config testing via: `cargo test`, `deno test`,`dotnet test`
+* Extremely easy dependency handling via: `cargo.toml`\-file, URL-based imports in deno, `dotnet add`
+* Pretty much 0-config vscode extensions that have autocomplete, typing, auto-import, intellisense, documentation via: `rust-analyzer` , `deno`, `dotnet` where the debugger works without any problems
+
+The experience today with using python is like this:  
+
+
+*  Configure black to format. Ok it doesn't want to do any non-AST-perserving operations. So to format imports install isort, configure black to use compatibility mode with isort. Also, to remove dead code, use autoflake. Make sure they work together.
+* Absolutely avoid pylint. Use autopep8. Configure it.
+* Install and use pytest. Also tox maybe.
+* All projects use different ways of doing this. Either [`requirements.in`](https://requirements.in) or plain `requirements.txt`. Sorry but this is really messy.
+* Editor isn't fun to configure to work with python.  
+
+
+I'm really burnt out after trying to use python at work. I want to just have it working, without having to worry about setting up so many tools.
+Hi all. After more then half a year study advanced python and SE principles I would like to develop a library of my liking. I’m aiming for a common decorators library. But after I saw the source code of [tenacity](https://github.com/jd/tenacity) (A retry pattern library). I was discouraged. It’s still very complicated to me for now. I can understand a lot of tenacity now. But to code it as beautiful as the author is tough. Tenacity is not even a big library. My goal is to develop something bigger.  
+
+
+I read Learning Python, know many standard library, then two books on SE. A design patterns book for python (broad not deep). And a clean code book (This one is pretty deep). Beyond that I know data structure and algo stuff. I thought I know python at an immediate level now. But seems source code is out of reach. Just wondering how long in python dev before you can develop something like tenacity.
+ DO YOU LIKE RUNNING, JUMPING AND DYING?!!?
+
+***Yes you do.***
+
+Well then.. \*cough\* ***sadist*** \*cough\* *(just kidding)* ...you can try [AGILE](https://skysurfer-kon.itch.io/agile)!
+
+[AGILE](https://skysurfer-kon.itch.io/agile) is a game where you can run to different places and collect **crystals**. The more crystals you get, the more abilities you can unlock!  
+
+I made [a post](https://www.reddit.com/r/pygame/comments/sd3j2i/agile_to_be_released_soon/) (about a month ago) saying my game Agile was nearly done... well, I kinda got distracted by another project I was working on... BUT!! It's finally released! This is my first public game and it feels VERY good to *finally* be done with this project.
+
+The game is free as I didn't want to make my first game cost anything, and also because I don't really care about money, only that people enjoy the game! *(and perhaps get a little well known...?)*
+
+&amp;#x200B;
+
+https://i.redd.it/qj1kvp9ytin81.gif
+
+&amp;#x200B;
+
+https://i.redd.it/0txyhgaztin81.gif
+
+
+
+Hi guys,
+
+my phd advisor is a coffee lover and python enthusiast. I am giving him a farewell gift, where I will print a small python script with some jokes on coffee. I came up with this so far:
+
+    from datetime import datetime
+    import pour, Coffee, Cup
+    
+    
+    def HiMich(what_coffee):
+        if "tea" not in what_coffee:
+            time = datetime.now().time()
+            coffee = Coffee(what_coffee)
+            cup = Cup(what_coffee)
+    
+            if (time.hour &gt;= 6) and (time.hour &lt; 9):
+                print("Come back later")
+            elif (time.hour &gt;= 9) and (time.hour &lt; 17):
+                if coffee.height &lt; cup.height:
+                    pour((coffee, cup))
+                print("What's up buddy?")
+            else:
+                print("See you tomorrow")
+        else:
+            print("This coffee tastes like s**t")
+    
+    
+    print(HiMich("espresso"))
+
+&amp;#x200B;
+
+Any suggestion on how to make this joke funnier and/or Pythonic?
+
+[https://github.com/joeeoj/mlbcal](https://github.com/joeeoj/mlbcal)
+
+Installation: `$ pip install mlbcal`
+
+Simple usage example: `$ mlbcal seattle --csv &gt; mariners_schedule_2022.csv`
+
+To celebrate the end of the MLB lockout and keep an eye out for soon-to-be rescheduled double header games I created a module to download the schedule for a given team from the MLB Stats API. It's kind of a stripped down version of something like [MLB-StatsAPI](https://github.com/toddrob99/MLB-StatsAPI) in that in only focuses on a single endpoint ([schedule](https://github.com/toddrob99/MLB-StatsAPI/wiki/Endpoints#endpoint-schedule)) and it has a command line interface. Besides being a helpful tool for me it was good practice on thinking through project structure and user interface as well as publishing to PyPI.
+
+Hope it can help some other baseball fans!
+
+Hello, I'm a Highschool senior looking to do a project for cs within the next year. Im thinking of a chatting/studying application to help college students find friends. I don't know if I  should start learning how to code servers, the gui or the functions within the app.
+for me its seek()  for some reason..
+Hey Everyone! Today I'm going to be showing you How to create an Image  Processor and Detector using Python. I'm going to upload a longer video where I explain the basis for why I wrote the code the way I did, and explain each line of code as well. This is going to be part of a video series where I create short and simple tutorials for people interested in learning Python. Thanks in advance for watching! Leave a comment below for any helpful tips and or recommendations.  
+GitHub Link - [https://github.com/adhamizain96/Image-Processor-and-Detector](https://github.com/adhamizain96/Image-Processor-and-Detector)  
+YouTube Link - [https://www.youtube.com/watch?v=T\_Zbz1ptA78](https://www.youtube.com/watch?v=T_Zbz1ptA78)
+
+https://preview.redd.it/lzos9rsjzfn81.png?width=2880&amp;format=png&amp;auto=webp&amp;s=6182bff2cea811677e50f8873561b4c3bf8156f7
+Have some burning questions on advanced Python topics? Use this thread to ask more advanced questions related to Python.
+
+**If your question is a beginner question we hold a beginner Daily Thread tomorrow (Wednesday) where you can ask any question! We may remove questions here and ask you to resubmit tomorrow.**
+
+This thread may be fairly low volume in replies, if you don't receive a response we recommend looking at r/LearnPython or joining the Python Discord server at [https://discord.gg/python](https://discord.gg/python) where you stand a better chance of receiving a response.
+
+
+Registration and Theme Voting is Now Open for the PyWeek 33 Game Jam
+
+https://preview.redd.it/3d9kk2gcken81.png?width=1921&amp;format=png&amp;auto=webp&amp;s=09fcd7e8ca3bf8477f53416928e9be92355332bb
+
+We're very excited to announce that it is almost time for PyWeek, a twice-a-year Python game jam we help host! Running for almost 16 years now, PyWeek is returning again from **March 20 - 27, 2022!** You can register to participate at: [https://pyweek.org/33/](https://pyweek.org/33/)
+
+PyWeek is community-run, so you can enter by yourself or with a team of your choosing! You'll have a week to make a game in Python and submit that game for the community to judge. That's right, the PyWeek winners are selected by the other PyWeek participants and PyWeek community! To find out more about this event head on over to the [Python Discord](https://discord.gg/python) and navigate to the `#pyweek-announcements` and `#pyweek-game-jam` channels on the lefthand sidebar!
+
+If you’d like to participate in a team for the game jam but need teammembers, head over to `#pyweek-team-forming` channel. If you have questions about PyWeek in general, check out `#pyweek-faq` and feel free to ask in `#pyweek-game-jam` channels.
+create \*, \*\*, % and // in python(i think you know all what that mean), but you can only use operator + and -, and dont import anything, you can use other things, use created operator is allowed
+
+can be not finnished, but at least 2
+
+example\*\*\*(JUST AN EXAMPLE, NOT WORKING)\*\*\*:
+
+`def multiply(a, b):`
+
+`for times in range(b):`
+
+`a=a+a`
+
+`return a`
+
+screenshot(code):
+
+* every created operator
+
+
+Hey everyone,  
+
+I work on a Django project where the ETL part is fully managed by the IT teams of the company i work at. I'm a simple business guy, but i made an app that helps us on our business process.  
+
+I'm getting more and more tired of having to ask IT teams for each thing i need in the SQL DB. IT guy is a senior obnoxious guy that is not friendly at all, ETL part should be his responsibility but everytime i ask him about something he replies "told you you should be using stocked procedures, if you used those you wouldn't be asking this".   
+
+We're simply receiving files from different providers, those files have to be integrated in a DB table and populate some specific columns of that DB. Initially i wanted to do this myself, but IT interefered, now for my next projects i don't wanna make the same mistake. Data IN, i'm gonna be the one ETLing it, is it too much work guys? I see there are Python libraries dedicated to that.
+
+Regards.
+There were some attributes missing in my new class. So, I distilled the problem into the code example below which meant that the `__init__` was not called upon instantiation. At this point I was wondering if all I know is wrong, if a new version of python removed default constructors and all sorts of crazy ideas.
+
+    class Test:
+        def __init___(self):
+            print("test")
+            self.test = "test"
+    
+    test = Test()
+    test.test
+
+`AttributeError: 'Test' object has no attribute 'test'`
+
+Can you find the error?
+# Interested in Python? Especially on small devices?
+
+With the Python on Microcontrollers newsletter, you get all the latest information in one place!
+
+The Python on Microcontrollers newsletter is the place for the latest news involving Python on hardware. It arrives Tuesday morning with all the week’s happenings.
+
+**Catch all the weekly news on** [**Python for Microcontrollers**](https://www.adafruitdaily.com/) with [adafruitdaily.com](https://www.adafruitdaily.com/).
+
+&gt;This *ad-free, spam-free* weekly email is filled with **CircuitPython**, **MicroPython**, and **Python** information that you may have missed, all in one place!  
+You get a summary of all the software, events, projects, and the latest hardware worldwide once a week, no ads!
+
+Ensure you catch the weekly Python on Hardware roundup– you can cancel anytime **–** [**try our spam-free newsletter today**](https://www.adafruitdaily.com/)**!**
+
+[**https://www.adafruitdaily.com/**](https://www.adafruitdaily.com/)
+Hello, Reddit, i'm back! Last time i was here, you all gave me some excellent feedback on my library. I've incorporated it and quite a bit more to release version 4 of [ScreenPy](https://github.com/ScreenPyHQ), which is now broken up into several libraries! I managed to release on 2sday, and am now ready on Pi day to show it off to all of you.
+
+To cut right to the chase, here's an example of what a test might look like using my framework:
+
+    Sammy = AnActor.named("Sammy").who_can(BrowseTheWeb.using_firefox())
+
+    given(Sammy).was_able_to(
+        Open.their_browser_on("https://old.reddit.com/")
+    )
+
+    when(Sammy).attempts_to(
+        LogIn.using(REDDIT_USERNAME, REDDIT_PASSWORD)
+    )
+
+    then(Sammy).should(
+        See.the(
+            Text.of_the(ACCOUNT_HEADER), ContainsTheText("AnActor_named")
+        )
+    )
+
+Part of the feedback i got was to include an example of everything all working together, so i completely reworked the [ScreenPy docs](https://screenpy-docs.readthedocs.io/en/latest/) to focus on that. That example goes much more in depth than the above.
+
+If you get a chance to check it out, i am very interested in your feedback! Your input has been very valuable so far. 
+
+Thanks for taking a look!
+I haven’t been paying attention over the last year or so….  Does PyCon Canada not exist anymore?  The last info I can find was that 2020 was cancelled, hoping to return in 2021.
+Hello everyone !
+
+I am a 21 year old french cybersecurity enthusiast and I would like to share with you Frelatage  
+ which is a tool I wrote !
+
+It is a coverage-based **Python** fuzzing library which can be used to fuzz python code. (**Fuzzing** or **fuzz testing** is an automated software testing technique that involves providing invalid, unexpected, or [r](https://en.wikipedia.org/wiki/Random_data)andom data as inputs to a computer program.)
+
+The development of Frelatage was inspired by various other fuzzers, including AFL/AFL++, Atheris and PyFuzzer.The main purpose of the project is to take advantage of the best features of these fuzzers and gather them together into a new tool in order to efficiently fuzz python applications.
+
+Please note that the project is still in early alpha, and its development is very active, so any advice or suggestion is welcomed !
+
+Github: [https://github.com/Rog3rSm1th/Frelatage](https://github.com/Rog3rSm1th/Frelatage)/
+
+PyPi: [https://pypi.org/project/frelatage/](https://pypi.org/project/frelatage/)
+
+DEMO: 
+
+https://i.redd.it/8ubfp25ckcn81.gif
+After 2 years of self-study, I decided to make my first personal project: [Reference Finder](https://github.com/licjon/reference-finder), a program run from the command line that takes a manuscript in the form of a text file, docx, or pdf and helps match the best supporting reference from a directory of pdf references. I was also able to add sentence matching thanks to /u/kotartemiy's post, [Ultimate Guide to Text Similarity with Python](https://www.reddit.com/r/Python/comments/s1g9g8/ultimate\_guide\_to\_text\_similarity\_with\_python/).
+
+
+I had not used Python much before this, but I decided to go with Python because of its extensive libraries, excellent documentation, and supportive community.
+
+
+I gained a great appreciation of Python and learned a lot, such as:
+
+* generators
+* multiprocessing
+* slots
+* argparse
+* working with pdfs (used PyPDF2 and pdfminer.six)
+* rudimentary natural language processing with the nltk library
+
+
+I'd appreciate any feedback you are generous enough to provide. I'd love to learn more about this powerful and versatile language!
+
+
+Hello, I made a simple Python3.9 rtsp-client to do computer vision stuff on my Raspberry-Pi3.
+
+It allow you to get the latest frame from there camera if it has a buffer queue like most reolink cameras.
+
+[https://github.com/Ouroboros1337/python\_rtsp\_client](https://github.com/Ouroboros1337/python_rtsp_client)
+
+Usage:
+
+    from rtsp_client import run_non_blocking
+    fetch = run_non_blocking("rtsp_link")
+    #fetch can be called to get the latest frame
+    while True:
+        frame = fetch()
+I personally do not like spotify's `Daily Playlist` or `Made For You` playlists since the songs in them are random and many I don't like.
+
+Hence I created a program that adds randoms songs from `users public playlists` to a specified playlist
+in this way, the songs in that playlist are ones that have already been handpicked by the user 
+
+The songs in this playlist will hence contain a multitude of songs from different genres as long as the user has made a playlist for them and is `public`
+
+Please give this program a go and feel free to open issues on github so i can look into fixing bugs, since till now i have only tested this on my local `ubuntu` machine
+
+[Link To Repo](https://github.com/Reverend-Toady/random-playlist-maker)
+HI All,
+
+I would like to hear your thoughts on **Visual Studio vs Visual Studio Code** when creating python projects. I started off learning on VS Code and its been great, I use Visual Studio at work, SSIS, SSAS etc. 
+
+I am thinking of moving into VS its just I don't see many Python People using Visual Studio. 
+
+Most of the Tutorials online - everyone is using VS Code for Python, Are there reasons' for this? 
+
+&amp;#x200B;
+
+Thank you
+
+
+Some days ago, i made a parser for my own "data serialization language". for now it has a very simple syntax and accepts arrays and strings!, any ideas or feedback please leave them in comments, i wan't to know how to improve it
+
+[https://github.com/ZSendokame/Easy-Serialization-Language](https://github.com/ZSendokame/Easy-Serialization-Language)
+Hello,
+
+I'm an organic chemist acting as a coder (I learned a lot from friends and co-workers). I work in drug design, and most often I use python as a mid layer for data movement and transformation. Although, with the rise of plotting libraries being implemented in python and a growing interest for data visualization I discovered a way to perform drug candidate selection using word key graphs.
+
+To acquire the data, I envisioned each trending academic paper for emerging drug candidates and wrong them as a python module with their "english" name and their skeletal pattern represented in 1-D. Then a master python module called GlobalChem organizes them into a makeshift graph network based on how they are positioned in the file directory structure.
+
+I did it manually and usually one-by-one checking the SMILES and the english name. I would like to teach this type of science again and want to promote the use of language construction's importance in future understanding of chemical data. I also just need help in getting it to expand, only developer on my team the rest are wet lab scientists who tell me which compounds are relevant.
+
+Thanks for reading and checking out the project. Feedback is welcomed, that's the only way I get better.
+
+Cheers,
+
+Github: [https://github.com/Sulstice/global-chem](https://github.com/Sulstice/global-chem)
+
+Comment any project ideas beginner or advanced in this thread for others to give a try! If you complete one make sure to reply to the comment with how you found it and attach some source code! If you're looking for project ideas, you might be interested in checking out Al Sweigart's, ["The Big Book of Small Python Projects"](https://inventwithpython.com/bigbookpython/) which provides a list of projects and the code to make them work.
+[Github](https://github.com/ProarchwasTaken/tld_random_number).  The project was made so I could learn Tkinker and Classes. Personally I'm pretty proud of it, only toke me the whole day. Personally I don't know if this is beginner or intermediate 
+
+All you have to do to use it is run the .EXE file. You only need the exe file. If you want to use the .py file, all you gotta do is keep the two scripts in one folder and double click gui.exe. 
+
+https://preview.redd.it/p9np975rg8n81.png?width=1042&amp;format=png&amp;auto=webp&amp;s=b1042896e7591fe81975c77e4fc1b02af44fc3a9
+I have been self learning Python about 1 year now and I don’t get why people use multiple scripts for their apps. It makes more sense for me to put multiple def functions in one script then use multiple files. It’s faster while writing and executing, it’s more organized…
+Doing proper line of sight checks in python games can take quite  a bit of time to get right and not to mention performant. We've been experimenting with a shader based solution with python arcade and it's working pretty nicely. We basically render a collision map to an offscreen texture (containing all the geometry we can collide with) and look up fragments in a ray between the player and the target sprite. This probably is a bit more about shaders, but it shows how it can empower python games when we need it the most. It could easily handle 100k sprites, but we only have so much space on the screen!
+
+Below we visualize the selected sprites by emitting a line between the player and sprite. Again, this is only sprites within a range and there are no obstacles between. The example will randomize box and coin positions between every run.
+
+https://i.redd.it/4omlfmube7n81.gif
+
+Source : [https://github.com/pythonarcade/arcade/blob/development/arcade/experimental/examples/spritelist\_interaction\_visualize\_dist\_los.py](https://github.com/pythonarcade/arcade/blob/development/arcade/experimental/examples/spritelist_interaction_visualize_dist_los.py)
+
+There are other examples in this directory showing how to resolve the actual sprite objects on the python side.
+Built a personal budgeting application for computers. My use case as a broke cs college student is that I need to keep track of my spending monthly, and not go overboard. Just wanted to share this project that I did for fun.
+
+Pretty new to git so let me know if I could've formatted the page better or if it's hard to understand, and please feel free to critique anything that you think is off.
+
+There is also a downloadable .exe file if anyone wants to try it out for themselves in the releases tab.
+
+[https://github.com/taventran/Budgeting-App](https://github.com/taventran/Budgeting-App)
+Some examples of easing types, implemented in Python Arcade:
+
+https://i.redd.it/qf6ey76c87n81.gif
+
+For source, see: [https://api.arcade.academy/en/development/examples/easing\_example\_1.html#easing-example-1](https://api.arcade.academy/en/development/examples/easing_example_1.html#easing-example-1)
+Hi!, I've made a simple script who get user's statistics and data (Biography, username, followers and public repos), it returns a nice HTML with the statistics that can be rendered on Browsers and OBS (I didn't test it with other Streaming softwares)
+
+It's a nice API that i been using a time, useful when viewers ask for GitHub or other related things!
+
+I wan't to get some feedback or suggestion about how i can improve it
+
+A big part of it is builted with other languages, but Python gets the data and create the webserver
+
+[https://github.com/ZSendokame/Git-Tab](https://github.com/ZSendokame/Git-Tab)
+
+I'm starting to learn using Spyder in Anaconda Navigator as IDE. There's no particular reason, it's just the first that came across. The thing is as I see it, Spyder is using the 3.8.8 version while there's already the 3.10.2.
+
+The question is: Am I missing something or this is normal?
+
+
+
+Hi All, I work with Python a lot to make REST micro services, and one thing that's really dragged down my development time is having to manually restart processes only to find I made a typo, or a mistake, and have to find it, fix it, then restart again.... only to find another typo and start over.
+
+Having worked with React / create-react-app, I was inspired to make a similar tool for Python that would find all the imports in my scripts/modules, keep track of any changes, and restart my services on the fly. I've been using it for the last couple of weeks and it's drastically cut down on my development time so I wanted to share it with the community. Hopefully I can get some feedback or suggestions on how I could improve it or make it more useful to others.
+
+[https://pypi.org/project/pylivedev/](https://pypi.org/project/pylivedev/)
+Any great content creators that teach python in a generally accepted way? Like, idk just looking for people's favorite teachers that make great points or are good quality teachers beyond some dude with a monotone voice repeating everything from a textbook. I'd love to see what y'all have to recommend :) have a lovely day and thanks for helping me and my chimp brained self. I hope you have a pleasant life.
+[https://github.com/timeopochin/GanTTY](https://github.com/timeopochin/GanTTY)  
+
+
+Found this over on r/commandline . Wanted to share because I think it's a great example on how you can create sophisticated CLI's with Python :)
+
+
+Hello,  
+I recently published a pre-relase of a Python tree library that implements   
+hierarchical object structures, navigation, searching, filtering, export to  
+JSON and DOT, and calculation of diffs.  
+I'd be interested in some early constructive feedback about API design,   
+functionality, etc. Let me know what you think:  
+https://github.com/mar10/nutree/
+I just created [bibcites](https://github.com/mdaeron/bibcites), a command-line utility which reads a BibTeX file, finds entries with a DOI, looks up the corresponding number of citations using [OpenCitations](https://opencitations.net), saves this number to the addendum field of each entry, and writes results to a new BibTex file.
+
+Feedback is welcome, thanks.
+this code encodes and decodes the rot13 cipher
+
+from string import ascii\_lowercase, ascii\_uppercase
+
+def Convert(ls):ls1 = \[\]ls1\[:0\]=lsreturn ls1
+
+    def Ecode_rot13(inn):
+    alf_lower = list(ascii_lowercase)
+    alf_upper = list(ascii_uppercase)
+    output = []
+    
+    ls = Convert(inn)
+
+for i in ls: if i.isalpha() and i.islower(): n = (alf\_lower.index(i)+13)%26 output.append(alf\_lower\[n\]) elif i.isalpha() and i.isupper(): n = (alf\_upper.index(i)+13)%26 output.append(alf\_upper\[n\]) else: output.append(i) return output
+
+def Decode\_rot13(inn): alf\_lower = list(ascii\_lowercase) alf\_upper = list(ascii\_uppercase) output = \[\]
+
+    ls = Convert(inn)
+
+for i in ls: if i.isalpha() and i.islower(): n = (alf\_lower.index(i)+13)%26 output.append(alf\_lower\[n\]) elif i.isalpha() and i.isupper(): n = (alf\_upper.index(i)-13)%26 output.append(alf\_upper\[n\]) else: output.append(i) return output
+
+typ = input("type d to Decode or e to Ecode: ").strip()
+
+    if typ=="e": inn = input("Value: ").strip() print(''.join(Ecode_rot13(inn))) elif typ=="d": inn = input("Value: ").strip() print(''.join(Decode_rot13(inn))) else: print("invlid")
+    
+
+&amp;#x200B;
+Hey everyone!
+
+&amp;#x200B;
+
+I recently started working on a personal project (a multiplayer game) and I was having some trouble trying to store user data and logins, etc. so I did some googleing and figured that I'd be best off using sql, however, I didn't want to write a store and load function for every class I wanted to store and load into and from the database so I made this python module instead :) I hope it helps some of you and I'd appreciate feedback (example and source code on github)
+
+&amp;#x200B;
+
+Github: [https://github.com/Matthias1590/SimpleSql](https://github.com/Matthias1590/SimpleSql)
+
+Pypi: [https://pypi.org/project/pyssql/](https://pypi.org/project/pyssql/)
+
+&amp;#x200B;
+
+P.S. If you like the project please give it a star on github :)
+
+Object-Relational Mapping (aka ORM) it is a design pattern that helps streamline communications between relational databases (like SQLite) and object-oriented programming languages (like Python).
+
+Less talk more ~~action~~ code!
+
+    # For example, you need to create a local database "database.db"
+    # and store data of users of your application in it, it'll be look like this
+    
+    # this is your first user, it has some fields
+    first_user = {
+        'username': "Redditor",
+        'email': "redditor@reddit.com",
+        'age': 42
+    }
+
+First of all lets create our database:
+
+    import sqllex as sx
+    
+    db = sx.SQLite3x('database.db')
+
+And now create table into it with same fields (columns) + one special id column:
+
+    db.create_table(
+        'user', {
+            'id': [sx.INTEGER, sx.PRIMARY_KEY],
+            'username': [sx.TEXT, sx.UNIQUE],
+            'email': [sx.TEXT, sx.UNIQUE],
+            'age': sx.INT
+        }
+    )
+    
+                                        # check what we got
+    print(db.tables_names)              # ('user',)
+    print(db['user'].columns_names)     # ('id', 'username', 'email', 'age')
+
+*See? This is how we access to a table 'user'*
+
+    db['user']
+
+*Therefore, in order to get the data of a specific column*
+
+    db['user']['username']
+
+Time to add some data into this table
+
+    db['user'].insert(
+        username=first_user['username'],
+        email=first_user['email'],
+        age=first_user['age'],
+    )
+    
+    print(db['user'].select_all())  # [(1, 'Redditor', 'redditor@reddit.com', 42)]
+
+Perfect, now we adding one more user, but it have some extra fields 'invited\_by'
+
+    second_user = {
+        'username': "Antonym",
+        'email': "anon@onionmail.idk",
+        'age': None,
+        'invited_by': "Redditor"
+    }
+
+First, make the same thing as few lines above
+
+    db['user'].insert(
+        username=second_user['username'],
+        email=second_user['email'],
+        age=second_user['age'],
+    )
+    
+    
+    print(db['user'].select_all())  # [(1, 'Redditor', 'redditor@reddit.com', 42), (2, 'Antonym', 'anon@onionmail.idk', None)]
+
+Let's create new table for save data about invitations *(+ FOREIGN KEY statement)*
+
+    db.create_table(
+        'invitation', {
+            'id': [sx.INTEGER, sx.PRIMARY_KEY],
+            'inviting_id': sx.INTEGER,
+            'invited_id': sx.INTEGER,
+    
+            sx.FOREIGN_KEY: {
+                'inviting_id': db['user']['id'],
+                'invited_id': db['user']['id']
+            }
+        }
+    )
+    
+    print(db.tables_names)  # ('user', 'invitation')
+
+Let's get id of inviting user:
+
+    # SELECT FROM 'user' table
+    # COLUMN 'id'
+    # WHERE 'username' column == inviting_username
+    # LIMIT 1 record
+    
+    inviting_user_id = db['user'].select(
+        db['user']['id'],
+        WHERE=(
+            db['user']['username'] == second_user['invited_by']
+        ),
+        LIMIT=1
+    )
+    
+    print(inviting_user_id)     # [(1,)]
+    inviting_user_id = inviting_user_id[0][0]
+    print(inviting_user_id)     # 1
+
+Let's get id of inviting user (just the same way)
+
+    # SELECT FROM 'user' table
+    # COLUMN 'id'
+    # WHERE 'username' column == invited_username
+    # LIMIT 1 record
+    
+    invited_user_id = db['user'].select(
+        db['user']['id'],
+        WHERE=(
+            db['user']['username'] == second_user['username']
+        ),
+        LIMIT=1
+    )
+    
+    print(invited_user_id)     # [(2,)]
+    invited_user_id = invited_user_id[0][0]
+    print(invited_user_id)     # 2
+
+Finally saving invitation data!
+
+    db['invitation'].insert(
+        inviting_id=inviting_user_id,
+        invited_id=invited_user_id
+    )
+    
+    print(db['invitation'].select_all())    # [(1, 1, 2)]
+
+That's is! Now you know how to simply use [sqllex ORM](https://github.com/v1a0/sqllex) in your projects, read more examples and explanations in [sqllex docs](https://v1a0.github.io/sqllex/).
+
+Code something yourself to consolidate the studied material!
+
+I will be grateful it you'll give [this project](https://github.com/v1a0/sqllex) a star on [github](https://github.com/v1a0/sqllex).
+
+P.S.:Here is few useful links:  
+—  [Sqllex ORM (github page)](https://v1a0.github.io/sqllex/)  
+—  [Sqllex docs](https://github.com/v1a0/sqllex)  
+—  [Project showcase](https://v1a0.dev/sqllex/sqllex-showcase.html)  
+—  [Another example #0](https://v1a0.dev/sqllex/examples/sqlite3x-aex-0.html)  
+—  [Another example #1](https://v1a0.dev/sqllex/examples/sqlite3x-aex-1.html)
+
+&amp;#x200B;
+
+[interface](https://preview.redd.it/yb1q93p8y3n81.jpg?width=1357&amp;format=pjpg&amp;auto=webp&amp;s=c4522032cca7a79028953cd7ce16e524ccd29d7b)
+
+[example](https://preview.redd.it/0jcochbay3n81.jpg?width=2486&amp;format=pjpg&amp;auto=webp&amp;s=9a9f45a092de3e4c5ed9d2dde19218a296e9d72b)
+
+Github -&gt; [https://github.com/Djdefrag/NiceScaler](https://github.com/Djdefrag/NiceScaler)
+
+Itch.io -&gt; [https://jangystudio.itch.io/nicescaler](https://jangystudio.itch.io/nicescaler)
+
+**NiceScaler 1.2.0 - (11.03.2022)**
+
+**New**
+
+1. Video upscaling (one video)
+2. Video dropped shows as a list of information: fps, filesize, resolution, etc.
+3. Support for mp4, webm, gif, mkv, flv, avi, mov videos
+4. New buttons to choose upscale factor (x2 &amp; x4)
+
+**UX/UI changes**
+
+1. Font changed to Calibri
+2. Setted default AI model to FSRCNN
+3. Setted default upscale factor to x2
+4. Changed buttons color for a better UX
+5. Added filesize in image description (when drop one image)
+
+**Bugfix**
+
+1. Fixed error when dropping files when the filepath contains dots '.'
+2. General bugfix &amp; code cleaning
+
+&amp;#x200B;
+
+Installation.
+
+NiceScaler does not require any installation, it's a single portable exe usable on any Windows PCSupported
+
+AI backends.
+
+Actually NiceScaler utilize only CPU to upscale to be compatible with any PC
+
+Features.
+
+* Images &amp; video upscaling
+* Different IA models selection
+* Drag and drop single image or multiple images or video
+* Auto-convert images to .png
+* Factor x2 &amp; x4 upscaling 
+* Simple and clean GUI
+* Compatible with PNG, JPEG, BMP, WEBP, TIF images
+* Portable everywhere without installation
+
+Next steps.
+
+* More AI backends (CUDA / OpenCL / Vulkan)
+* Pre-processing (image/videos downscaling before upscaling)
+
+Feedback.
+
+Please, give me feedback about the product, i will listen all feedback.
+
+Thank you for your support :)
+
+The [docs](https://docs.python.org/3/library/datetime.html?highlight=strftime#strftime-strptime-behavior) mention in passing that there are other formats in a [linked document](https://manpages.debian.org/bullseye/manpages-dev/strftime.3.en.html), but they aren’t ~~obviated~~ made obvious enough for someone looking for a quick reference. 
+
+**As u/undercoveryankee has [pointed out](https://reddit.com/r/Python/comments/tczsrh/_/i0gtt2d/?context=1) - theyre not in the main docs page because python executes on the underlying platform’s c implementation, which can vary per environment. **
+
+`%F` and `%T` should be part of the standard docs imo. 
+
+
+`%F` is an equivalent of `%Y-%m-%d`. 
+
+`%T` is an equivalent of `%H:%M:%S`.
+
+(Honorable mention)
+`+%` - date and time in date format. 
+
+`%x` - locales preferred date format
+
+`%X` - locales preferred time format
+
+This means that the below has the same output:
+
+```
+from datetime import datetime
+    
+    
+now = datetime.now()
+print(now.strftime("%Y-%m-%d %H:%M:%S"))
+# 2022-03-12 22:31:33
+
+print(f'{now:%F %T}')
+# 2022-03-12 22:31:33
+
+print(f'{now:%x %X}')
+# 2022-03-12 22:31:33
+
+print(f'{now:%+}')
+# Sat Mar 12 22:57:15  2022
+
+```
+
+Side note -  I often use [strftime.org](https://strftime.org) as a quick reference for datetime strings. It doesn’t mention these on the cover page either.
+ CodeCat is an open-source tool(made in python with Flask) to help you find/track user input sinks  and security bugs using static code analysis. These points follow regex  rules.      [https://github.com/CoolerVoid/codecat](https://github.com/CoolerVoid/codecat)
+
+ Casper-fs is a Custom Hidden Linux Kernel Module generator. Each module  works in the file system to protect and hide secret files. This program has two principal functions: turning private files hidden.  The second function is to protect confidential files to prevent reading,  writing and removal.   [https://github.com/CoolerVoid/casper-fs](https://github.com/CoolerVoid/casper-fs)
+Just like how Instagram allows you login with your phone number, email, or, username... this guide shows you how to do the same in Django. Link below
+
+&amp;#x200B;
+
+https://preview.redd.it/kr9iq2gxa2n81.png?width=1920&amp;format=png&amp;auto=webp&amp;s=7ce2299e8d534f8748cef5a96f79bd255cf14b48
+
+[https://jaycoding.tech/tutorials/guides/enable-users-login-with-username-phone-uczmkp](https://jaycoding.tech/tutorials/guides/enable-users-login-with-username-phone-uczmkp)
+[https://github.com/blaze005/PIP-Manager-App](https://github.com/blaze005/PIP-Manager-App)
+
+Windows Only!!!
+
+This is a package manager turned into a GUI, no need to use the CMD to run pip installations. It is currently on version 3.1, 3.2 is coming soon. 
+
+Includes the following: 
+
+* Tabs - The current tabs are Manager, Package List, and settings. 
+* Manager Tab - has an entry box to enter the wanted package just click install to install it. Has uninstall and upgrade buttons as well. 
+* Package List Tab - Has a list of packages on machine and outdated packages are represented as red text, here you can upgrade/uninstall as well just selected the wanted package and right click to get a drop down menu. 
+* Settings Tab - Has some basic window settings
+* Built in console - appears in all tabs, currently in BETA. So the python launch console will not show.
+I am trying to write a program to login into my works website to schedule shifts because they get taken within seconds. I like the way webbrowser pulls up the website. I have tried using selenium to do it but when it logs me in it has me verify my computer every time through SMS. 
+
+Is there any way to use webbrowser to open the website but then use selenium to fill in the username and password?
+Tell /r/python what you're working on this week! You can be bragging, grousing, sharing your passion, or explaining your pain. Talk about your current project or your pet project; whatever you want to share.
+Hello dear /r/Python community. 
+
+I’m a long-time lurker and a few years ago you inspired me to learn Python. While we are trying to survive here in Ukraine under the destructive Russian invasion which tries to erase our cities and nation from the planet, I want to share with you several of my projects which might be useful for some of you or could be interesting for pure beginners to learn/dig into Python code in the context of simple microservices, REST API development, API clients, async programming, processes, threading, queues, message brokers, etc. 
+
+So they are:
+
+* [hikvision-camera-bot](https://github.com/tropicoo/hikvision-camera-bot) - Telegram Bot for Hikvision cameras which has a lot of functionality like taking pictures/video-gifs on motion and other alerts.
+* [yt-dlp-bot](https://github.com/tropicoo/yt-dlp-bot) - Yet another Telegram Bot for downloading YouTube videos (and any other supported by yt-dlp)
+* [zoneh](https://github.com/tropicoo/zoneh) - Zone-H Cybercrime Archive Telegram Monitoring Bot (uses threading and I would definitely say it should be rewritten with async and microservices architecture)
+* [youtube-dl-ffmpeg-updater-win](https://github.com/tropicoo/youtube-dl-ffmpeg-updater-win) - Windows youtube-dl and ffmpeg binaries updater for lazy ones (planned to be rewritten to support yt-dlp since youtube-dl is deprecated)
+
+Hope someone will find something interesting for themselves and also big thanks to everyone who is supporting us in such dark times.
+
+Hey everyone,
+
+today I would like to share a video with you about "Multiclass Support Vector Machines (SVMs)" using scikit-learn. Again, as my previous videos, we apply the algorithm on some space data: namely asteroid spectra; the classes are: C (Carbonaceous composition), S ("Stony" composition), X (Iron-like composition) and Others (well... other outliers)
+
+Scikit-learn's SVM algorithms can compute multi class hyperplane margins by computing either "one-vs-rest" or "one-vs-one" classes. The resulting hyperplane are, together, the classifier.
+
+This is my last SVM related video, concluding this hyperplane driven approach. In the next video I'd like to tackle the classification task with Keras and neural networks!
+
+[https://www.youtube.com/watch?v=bpKM-W3gUW0](https://www.youtube.com/watch?v=bpKM-W3gUW0)
+
+Stay tuned,  
+Thomas
+I'm 16 years old. I have more than a year of experience with Python. I'm so much open to learn new things because I got a plenty of time and effort.
+
+If you have an interesting idea or already working on your project and you need someones help, post a comment here describing your project and maybe I'll join you.
+
+Thanks for all the offers
+
+
+Hello guys, 
+
+I want to share my knowledge about functions in Python with you. Check out this video: [https://youtu.be/HsqN8UNplGI](https://youtu.be/HsqN8UNplGI) for learning more about how functions are used in Python. 
+
+Also, you can learn more about differences between parameters vs arguments and optional arguments vs positional arguments. 
+
+Please let me know what you struggle most about related to functions in Python.
+I created a sorting algorithm visualizer using pygame and just wanted to share with someone because i'm really proud of it :)
+
+[https://github.com/spyvanilla/sorting-algorithm-visualizer](https://github.com/spyvanilla/sorting-algorithm-visualizer)
+
+    import random
+    guessesTaken = 0
+    print('Hello! What is your name?')
+    myName = input()
+    number = random.randint(1, 20)
+    print('Well, ' + myName + ', I am thinking of a number between 1 and 20. You have 5 guesses to get it right!')
+    while guessesTaken &lt; 5:
+      print('Take a guess.')
+      guess = input()
+      guess = int(guess)
+      guessesTaken = guessesTaken + 1
+      if guess &lt; number:
+        print('Your guess is too low.')
+      if guess &gt; number:
+        print('Your guess is too high.')
+      if guess == number:
+        break
+    if guess == number:
+      guessesTaken = str(guessesTaken)
+      print('Good job, ' + myName + '! You guessed my number in ' + guessesTaken + ' guesses!')
+    if guess != number:
+      number = str(number)
+      print('Nope. The number I was thinking of was ' + number)
+using a library i created the other day, i'm able to easily overwrite memory:
+
+```
+from pointers import to_ptr, Pointer, decay
+
+a: str = '123'
+b: str = 'abc'
+
+@decay
+def switch(ptr_a: Pointer[str], ptr_b: Pointer[str]):
+    ptr_a &lt;&lt; ptr_b
+
+switch(a, b)
+print(a, b) # abc abc
+# this can work with any object or literal
+```
+
+repo: https://github.com/ZeroIntensity/pointers.py
+
+
+Behold, the BEST OOP style invented so far. You can thank me later!
+
+(Jokes aside, I really love Python support for closures via nested functions and nonlocal keyword)
+
+&amp;#x200B;
+
+edit: fix grammar abuse
+
+https://preview.redd.it/ify00a1erxm81.png?width=1280&amp;format=png&amp;auto=webp&amp;s=9b4812f0acf24865976884c985dec7e2e8f636df
+Hello,
+
+I want to add non exisitng metadata tag to an mp3 files using Python.
+
+Why using a programing language ? Because I want to add a tag to hundreds of mp3 files. Otherwise I would have used manually mp3tag or modify the proporties of the file in windows. (this method will take an eternity when dealing with a big number of files)
+
+I searched for the available possibilities and found out mutagen.id3 library :
+
+The issue is with this library i can only modify the existing tags within the id3 metadata container.
+
+Let's supposer I want to add a tag named 'Key'. I can't do it with id3 it tells me that module has no attribute KEY...
+
+Any want has an idea how to solve this issue?
+
+&amp;#x200B;
+
+**EDIT**: got the solution. Actually I needed to create new, otherwise it won't recognize it as a valid key.  There is an ID3 tag for the song's key (it is 'TKEY'): So I need to register my own tag ,i  just add this code line:
+
+    EasyID3.RegisterTextKey('INITIAL KEY', 'TKEY') 
+
+&amp;#x200B;
+I've created UltraDict ([https://github.com/ronny-rentner/UltraDict](https://github.com/ronny-rentner/UltraDict)) as a much faster alternative to multiprocessings.Manager().dict().
+
+It does not require any running manager processes, it works across independent processes and it optionally supports nested dicts.
+
+I'ved tested on Linux and Windows. There's an examples directory with various use cases.
+
+I'm looking for comments, issues and people who would help testing.
+
+&amp;#x200B;
+
+## Nested Example
+
+In one Python REPL:
+
+    Python 3.9.2 on linux
+    &gt;&gt;&gt; 
+    &gt;&gt;&gt; from UltraDict import UltraDict
+    &gt;&gt;&gt; ultra = UltraDict(recurse=True)
+    &gt;&gt;&gt; ultra['nested'] = { 'counter': 0 }
+    &gt;&gt;&gt; type(ultra['nested'])
+    &lt;class 'UltraDict.UltraDict'&gt;
+    &gt;&gt;&gt; ultra.name
+    'psm_0a2713e4'
+
+In another Python REPL:
+
+    Python 3.9.2 on linux
+    &gt;&gt;&gt; 
+    &gt;&gt;&gt; from UltraDict import UltraDict
+    &gt;&gt;&gt; other = UltraDict(name='psm_0a2713e4')
+    &gt;&gt;&gt; other['nested']['counter'] += 1
+
+Back in the first Python REPL:
+
+    &gt;&gt;&gt; ultra['nested']['counter']
+    1
+
+
+
+    deck_of_cards = ["A1","A2","A3","A4","A5","B1","B2","B3","B4","B5","C1","C2","C3","C4","C5"]
+            hands.append(hand)
+        num_of_hands = 3
+        cards_per_hand = 3
+        hands = []
+        random.shuffle(deck_of_cards)
+        for i in range(num_of_hands):
+            hand = []
+            for j in range(cards_per_hand):
+                card = deck_of_cards.pop()
+                hand.append(card)
+
+
+I made this to test an idea I had (actual solution wasn't a deck of cards, but something similar, creating three baseball teams)
+
+I'm not super happy with this solution though, it's kind of ugly. Is there a cleaner way to do this?
+
+Also yes I know those aren't traditional cards. I don't care. This is a deck of cards from space, that aliens play with, happy?
+Don’t waste your time on deciding which restaurant to go. Just flip a coin!
+
+[https://leimao.github.io/project/Random-Meals/](https://leimao.github.io/project/Random-Meals/)
+
+Found a neat resource related to Python over the past week? Looking for a resource to explain a certain topic?
+
+Use this thread to chat about and share Python resources!
+
+My CS teacher gave us a list of tasks to do, with the last one being a bot that plays Wordle. 
+
+I finished basically every other question, so I started working on the bot. After writing some (terrible, horrible, very bad) code, I got it working (about 90% of the time, it gets really close to the guessing, but doesn't quite come close sometimes, but I'm working on that).
+
+Anyways, CODE: [https://github.com/MissingFable/wordle\_bot\_4\_python](https://github.com/MissingFable/wordle_bot_4_python)
+&amp;#x200B;
+
+https://preview.redd.it/nkterhv1otm81.png?width=775&amp;format=png&amp;auto=webp&amp;s=84ec3229b07e0e53fc0ae1a47e27f051d5991352
+
+Since the first release (0.1.0) a few weeks back, I have been adding new features to [https://github.com/roniemartinez/dude](https://github.com/roniemartinez/dude) . I am happy to announce that Dude is now at version **0.9.1** with more improvements and features.
+
+You can now choose a parser backend that you are familiar with to build your web scrapers:
+
+* Playwright (default)
+* Pyppeteer -\` `pip install pydude[pyppeteer]`
+* Selenium - `pip install pydude[selenium]`
+* BeautifulSoup4 - `pip install pydude[bs4]`
+* Parsel - `pip install pydude[parsel]`
+* lxml - `pip install pydude[lxml]`
+
+Github: [https://github.com/roniemartinez/dude](https://github.com/roniemartinez/dude)
+
+Documentation: [https://roniemartinez.github.io/dude/](https://roniemartinez.github.io/dude/)
+[Demonstration](https://www.youtube.com/watch?v=tT2zzCXfYpg)
+
+[Code](https://github.com/ChuckMash/CUBES_CUBES_CUBES)
+
+I've read before "It's dictionaries all the way down" but also "python treats everything as an object". So which one is it? Are dictionaries a subset of objects or are objects some kind of dictionary?
+
+I've recently stumbled onto a FOSS alternative to [Pastebin](https://pastebin.com/), called [Hastebin](https://hastebin.app/), which happens to be more suitable for me, which also has some documentation on how to upload text to the website under a POST request.
+
+Unfortunately, the website doesn't detail any Python programs to handle this, rather BASH and NODE, so I thought I'd develop one myself.
+
+Please let me know what you think!
+
+[Link to the project on Github](https://github.com/Skibbsies/hastebin-python)
+I just launched a brand new Python bootcamp this week. I have put hundreds and hundreds of hours into building it and I really want to get feedback from actual users so I can improve it and make it an incredible user experience.
+
+I don't want anyone to come out of the bootcamp only able to recite the fundamentals; I want people to actually be able to complete an entry-level project. 
+
+The bootcamp includes:
+
+1. 30 day access to 142 training modules
+2. 30 day access to 20 knowledge assessments
+3. 30 day access to 100+ guided exercises
+4. 30 day access to the "Inner Circle"
+5. 1 capstone project walkthrough
+
+I don't want to bite off more than I can chew in terms of obtaining feedback all at once so I am limiting the FREE registrations to 200.
+
+It is open for FREE enrollment until next Monday, March 14 at midnight.
+
+[If you are interested you can register through this link.](https://challenge.conquerpython.com/30days?utm_source=reddit&amp;utm_medium=ad&amp;utm_campaign=30+Day+Challenge&amp;utm_content=rPython)
+
+Thanks so much and hope to see you in the bootcamp!
+This API can be used to generate images, create memes with custom pictures as faces for discord bots or any other project. Because it is still in beta, minor issues are to be expected. If you found it useful or using it for your project consider giving it a star.
+
+GitHub Link - [https://github.com/SecretsX/AphroGen](https://github.com/SecretsX/AphroGen)
+Hello /r/Python, I just released my first Python package `pyoxipng`. You can use this package to reduce the file size of PNG images. It works with paths to existing files on disk or a `bytes` object containing PNG data. I plan on using this to compress plots generated by `matplotlib` for use in a web application.
+
+Available PyPI: [https://pypi.org/project/pyoxipng/](https://pypi.org/project/pyoxipng/)
+
+Demo GIF: 
+
+https://i.redd.it/f5e3kctfgsm81.gif
+New-ish to Python here, and I am curious what you all do from a data validation perspective to call an Excel concatentation program effective?
+
+My program takes specific columns from a monthly file and concats them with an existing file (i.e. concat 'File\_Feb.xlsx' with 'File\_Consolidated.xlsx'. Next month, concat 'File\_Mar.xlsx' with 'File\_Consolidated.xlsx' and so on, resulting in a 'File\_Consolidated.xlsx' at the end of the year with all of the monthly files data).
+
+I am using pandas to combine dataframes (i.e. creating a df from each xlsx) and then overwriting the 'File\_Consolidated.xlsx'. What is the most efficient and effective way to validate all data was combined correctly? My thought is to do several record counts (total counts before/after, counts of specific columns filtered in different ways, etc.), but it seems like there is probably a more complete way to confirm all the data wrote over properly.
+I recently started learning python from this guy called "Bro Code" he seems very nice and his tutorials are easy to follow I definitely recommend.
+&amp;#x200B;
+
+[In this post on excess.org](https://excess.org/video-encoding/) we use Python to encode the full Bad Apple video (3m39s) into 32 kilobytes. Our playback hardware has no CPU so our video “compression” is limited to the features of our HD44780-powered LCD display.
+
+We create an illusion of a full bitmap display by carefully juggling 8 CGRAM characters across the 8 x 4 video area and lean on LCD display persistence.
+
+&amp;#x200B;
+
+[video encoder files](https://preview.redd.it/bv1thn768sm81.png?width=665&amp;format=png&amp;auto=webp&amp;s=f579b58637a7117a70ef1cf394fccbdc4f643d1e)
+For my nuclear pharmacy class, I thought that calculating for the daughter nuclide and type of particle decay was too tedious. It was basically doing the same steps every time with the periodic table as reference, so I figured I'd make a calculator myself. The only tool I knew how to use was Microsoft Excel/Google Sheets. I had to learn about new concepts like vlookup and split. Since I've been teaching myself python recently, I decided to take the same calculator idea and do it on python. 
+
+[https://github.com/jjayyc/nuclide-decay-calculator](https://github.com/jjayyc/nuclide-decay-calculator)
+Here is a link to a video showcasing my project (made in Python using the Pygame module):
+
+[https://youtu.be/SmUiQ-UrTg8](https://youtu.be/SmUiQ-UrTg8)
+
+I was able to have the bats follow the player on the trajectory of a unit vector connecting the bat and the player. I plan to add enemies that will not follow if a wall is in the way of the unit vector, but that will take some extra programming to do. Also, all the art was done by me in this video.
+hi, i created small cache library, similar to memcache but use file as storage.
+
+you can find it here https://github.com/guangrei/PyZCache
+
+In need of a solution  for WMI queries from a non-Microsoft operating system? Make use of  [aiowmi](https://pypi.org/project/aiowmi/)! A Python library for WMI, which we have made freely available as  an [open source project.](https://github.com/cesbit/aiowmi)
+
+Read the announcement below for more information or start using **aiowmi** in all your projects right away!  
+
+
+[https://cesbit.com/aiowmi](https://cesbit.com/aiowmi)
+I wrote a small and lightweight extension to the `json` module. It allows you to combine serializeable objects like lists with non-serializeable objects like `numpy` arrays in a single json file.
+
+You can easily attach custom converters for all kind of file types to it making it a versatile tool for writing json files.
+
+Check it out directly via `pip install znjson` or on GitHub [https://github.com/zincware/ZnJSON](https://github.com/zincware/ZnJSON)
+
+There is another popular package that produces similar files called `jsonpickle`. I did not know about this package when writing ZnJSON. Whilst `jsonpickle` supports different json packages and older python versions, ZnJSON is more flexible in adding custom converters for different types.
+
+## Example
+
+    import numpy as np
+    import json
+    import znjson
+    
+    data = json.dumps(
+        obj={"data_np": np.arange(2), "data": [x for x in range(10)]},
+        cls=znjson.ZnEncoder,
+        indent=4
+    )
+
+yields
+
+    {
+        "data_np": {
+            "_type": "np.ndarray_small",
+            "value": [
+                0,
+                1
+            ]
+        },
+        "data": [
+            0,
+            1,
+            2,
+            3,
+            4
+        ]
+    }
+Wow! I am amazed and humbled by the response. Here is a new link for free sign-ups.1st 1000 (yes, thousand) signups in 5 days.
+
+[Udemy New Link (1000 in 5 days)](https://www.udemy.com/course/python-three-from-beginner-to-pro/?couponCode=0B43871F6AE055A29868)
+
+I created a Python course for beginners. The part that I really worked a lot on was functions, scope, closures and decorators. I always found these topics a bit hard for beginners.The other section that has a lot of material is OOP: classes, instances, properties, instance methods, class methods, inheritance and the MRO(method resolution order).Applications include web development using a backend SQL DB and of course numpy and pandas.
+
+&amp;#x200B;
+This is a small project I made, it is not perfect and I will definitely upgrade it later. 
+
+But I really hope it is useful for at least one of you guys! 
+
+[https://github.com/Germfreekai/Maginner](https://github.com/Germfreekai/Maginner)
+
+
+Use this thread to talk about anything Python related! Questions, news,  projects and any relevant discussion around Python is permitted!
+The program is very basic with it being only 78 lines of code, but it is the first project I did not have to ask for any help on or research more information for. Just wanted to share!
+
+[https://github.com/SlyFryFrog/Password-Generator](https://github.com/SlyFryFrog/Password-Generator)
+I wrote a simple script that downloads a Wikipedia article and uploads it as a Q/A GPT-3 model. You can then ask any question about the article and GPT-3 will do its best to answer.
+
+You will need to create an OpenAI account to get a key. They offer $20 in free credits to new users.
+
+[https://openai.com/api/login/](https://openai.com/api/login/)
+
+[https://github.com/AustinReese/WikipediaQuestionBot](https://github.com/AustinReese/WikipediaQuestionBot)
+Hi guys! I thought I would share a cool resource that converts a sentence to a python method. Not sure how useful this is, but just wanted to share.
+
+Check It Out: [https://quasi.market/make/model=1645828120.209651A4rRtKMDewaJ59dyeIfy5hXkbVk2](https://quasi.market/make/model=1645828120.209651A4rRtKMDewaJ59dyeIfy5hXkbVk2)
+Hey, I created a UI library which provides new Tkinter widgets, which can be customized in color and shape and which can adapt to the system appearance.
+
+[complex\_example.py macOS](https://preview.redd.it/dwj7ofg62mm81.png?width=2736&amp;format=png&amp;auto=webp&amp;s=90eba993cb5459da01eb506b88a2cdd920ec18cb)
+
+[complex\_example.py Windows 11](https://i.redd.it/5n3tx42i5mm81.gif)
+
+It's just as easy to use as Tkinter because it basically is Tkinter, and it works on all platforms.
+
+You can check it out here:
+
+[https://github.com/TomSchimansky/CustomTkinter](https://github.com/TomSchimansky/CustomTkinter)
+Hi! I wrote a simple key-value store in Python: [https://github.com/ostafen/viperdb](https://github.com/ostafen/viperdb)
+
+ViperDB is a lightweight embedded key-value store written in pure Python. It has been designed for being extremely simple while efficient.
+
+## Features
+
+* **tiny**: the main db file consists of just \~300 lines of code.
+* **highly coverage**: thanks to the small codebase, every single line of code is tested.
+* **log-structured**: ViperDB takes design concepts by log-structured databases such as [Bitcask](https://docs.riak.com/riak/kv/2.2.3/setup/planning/backend/bitcask/index.html).
+* **written in pure Python**: no external dependency needed.
+
+API is very simple, the database can be simply used as a map:
+
+    
+    from viperdb import ViperDB 
+    db = ViperDB('./db') # db can be used as a simple dictionary 
+    db['hello'] = 'ViperDB!' 
+    assert db['hello'] == 'ViperDB' 
+    del db['hello'] 
+    assert 'hello' not in db 
+    
+    db.reclaim() # call this method periodically to free unused space. 
+    db.close() # flush any pending write and close the database.
+
+Leave feedback if interested!
+
+
+Hello guys. [I've been making this engine for years now](https://www.youtube.com/watch?v=VHhjRsSHGfk). It is written in Python 3.8. For math and image processing I've used NumPy, for User Interface PySide6 and for 3D rendering PyOpenGL. It is built for Windows and Linux using Nuitka. If Anyone wants to try it out [here is the free download link](https://rayterex.gumroad.com/l/mijAE). It is currently a closed source side hustle but if I manage to make it my full time project I would like to open source it. Any feedback would be appreciated.
+https://github.com/Agent-Hellboy/YouTubeDataApi_Wrapper
+
+This is a library which returns metadata of youtube videos.
+nbpreview is a CLI and library for rendering Jupyter notebooks on the terminal. It's kind of like cat for ipynb files (but doesn't actually concatenate anything—just the preview part).
+
+https://preview.redd.it/1lyjvvkntkm81.png?width=1504&amp;format=png&amp;auto=webp&amp;s=1e246db081276e5b15abdd86f9838afabe9ed3de
+
+# Repository
+
+[https://github.com/paw-lu/nbpreview](https://github.com/paw-lu/nbpreview)
+
+# Documentation
+
+[https://nbpreview.readthedocs.io/en/latest/index.html#](https://nbpreview.readthedocs.io/en/latest/index.html#)
+
+# Features
+
+nbpreview can:
+
+* [Syntax highlight code cells](https://nbpreview.readthedocs.io/en/latest/features.html#syntax-highlighting)
+* [Render markdown](https://nbpreview.readthedocs.io/en/latest/features.html#markdown-rendering)
+* [Draw images](https://nbpreview.readthedocs.io/en/latest/features.html#images)
+* [Render DataFrame](https://nbpreview.readthedocs.io/en/latest/features.html#dataframe-rendering)
+* [Create previews for Vega charts](https://nbpreview.readthedocs.io/en/latest/features.html#vega-and-vegalite-charts)
+* [Render LaTeX](https://nbpreview.readthedocs.io/en/latest/features.html#latex)
+* [Parse HTML](https://nbpreview.readthedocs.io/en/latest/features.html#html)
+* [Create hyperlinks for complex content](https://nbpreview.readthedocs.io/en/latest/features.html#hyperlinks)
+* [Use Nerd Font icons](https://nbpreview.readthedocs.io/en/latest/features.html#nerd-fonts)
+* [Render stderr output](https://nbpreview.readthedocs.io/en/latest/features.html#stderr)
+* [Render tracebacks](https://nbpreview.readthedocs.io/en/latest/features.html#tracebacks)
+
+# Installation
+
+nbpreview can be installed through [pipx](https://pypa.github.io/pipx/) or [pip](https://pip.pypa.io/) from [PyPI](https://pypi.org/).
+
+    % pipx install nbpreview
+
+If [pipx](https://pypa.github.io/pipx/) is not installed, nbpreview may also be installed via [pip](https://pip.pypa.io/):
+
+    % python -m pip install nbpreview
+
+# Usage
+
+To use nbpreview, simply type nbpreviewinto your terminal followed by the path of the notebook you wish to view.
+
+    % nbpreview notebook.ipynb
+
+See the [command-line reference](https://nbpreview.readthedocs.io/en/latest/usage.html) for details on options.
+Hi,
+
+I created a little library that helps to compare dictionaries (or lists) that are "almost" equal.
+
+My main use case is comparing JSON responses from servers in tests. Sometimes, you cannot do it directly (like response == expectation) because of a dynamically generated UUID or timestamp. This was kind of annoying especially for nested data since you had to destructure the whole dictionary or do other workarounds.
+
+With that library you can do something like this:
+
+    from lookslike import Like
+    server_response = {'user': 'john', 'timestamp': 123.45}
+    assert server_response == {'user': 'john', 'timestamp': Like(float)}
+
+If you like you could try it out. I would be happy about some feedback before releasing the initial "stable" version.
+
+[https://pypi.org/project/lookslike/](https://pypi.org/project/lookslike/)
+a function that unscrambles a word
+
+`def unscramble(word: str, lst: list):`  
+`pook = []`  
+ `for i in filter(lambda x: len(x) == len(word), lst):`  
+`possible = True`  
+ `letters = {}`  
+ `for ltr in i:`  
+ `if ltr in letters:`  
+`letters[ltr] += 1`  
+ `else:`  
+`letters[ltr] = 1`  
+ `for ltr in letters:`  
+ `if letters[ltr] != word.count(ltr):`  
+`possible = False`  
+`break`  
+`if possible:`  
+`pook.append(i)`  
+ `return pook`
+
+and lst is the list of words or that the function is gonna use to unscramble the word
+[https://github.com/ZeroIntensity/pointers.py](https://github.com/ZeroIntensity/pointers.py)
+Hello all, I have been searching online everywhere but I cannot find a way to change the naming style setting for Plyint within the Spyder IDE. I keep receiving convention code C0103 which is "doesn't conform to UPPER\_CASE naming style". I use camelCase and I would like Pylint to ensure that convention is used throughout my code. I've looked through all the settings to no avail. 
+
+Any help is appreciated, thanks!
+With this application, you will be able to calculate the cost prices of your industrial recipes (optimized for the food industry). At the same time, you will be able to follow the recipe materials and examine their graphics.
+
+&amp;#x200B;
+
+[https://github.com/c-baba/Industrialrecipecostcalculator](https://github.com/c-baba/Industrialrecipecostcalculator)
+
+Hi guys, 
+
+I am developing an open source (Open Source) [https://github.com/riso-tech/one-platform](https://github.com/riso-tech/one-platform) based on django-cookiecutter and using Metronic paid template.
+
+If using this product, people can start to set-up projects faster.
+
+The plan is that I will develop basic features that every web-app must have such as managing Home Page, Landing Page, User... Anyone interested can join in testing, translating or coding or write document.
+
+If you feel good, please give "Star" for yourself.
+
+P/s: Because the template I use is paid, I can't upload the Static file, if you need to buy a template to support me, please go to the aff link [https://1.envato.market/NKe19P](https://1.envato.market/NKe19P)
+
+ Thanks everyone
+
+&amp;#x200B;
+
+https://preview.redd.it/9q6xy1kvdim81.png?width=2880&amp;format=png&amp;auto=webp&amp;s=d931fa38007e0d726b2fbb8cfa86587c4194037e
+I beat symbolab, math papa, and almost killed my ti-89 titanium
+
+Here's the link to how you can make it:
+
+[https://youtu.be/4qYHRx0K0do](https://youtu.be/4qYHRx0K0do)
+Hello everyone! 
+
+I was recently learning about Pandas and Data Science.  
+
+I would like to be able to enter a community (outside Reddit) where I can contribute, and above all, learn from other developers and be able to interact professionally with them.  
+
+I've tried kaggle.com, but I'd need a strong community like PyAr, for example.  
+
+I read your suggestions. Thank you very much!
+
+[Github](https://github.com/ProarchwasTaken/tld_fakedownloader) 
+
+So I learned how to find a percentage of something in math class on calculator not on paper yet. I all had to do is divide and multiply by decimals I think. I had to do it to find what is like 10 percent of 50 or something. I then realized I could do that in python so I quickly made a program that simulates downloading files.
+
+You can set a file size and download speed and both of these factors will determine how long a download takes. It also informs you if a certain percentage of the download is complete too so you're not completely in the dark!
+
+I prepared an .exe file if you don't have python and I of course, also included the .py file so you can look at the code.
+Discussion of using Python in a professional environment, getting jobs in Python as well as ask questions about courses to further your python education!
+
+**This thread is not for recruitment, please see** r/PythonJobs **or the thread in the sidebar for that.**
+
+
+I'm thinking about getting the certified professional in python programming certificate by the python institute.
+
+I'm curious if anyone here has taken the test and if the certificate helped their career at all.
+
+I've been looking for practice tests and resources to study with but I've found practically nothing except for the syllabus so it's anyone knows some study material that would be great.
+
+I'm not really wanting the certificate to benefit my career as it's mainly just for a concrete self improvement goal, but the lack of information about the test gives me the impression it's just a cash grab.
+
+I did obtain the PCAP certificate and found that one taught me some good information about python.
+
+Hello all! Over a year ago, I decided to help my brother in creating a website for his industry reel. I used Python library; PyVimeo. Also, I have used Vimeo's Player SDK which in their words is a "short (but sweet) Javascript library.
+
+"why not just embed all the videos to use?" A question I've been asked a lot. Well using the libraries mentioned; the app can scale greatly according to the usage of one's own Vimeo account. If you upload a video to your vimeo account, then it will update on the website respectively. 
+
+There are things to be desired like implementing another frontend framework, but I'm glad how it came out and working towards on improving it.
+
+**LINKS:**
+
+[Video Gallery App](https://derekhenriquez-editor.com/)
+
+[Github](https://github.com/141Wonders/vimeoalbum-portfolio)
+
+I wanted to share so anyone working with Vimeo API can have a reference. Also, some feedback would be greatly appreciated. I have limited experience in scripting and would like to become masterful soon!
+
+&amp;#x200B;
+
+https://preview.redd.it/3v55a79pgfm81.png?width=2560&amp;format=png&amp;auto=webp&amp;s=c620dca20746312a0501b769e0a9980d3fa251fb
+Python being user-friendly and easy to write / watch is enough to compensate for the relatively slow speed? Or is there another reason? Im really curious.
+I released tiptop the other day, a command-line system monitor written in Python. It works on all operating systems and adapts to your terminal color scheme. I hope you find it useful!
+
+[https://github.com/nschloe/tiptop](https://github.com/nschloe/tiptop)
+
+&amp;#x200B;
+
+[tiptop in action.](https://preview.redd.it/2vl8c0lsdfm81.png?width=900&amp;format=png&amp;auto=webp&amp;s=ae057bb1fc35081b606b0d915bb439a7ec321191)
+&lt;rant&gt;
+
+I've been programming in Python for almost a decade now and I love most things about it. One thing that never felt right to me was how a string's `.join()` method works. In short, `' + '.join(['a', 'b', 'c'])` returns `'a + b + c'`.
+
+Wouldn't it make more sense to have the join be a member function of the list/iterable? You could apply the same type constraints. I'd even be comfortable with it floating alone in the namespace and calling something like `join(['a', 'b', 'c'], ' + ')`. 
+
+In short, the current way feels backwards in some way that I can't explain an it's grinding my gears rn. Carry on.
+
+&lt;/rant&gt;
+Since I've seen this [article](http://large.stanford.edu/courses/2007/ph210/pelc2/) that describes how to analytically calculate the sound of a guitar, I wanted to implement it in Python. The script that generates the sound is very simple, but I want to create an environment where I can test the different initial conditions and be able to play around with the sounds. So I mix pyaudio and pygame to make a little vst type program where I can play the sounds with the keyboard of my computer.
+
+In this way, it's very easy to spend some time testing different conditions and you can also save the ones that sound the best and create your own presets. Although python is not the most suited language for real-time audio, with pyaudio I was able to make it sound decent enough for this task. Link to repo [here](https://github.com/MatiasDiBernardo/Acoustic_Synth_With_Python).
+
+https://reddit.com/link/tah3ce/video/yjyeheab6fm81/player
+
+I started learning the basics of PyAutoGUI today. I followed some tutorials and I was soon able to make a bot that made a post. I was fascinated! I could make a post in the matter of a second and it all happens right in front of me. Then I thought, "Well why not make a spam bot.", so I did but I messed up my while loop. I was opening things that I did not even know existed, so I restarted my PC. Everything is fine, but it scared me lol.
+
+&amp;#x200B;
+
+TLDR:  
+
+
+I was a jerk and bad things happened.
+ Hello Everyone,
+
+This is the 2nd part in the #FlappyBird Python project. Since this has quite a bit of coding, I have separated it out into multiple parts. I hope you can follow through and provide your comments &amp; suggestions.
+
+Python programming language enables us with all these built-in modules and libraries which makes it a powerful tool to create such project showcases. 
+
+Python is easy to learn and kids as early as 8 years can get started!!
+
+In this video we will start writing the "Move" function to give some mobility to our bird. Also we will see the end result UI.
+
+[Flappy Bird in Python Part 2](https://youtu.be/1SP2Vy03nEM)
+Wants to understand what **\_\_name\_\_** variable means in python? Here is a post about it 
+
+Link: [https://dev.to/phelixdusengimana/what-really-is-name-a-special-variable-in-python-2fbg](https://dev.to/phelixdusengimana/what-really-is-name-a-special-variable-in-python-2fbg)
+I used Robotic Process Automation (RPA) to automate my grocery shopping so that I can spend less time shopping. The Robot Framework is a layer on top of Python and therefore, it is easy to insert custom Python code into the bot.
+
+You can download the source code and read about it [here](https://betterprogramming.pub/grocery-hacking-automate-your-grocery-shopping-using-the-robot-framework-9444a553f8dc).
+
+Ever wonder how hot hydrogen flame is? When you don't feel like going up your laptop to run Chemkin, Cantera, or NASA CEA, try Cantera Chatbot on your phone or watch. Calculate adiabatic flame temperature on Facebook Messenger by asking '/hydrogen 300 101.325 34.3 1'
+[https://youtu.be/sT9sTux4E1k](https://youtu.be/sT9sTux4E1k)
+
+It's a small python webapp, hosted on Heroku server. Once you get an approval from Facebook (Meta) people, it will send message back. Cantera is an open-source chemical kinetics and thermodynamics software with Python interface.
+
+Source code is available here: [https://github.com/shaunkim/cantera-chatbot](https://github.com/shaunkim/cantera-chatbot)
+
+# [Opytimizer: A Nature-Inspired Python Optimizer](https://github.com/gugarosa/opytimizer)
+
+Did you ever reach a bottleneck in your computational experiments? Are you tired of selecting suitable parameters for a chosen technique? If yes, Opytimizer is the real deal! This package provides an easy-to-go implementation of meta-heuristic optimizations. From agents to search space, from internal functions to external communication, we will foster all research related to optimizing stuff.
+
+Use Opytimizer if you need a library or wish to:
+* Create your optimization algorithm;
+* Design or use pre-loaded optimization tasks;
+* Mix-and-match different strategies to solve your problem;
+* Because it is fun to optimize things.
+
+Read the docs at [opytimizer.readthedocs.io](https://opytimizer.readthedocs.io).
+
+Opytimizer is compatible with: **Python 3.6+**.
+
+---
+
+## How-To-Use: Minimal Example
+
+Take a look at a quick working example of Opytimizer. Note that we are not passing many extra arguments nor additional information to the procedure. For more complex examples, please check our `examples/` folder.
+
+```Python
+import numpy as np
+
+from opytimizer import Opytimizer
+from opytimizer.core import Function
+from opytimizer.optimizers.swarm import PSO
+from opytimizer.spaces import SearchSpace
+
+def sphere(x):
+  return np.sum(x ** 2)
+
+n_agents = 20
+n_variables = 2
+lower_bound = [-10, -10]
+upper_bound = [10, 10]
+
+space = SearchSpace(n_agents, n_variables, lower_bound, upper_bound)
+optimizer = PSO()
+function = Function(sphere)
+
+opt = Opytimizer(space, optimizer, function)
+opt.start(n_iterations=1000)
+```
+I heard there is a huge demand for Python devs and salaries are sky-high. Is it true? And why are Python devs much more in demand and why are they being paid much more?
+Hi everybody, I am a particle physics PhD student passionate about coding which usually like to develope models or algorithms to solve physics problems.
+
+I want to share with you one of the most recent projects I developed, it consists of a program to compute the normalization coefficients of a given set of orthogonal 1D complex wave functions. In quantum physics wave-functions are the solutions of the [Schrödinger equation](https://en.wikipedia.org/wiki/Schr%C3%B6dinger_equation).
+
+This code is able to get the wave-functions set shape as input and then to compute the normalization coefficients for each component and plotting it in the complex plane.
+
+Hope you like it and in positive case, don't forget to leave a star on GitHub! Thanks.
+
+If you want to contribute with issues or pull requests you are more than welcome.
+
+Github repository: [https://github.com/JustWhit3/WaveNCC](https://github.com/JustWhit3/WaveNCC)
+Hey guys!
+
+I am looking for part time remote freelance projects in Python, but all the sites that I found are kind of BS. Do you guys know a reliable place where I could advertise my services? How long does it usually take to develop a network to keep the incoming demand of work consistently? What is an average price for a senior? And finally, what is the best way to receive payments?
+
+
+
+
+For people who use Outlook at home or at the office and would like to send an email using Python, you may find this tutorial useful.
+
+Tutorial: [https://youtu.be/rUCOrbFrWqU](https://youtu.be/rUCOrbFrWqU)
+
+PS: To access Outlook application object models, I will be using pywin32 library, which is a Windows specific package. Just an FYI.
+Learn integrals in under 4 minutes
+
+[https://youtu.be/S2cv\_03Hs\_Y](https://youtu.be/S2cv_03Hs_Y)
+[Streamlit + Darts Demo live](https://share.streamlit.io/gerardrbentley/timeseries-examples/main/streamlit_apps/02_darts.py)
+
+See the screencast below for demos on predicting Heater purchases and personal spending (from a real bank CSV export format).
+
+I wanted to explore the claim of "Time Series Made Easy in Python" by the [Darts](https://unit8co.github.io/darts/) library. Turns out it takes \~12 lines of code including imports to get started with Darts.
+
+I knew from their [pydata talk](https://www.youtube.com/watch?v=g6OXDnXEtFA) that making something interactive around the training API would be straightforward.
+
+Adding interactive web elements with [Streamlit](https://streamlit.io) to the Darts documentation example led to this quick demo project that lets you explore any univariate Timeseries CSV and make forecasts with Exponential Smoothing. This version will resample and sum values to get to monthly samples (or change to weekly / quarterly / etc); there are other Pandas resampling aggregation options though! 
+
+See the [app script source](https://github.com/gerardrbentley/timeseries-examples/blob/main/streamlit_apps/02_darts.py)
+
+&amp;#x200B;
+
+[darts and streamlit demo](https://i.redd.it/zor9adqj89m81.gif)
+
+(apologies for the speed, I wanted to keep the video short)
+
+[Free CSV Entry Direct Link](https://share.streamlit.io/gerardrbentley/timeseries-examples/main/streamlit_apps/02_darts.py#go-wild)
+
+Next steps on this would be:
+
+* Series / Data info and timeseries attributes
+* Exposing configuration options for the model
+* Adding other [model options](https://unit8co.github.io/darts/generated_api/darts.models.forecasting.html) from Darts
+* Backtest / Historical Forecast view
+* Grid search result view
+New to Python and have questions? Use this thread to ask anything about Python, there are no bad questions!
+
+This thread may be fairly low volume in replies, if you don't receive a response we recommend looking at r/LearnPython or joining the Python Discord server at [https://discord.gg/python](https://discord.gg/python) where you stand a better chance of receiving a response.
+Basically the title - I want to create a custom dashboard that will display on a screen hooked up to a Raspberry Pi where it will show various things all day long - a tile for rotating sports scores, stock/crypto prices, weather, etc. I'd like to use a python script to fetch info from API's and use it to populate the custom dashboard, and have the dashboard constantly running on an old laptop screen. Does anyone know anything that might fit my requirements?
+
+
+Hello everyone! For ages now I have wanted to create a website and deploy it using Flask. Today I finally did it! I used PythonAnywhere to deploy and build the entire website with Flask, Html and Css
+
+Thanks Everyone!
+
+**Links**
+
+[Website](https://www.imagscii.com/)
+
+[GitHub](https://github.com/ScriptLineStudios/Imagscii)
+
+**What does it do?**
+
+The website is an ascii image filter! Just upload an image and get the ascii version back! Allows  adjustable font size and spacing! 
+
+https://preview.redd.it/yvb3lt7pq7m81.png?width=1000&amp;format=png&amp;auto=webp&amp;s=0a5fddeea88b7a95f296c08c78be748c754d9edc
+
+
+
+
+Hey, this is Eldad from Appwrite 👋 
+
+As a young open-source project, we break and fix a lot of things each patch. We also learn a lot from the changes we make each patch. [Appwrite v0.13](https://github.com/appwrite/appwrite/releases) focuses on making our file storage more scalable and cloud functions more responsive, here are the changes we made to achieve these goals.
+
+Faster Cloud Functions:
+
+In past versions, Appwrite Functions service spins up a new Docker container for each function execution. This approach has a high response time, suitable for asynchronous and scheduled tasks, but can’t be used synchronously. Appwrite v0.13 allows functions runtimes to persist for a while after use and new executions are invoked using TCP. This results in a much faster response. 
+
+Handling Large Files: 
+
+In previous versions of Appwrite, the entire file to be uploaded is loaded into memory at once. For large files, this approach hogs server memory and is susceptible to unstable network connections. In v0.13 the Storage service implemented chunked upload. Uploading files in a piece at a time means the upload uses less memory, can be resumed if a chunk fails to upload, and can gracefully handle huge files.
+
+Organizing Files: 
+
+If your app handles lots of user files, permissions and constraints on user files become difficult to track. In Appwrite 0.13, files can be grouped under buckets which share the same permissions, define acceptable file types, define max file size, toggle encryption, and toggle antivirus scans. 
+
+More Storage Flexibility:
+
+Previous versions of Appwrite Storage service stored uploaded files on your host VPC or server’s hard drive. This is enough for some scenarios, but not flexible if your app handles lots of user files. Appwrite v0.13 adds S3 compatible storage adaptors. You can continue to self-host Appwrite on any server, but offload file storage to AWS S3 or DigitalOcean Spaces. We plan on adding more storage adaptors in future versions.
+
+As the team works toward Appwrite v1.0, we’re always looking for ways to improve Appwrite. Feel free to point out implementation issues and provide suggestions on [GitHub](https://github.com/appwrite/appwrite/issues) or here on Reddit.
+
+Cheers~
+
+Hi All,
+
+I am really confused between the words package and library word. At least I thought they are the same. An example is pandas, it contains a file called __init__.py but most of us call it library. As per the documentation it occurred to me that if set of modules contains __init__.py, it means a package. I am really confused here. I was reading here: https://docs.python.org/3.9/tutorial/modules.html#packages
+
+Thank you all.
+Hi all, if you're interested in process optimization come check out my code on GitHub. The picture shows the output from the script.
+
+[https://github.com/noobie1Kenobie/rpw](https://github.com/noobie1Kenobie/rpw)
+
+&amp;#x200B;
+
+https://preview.redd.it/s9gx9s0a95m81.png?width=1565&amp;format=png&amp;auto=webp&amp;s=45dbe38293044b5f80453ffff38648db227e052b
+
+ 
+
+Till now I have uploaded around 29 high quality videos on my channel.
+
+Here is the link for the Machine Learning Series : [Machine Learning Tutorials - From Novice To Pro - YouTube](https://www.youtube.com/playlist?list=PLXgqhtspYCM9-eMFw31mJZnQFYjj2SQLO)
+
+PS : I do have a Python Series as well where we go over all the concepts of Python along with a couple of projects.
+
+Here is the link for the Python Series : [Python Tutorials For Beginners - YouTube](https://www.youtube.com/playlist?list=PLXgqhtspYCM8eUX94Ng4SQ-3kWMTZ7zFM)
+
+&amp;#x200B;
+
+https://preview.redd.it/6ntg3fgc95m81.png?width=1632&amp;format=png&amp;auto=webp&amp;s=72309c233050b53599d921ccc2d999e8f68fe9af
+Github and screenshots: https://github.com/sgriffin53/deadceleb
+
+Pretty simple python script but I found it interesting to write.
+
+It goes through a list of celebrities, checks their wikipedia page to see if they're still alive, and shows a notification if they're dead.
+
+Right now it has a list of 274 celebrities and checks every 5 minutes. You can change the delay by changing the sleep_delay variable and change the celebrities it checks by changing the celebs.txt file.
+
+Hi there, I created a rest api on wordle using a language called Python and a SQL database called PostgreSQL. It's just Wordle but you manipulate via url.
+
+Github repo: [https://github.com/anishgorakavi787809/rest-wordle](https://github.com/anishgorakavi787809/rest-wordle)
+
+Requirements:
+
+Python 3.10 - as I used match, case statements
+
+PostgreSQL
+
+Postman
+
+How to run:
+
+clone the github repository
+
+open psql or pgadmin4 and create a database called wordle-rest
+
+then create a table called login which has 2 columns which is: username, type: text, password, type: text.
+
+Create a table called wordle which has 7 columns: username; type: text guesses; type: integer; guess1, type: json; guess2, type: json; guess3, type: json; guess4, type:json; guess5,type: json
+
+Now go to [server.py](https://server.py/), change the following line from line 7:
+
+connecter = psycopg2.connect(user="postgres",password="Checkred",host="[127.0.0.1](https://127.0.0.1/)",database="wordle-rest")
+
+TO
+
+connecter = psycopg2.connect(user="postgres",password="&lt;your password&gt; - change this",host="[127.0.0.1](https://127.0.0.1/)",database="wordle-rest")
+
+then, go and type (python3.10 if linux or /usr/local/bin/python3 if mac, or python3 if windows) -m pip install random-word flask psycopg2 flask-restful pyyaml
+
+Finally, go and type (python3.10 if linux or /usr/local/bin/python3 if mac, or python3 if windows) [server.py](https://server.py/)
+
+Go to postman and type localhost. It should give a list of urls. Go to authorization tab and click on No auth and options should show.
+
+CLICK ON BASIC AUTH!!!!!!
+
+and put in the username and password
+
+then in the url, type in: localhost/signup and it will put the account you typed into the database
+
+In url type in localhost/wordle/&lt;the word you choose&gt; to play the REST api version of wordle.
+
+Now, if you want, put my code in a aws server so, everyone can have the api to build apps with.
+
+If you have any code suggestions or wanna change code, reply below!
+My team and I have come up with an open-source CLI library that converts python functions into Linux shell commands - on the fly. DynaCLI is useful if you’re building a suite of admin commands incrementally and don’t want to redeploy the CLI app multiple times.
+
+Here’s a quick walkthrough of producing a QR code that represents a person’s vaccination status, using DynaCLI to create the command line call. Please have a read, and I’d welcome feedback on what could make this even more useful. 
+
+Here’s the walkthrough: https://rzayev-sehriyar.medium.com/build-a-user-friendly-cli-from-pure-python-functions-348858c61022
+
+and here’s the GitHub repo: https://github.com/BstLabs/py-dynacli
+
+Thanks, 
+Shako
+
+So some packages which I've installed using PIP allow me to run a command from CMD to run them. Like flask for example with 'flask run' or virtualenv. How exactly does that work? PIP downloads packages which contain .py files composed of classes and functions to my library correct? I can then use these classes and functions in my own .py programs by referencing them with imports. How does this tie in to running something Iike 'flask run' in the CMD? I've looked around in my python appdata and I found scripts which include flask.exe and even pip.exe. Does that mean when I'm running 'flask run' in the CMD it's starting up that specific exe in the scripts folder? And if 'flask' is referencing flask.exe how does 'run' tie into this? Is it just like an argument that's being passed into flask.exe? Kinda like sys args in C?
+Hello Python devs !
+
+Are you studying to take the **PCAP certification** ?
+
+I have created **5 Practice Tests** for the **PCAP-31-03** certification exam : that's **200 questions** !!
+
+Each practice test matches exactly the PCAP Exam Syllabus and Exam requirements (40 questions each ; 65 minutes; 70% passing score).
+
+I have created the Practice Tests on the Udemy platform and since it was just published this week, I am running a special promotion :
+
+**\*\*\* 50% off at $9.99 \*\*\*** (regular price is $19.99).
+
+Please use the link below to get the coupon.
+
+The promotion runs until **3/12/2022 5PM PST.**
+
+Let me know if you have any questions.
+
+Happy learning !
+
+[https://www.udemy.com/course/python-certification-exam-pcap-31-03-practice-tests/?couponCode=A1C3D253A54EF0B659E7](https://www.udemy.com/course/python-certification-exam-pcap-31-03-practice-tests/?couponCode=A1C3D253A54EF0B659E7)
+Just created a new open source package, guys! Check it out :) [https://github.com/Eric-Mendes/textime](https://github.com/Eric-Mendes/textime)
+Have some burning questions on advanced Python topics? Use this thread to ask more advanced questions related to Python.
+
+**If your question is a beginner question we hold a beginner Daily Thread tomorrow (Wednesday) where you can ask any question! We may remove questions here and ask you to resubmit tomorrow.**
+
+This thread may be fairly low volume in replies, if you don't receive a response we recommend looking at r/LearnPython or joining the Python Discord server at [https://discord.gg/python](https://discord.gg/python) where you stand a better chance of receiving a response.
+Since there has been quite some progress since the first time I've posted something about the library I'm developing, I thought I'll do another post on some of the more recent features:
+
+In general, [EOmaps](https://github.com/raphaelquast/EOmaps) serves 2 primary purposes:
+
+* provide a simple interface to create maps from (possibly very large) geo-spatial datasets
+* turn maps into interactive data-analysis widgets
+
+... and here are some of the nice features  I've implemented so far 🥳   
+(...for more info, make sure to checkout the [documentation](https://eomaps.readthedocs.io/en/latest/))!
+
+&amp;#x200B;
+
+[Use your map to interact with your dataset!](https://i.redd.it/izptlno5g1m81.gif)
+
+[There are a lot of pre-defined open-access WebMap services you can add to your maps.](https://preview.redd.it/jz9x1hcoe1m81.png?width=640&amp;format=png&amp;auto=webp&amp;s=2cdd78370e9089226f10ed5aea2a11207aed6de1)
+
+[Represent your data as projected rectangles\/ellipses, as voroni diagrams or delaunay triangulations  or use \\"shading\\" to visualize millions of datapoints.](https://i.redd.it/4hnbx9ued1m81.gif)
+
+[Easily switch between different data-layers with the new utility widgets!](https://i.redd.it/0c2jyjyyf1m81.gif)
+
+[There's a customizable and dynamically updated \\"north-arrow\\"](https://i.redd.it/vrx9v6voc1m81.gif)
+
+[... and an awesome scalebar that is dynamically updated on pan\/zoom!](https://i.redd.it/1vjrn46gc1m81.gif)
+
+I learned python a few months ago when I had some downtime. Since then I have slowly started to build games and engagement tools for my stream. Most of the games I created are very small, less than 100 lines of code. I had this idea a few months ago to create a game on a much larger scale. So I went to work. It is still a work in progress but I am pretty satisfied so far. I know the code is kind of all over the place and not nearly as organized as it should be. Below are the features of the game and the things I learned.
+
+Features:
+
+* Upgrade 5 different attributes using my in stream currency: Rushing Offense, Passing Offense, Rushing Defense, Passing Defense and Special Teams
+* Full Stat Tracking (wins, losses, ties, yards per game, points per game,  passing yards per game, rushing yards per game, etc.)
+* Momentum can change during the game which has an impact on attributes
+* Over the course of the game each teams play success is tracked and play calls are based on what kind of success they are having ie running vs passing
+* Drive Rhythm. If a team starts to have success during a drive it will slowly increase their success for the next play call
+
+Things I Learned:
+
+* Database Management. I create 4 different databases to track and reference data over time. 
+* API. I communicate with my stream through my bots API. 
+
+Any Feedback is welcome
+
+[https://github.com/whatupcraig/The-Franchise](https://github.com/whatupcraig/The-Franchise)
+
+Hello everyone. My name is Andrew and for several years I've been working on to make the learning path for ML easier. I wrote a manual on machine learning that everyone understands - Machine Learning Simplified Book.
+
+The main purpose of my book is to build **an intuitive understanding** of how algorithms work through basic examples. In order to understand the presented material, it is enough to know basic mathematics and linear algebra.
+
+After reading this book, you will know the basics of supervised learning, understand complex mathematical models, understand the entire pipeline of a typical ML project, and also be able to share your knowledge with colleagues from related industries and with technical professionals.
+
+And for those who find the theoretical part not enough - I supplemented the book with a repository on **GitHub**, which has Python implementation of every method and algorithm that I describe in each chapter ([https://github.com/5x12/themlsbook](https://github.com/5x12/themlsbook)).
+
+You can read the book absolutely free at the link below: -&gt; [https://themlsbook.com](https://themlsbook.com/)
+
+I would appreciate it if you recommend my book to those who might be interested in this topic, as well as for any feedback provided. Thanks! (attaching one of the pipelines described in the book).;
+
+&amp;#x200B;
+
+https://preview.redd.it/o8r8luzelzl81.png?width=1572&amp;format=png&amp;auto=webp&amp;s=08dd448e3a024cb7b28e7d5a12085f56819e26ed
+
+Hey Everyone! Today I'm going to be showing you How to create a Music  (.mp3/.wav) Player using Python. I'm going to upload a longer video where I explain the basis for why I wrote the code the way I did, and explain each line of code as well. This is going to be part of a video series where I create short and simple tutorials for people interested in learning Python. Thanks in advance for watching! Leave a comment below for any helpful tips and or recommendations.  
+GitHub Link - [https://github.com/adhamizain96/Music-Player](https://github.com/adhamizain96/Music-Player)   
+YouTube Link - [https://www.youtube.com/watch?v=7oBpXVjrCzU](https://www.youtube.com/watch?v=7oBpXVjrCzU)
+
+https://preview.redd.it/5i9fuyzkczl81.png?width=2880&amp;format=png&amp;auto=webp&amp;s=f7680e1b202cb51740194ecefa27a4bd30e464eb
+Hey! My team and I have just build an awesome library [https://pypi.org/project/pipely/](https://pypi.org/project/pipely/)
+
+You can trigger a sequence of classes: pipely will automatically understand which steps are independent to run them in parallel! Feedback is welcome!
+
+\--------TLDR -----
+
+Recently my team and I built an awesome library [https://pypi.org/project/pipely/](https://pypi.org/project/pipely/) that forms a sequence of steps, each triggering a specific class from a specified .py file that can contain multiple classes.
+
+All you do is create a collect.yml file with defined steps in the form of:
+
+    steps:       
+        [step name]:         
+            exec: [relative path to a file]:[class to execute]     
+        [step name]:         
+            exec: [relative path to a file]:[class to execute]     
+        [step name]:         
+            exec: [relative path to a file]:[class to execute] 
+
+For instance:
+
+    steps:     
+        extract:         
+            exec: db/connect.py:ExtractData     
+        kMeans:         
+            exec: src/models.py:Kmeans
+        load:         
+            exec: db/connect.py:LoadToPostgres 
+            depends_on:
+                - extract
+                - kMeans
+
+And then use the following command in CLI inside your root dir:
+
+    python -m pipely.cli --config_file collect.yml
+
+Best part: by using a parameter `depends_on` it will automatically understand which steps are independent to run them in parallel! For example, it will run steps `extract` and `kMeans` in parallel, and then `load` (be careful!)
+
+Your feedback is highly appreciated. I would love to hear both if you find this library very useful as well as what should be added or why it sucks so much. Thanks!
+
+I had a great time recently putting together this Python Lists Tutorial for beginners with hands-on exercises following the tutorial.
+
+[Python Lists for Beginners: A Complete Lesson With Exercises](https://codesolid.com/python-lists/)
+
+Sorry for the mulligan -- I removed the first link.
+[BetterJSONStorage](https://github.com/MrPigss/BetterJSONStorage)  is a faster 'Storage Type' for [TinyDB](https://github.com/msiemens/tinydb). It uses treading, the faster [Orjson](https://github.com/ijl/orjson) library for parsing the JSON and [BLOSC2](https://github.com/Blosc/python-blosc2) for compression. 
+
+Let me know what you guys think.
+I found this webapp and it can turn youtube videos into ascii: [https://asciifly.com/](https://asciifly.com/)
+
+It even works by replacing youtube URLs directly: [https://www.asciifly.com/watch?v=dQw4w9WgXcQ](https://www.asciifly.com/watch?v=dQw4w9WgXcQ)   
+
+
+All I know is that it is running python in the backend \^\^
+
+
+
+Our team built a simple music recognition system using open-source framework-Towhee to generate embeddings and Milvus for similarity search.
+
+https://preview.redd.it/77m1oel94xl81.png?width=3116&amp;format=png&amp;auto=webp&amp;s=2a2b7d3865898acd717a90519d7cdbb990b3efe8
+
+We built the music recognition system in the following steps:
+
+1. Model and pipeline selection
+2. Computing fingerprints for the existing music dataset
+3. Insert all generated vectors into a vector database
+4. Identify an unknown music snippet by similarity search of vectors
+
+If you are interested, you can read the full tutorial here: [https://docs.towhee.io/tutorials/music-recognition-system/](https://docs.towhee.io/tutorials/music-recognition-system/)
+
+Hope you enjoy building your own projects!
+
+https://github.com/EthanLeitch/ao3scraper
+
+This project takes fanfic urls from a file, looks them up on Archive of Our Own, and highlights them in a Rich table if any of them have been updated.
+
+Stars and forks appreciated -- This project is still quite basic, and I'm looking forward to see what you do with it!
+GitHub link: [https://github.com/nekumelon/GithubTransfer](https://github.com/nekumelon/GithubTransfer)
+
+GitHub transfer is a python script I made for users to easily transfer their GitHub repositories to another account. Information on how you can contribute to it and information on how you run it is all located in the GitHub repo.
+[https://www.youtube.com/watch?v=U1K](https://www.youtube.com/watch?v=U1K)
+
+
+Print (“bob is on”)
+User = input ( ‘I am bob what is your name? :’)
+Print ( ‘welcome’,user)
+Link: [The Axis, by Hendrixia](https://hendrixia.com/the-axis/new)
+
+The app is called The Axis, and is a sub-app of my website Hendrixia ("The Axis is a reference to a lyric in Jimi Hendrix' song Bold as Love, "Just ask the Axis"). (Hendrixia is a guitar tutorials site which teaches you how to play guitar in the style of Jimi Hendrix).
+
+Basically, you find a song on Youtube (must be at least 10 seconds long), input the youtube URL at The Axis, wait for it to process, and the model outputs a "Hendrixian Index" of the song (how close your song sounds to Jimi Hendrix' songs). There's more information on how this sub-app was created, but basically, it's a convolutional neural network that was trained on mel spectrograms of Jimi Hendrix and non-Jimi Hendrix songs.
+
+This is a very new project. In the near future I'll have better visualizations (how your song compares with other user-submitted songs).
+
+Let me know if you guys want a bot made out of this (like, a bot that comments under /r/music songs with the Hendrixian Index).
+
+At the moment, the app takes about 10 minutes to process a 4-5 minute song, and the app can only process one song at a time. This is because I'm not rich, and the resources needed for serving a lot of users at once are expensive.
+
+In the long-term future (months), I'll be making a music service called vibereach based on this idea, and others. It will 1) be a service that primarily serves indie artists, and allows artists to upload their music to see how similar their song is to the top 1000 artists as well as other user-submitted songs (and the music recommender will use this system to recommend songs -- this is novel), 2) be a place that promotes and rewards great music from new and relatively unknown artists, 3) be a place that financially supports indie artists (with a patreon-like subscription model for the premium bundle (users can choose which artists to financially support with the money they're paying for their premium subscription)), and 4) a place the promotes empathy, authenticity, and originality. If you want to follow vibereach, subscribe to /r/vibereach.
+
+If you want to follow The Axis, subscribe to /r/TheAxis If you want to follow Hendrixia, subscribe to https://youtube.com/c/HendrixiaMusic
+
+Here's a Jimi Hendrix song prediction: https://hendrixia.com/the-axis/viewer/170/TLV4_xaYynY/ And here's a non-Jimi Hendrix song prediction: https://hendrixia.com/the-axis/viewer/193/QVvtJ0BL9wg/
+
+Tech info: The neural network was built in tensorflow and keras. The backend for the general app is python and django. Postgresql database. websocket (django channels) for progress updates. python rq for task queue.
+
+Please let me know what you think!
+
+Mike
+I built 3  versions of this content aggregator for UK news with a typer-CLI, streamlit and Flask. Go and [check it out ](https://www.github.com/ubongab/news-scrape) and show some ❤!
+Comment any project ideas beginner or advanced in this thread for others to give a try! If you complete one make sure to reply to the comment with how you found it and attach some source code! If you're looking for project ideas, you might be interested in checking out Al Sweigart's, ["The Big Book of Small Python Projects"](https://inventwithpython.com/bigbookpython/) which provides a list of projects and the code to make them work.
+Hi everyone! I recently started a python programming course in my university. I realise I'm kind of a slow programmer where I take a long time to code commands and during test, I often have a hard time coming up with an efficient solution/way to code and have to resort to hard-programming. Do you all have any advice for me?
+I've always liked OOP. When I started using database, I didn't like working with dictionaries (which is essentially what asyncpg returns), so I spent time looking at different ORMs. There are quite a few ORMs out there, such as sqlalchemy (with declarative\_base) and tortoise ORM, but none of them had true typehint support.
+
+So, I decided to write my own ORM, `apgorm`. It's still in its early stages, but it works very well. Let me know what you think!
+
+Github: [https://github.com/trigondev/apgorm](https://github.com/trigondev/apgorm)  
+PyPi: [https://pypi.org/project/apgorm](https://pypi.org/project/apgorm)
+
+Features:
+
+* Full type-hint support
+* Models, columns, column types (with parameters), all constraint types, and  all index types
+* Allows multiple fields in the primary key (unlike some other ORMs)
+* Basic migrations (add/drop tables/columns/indexes/constraints)
+* ManyToMany "columns" (not quite as simple as other ORMs but it still works)
+
+Basic Example:
+
+    from apgorm import Model, Database, types
+    
+    
+    class User(Model):
+        name = types.VarChar(32).field()
+        nickname = types.VarChar(32).nullablefield()
+    
+        primary_key = (name,)
+    
+    
+    class MyDB(Database):
+        users = User
+    
+    
+    db = MyDB("path/to/migrations")
+    await db.connect(database="database name")
+    
+    # create migrations
+    if db.must_create_migrations():
+        db.create_migrations()
+    
+    # apply migrations
+    if await db.must_apply_migrations():
+        await db.apply_migrations()
+    
+    
+    # typehint support!
+    reveal_type(User.name)  # apgorm.Field[VarChar, str]
+    reveal_type(User.nickname)  # apgorm.Field[VarChar, str | None]
+    
+    # create a model
+    user = await User(name="Bruce Wayne").create()
+    print(user.name)  # "Bruce Wayne"
+    print(user.nickname)  # None
+    
+    # more typehint support
+    reveal_type(user.name)  # str
+    reveal_type(user.nickname)  # str | None
+    
+    # update a model
+    user.nickname = "batman"
+    await user.save()
+    
+    # fetch a model
+    user_copy = await User.fetch(name="Bruce Wayne")
+    assert user_copy == user
+    
+    # delete a model
+    await user.delete()
+
+I'm more concerned with the details of actually reusing code, taking the concepts of writing reusuable code as a given here, wondering how users are actually implementing ways to save and retrieve useful bit of code. (Which in practice really reinforces the importance of writing resuable code.)
+
+I use emacs, so I started out using a mastercode.org  file where I stash things I know I'll need again, and can call up that file via a keyboard macro. Org file makes it somewhat easier to search too, as I have to write headlines for each section.
+
+The most common  functions - like "name == __main__",  or "with open" are saved as snippets (using yas-snippets) and are inserted by typing something like "openvv" where vv is a quick double-tab.
+
+Working OK, I generally can find what I'm after, but I do need to be conscientious about updating the master file. 
+
+But if all goes well I can program fairly quickly, and work on solving the problem at hand rather than trying to figure out the syntax and switches for opening and writing files, or how to get the absolute path of the current directory, or have to look up on the internet how to create an sqlite table, or whatever.
+
+I would think though most here use more traditional IDEs, and am wondering how this situation is handled in those, and especially if there's any functionality or strategies I'm overlooking.
+Hey everyone,
+
+I created some new content and a new tutorial video for my "Space Science with Python" tutorial series. Last time I created a Support Vector Machine classifier using scikit-learn. The classifier's task was to distinguish between so called reflectance spectra of asteroids.
+
+In fact, there are several classes, but for starters I reduced it to a binary problem: "Class X" or "Not Class X". Support Vector Machines are quite powerful for high dimensional and linearly separable datasets... and in this case it was given!
+
+Now using the exhaustive Grid Search method I want to show how to optimizer the parameter search in scikit-learn. Though... fine tuning is more of an art than science.
+
+Now I am preparing a neural network classifier using keras. More will come next week.
+
+Thanks for the messages and feedback on my tutorial series. I have tons of ideas for more Space + Python related topics and projects :-).
+
+Video: [https://youtu.be/c9GLc40FXvg](https://youtu.be/c9GLc40FXvg)
+
+GitHub: [https://github.com/ThomasAlbin/Astroniz-YT-Tutorials/tree/main/%5BML1%5D-Asteroid-Spectra](https://github.com/ThomasAlbin/Astroniz-YT-Tutorials/tree/main/%5BML1%5D-Asteroid-Spectra)
+
+Stay safe,
+
+Thomas
+I wanted to originally post this on r/ukraine but I don't have enough Karma. I made a website that scrapes a few subreddits to (hopefully) present neat and useful data. The aim was to make it more accessible than Reddit (for children/adults who don't use Reddit). It's still only a prototype which I might develop in my free time. If people do actually find it useful, I will develop it full-time (might open-source it too). (By the way, if anyone can post this on r/ukraine I'd love it. I don't care about credits but I do crave some feedback on it.) Thanks :)
+
+### [ukraineupdates.pythonanywhere.com](http://ukraineupdates.pythonanywhere.com/)
+Assume you are going to make a new framework/library and release it as open source.
+
+What minimum version of Python are you willing to support?
+
+Python 3.6 is no longer officially supported, which may make it reasonable to only support 3.7 and above.
+
+However, if there are still a substantial number of users on 3.6 (or lower), it would make sense to try to write your framework to be compatible if you wanted to maximize the number of users.
+
+First time poster, so as the title says I have been off and on with coding for 5 years, Python in particular.  I pick it up see how much information there is and loose confidence due to not knowing where to start (YouTube, Books, Courses) . 
+
+I wanted to ask the community:
+
+Where everybody else started? 
+
+How did you get through the initial overwhelming feeling having so much information in front of you?
+
+Where would you recommend someone who wants to learn and keep at it to start?
+
+Lastly, what were some beginner projects you guys have done to help the learning process?
+After realizing I was spending way too much time looking for answers instead of coding. Thinking there must be a better way but not finding what I want, I created this...
+
+The Python SpeedSheet: https://speedsheet.io/s/python
+
+This is an interactive cheat sheet. It is a simple idea, just type what you want into the search bar and it displays the answer.
+
+This sheet covers the core Python language. The sheet has doubled in size since I first posted about it last year and the search has been improved. It is definitely not perfect and I'm sure it is still lacking some important features but I personally find it incredibly useful.
+
+Here is a video on how it works:
+
+https://www.youtube.com/watch?v=66RumAF50_4
+
+TLDR:
+
+This is an interactive cheat sheet for Python.
+
+I wrote this [thorough article on Python's range function](https://medium.com/pythonland/this-is-what-you-need-to-know-about-pythons-range-fa96c398012f?sk=7570e2f6e762d084543a5c24677ec778) ^((the link by-passes the Medium paywall)). I'd love to hear your comments on it. It shows how to use range and how it works internally, and also goes into iterators and iterability. I included a bunch of code examples that you can run and edit right from your browser.
+
+There are python for datascience, python for data engineering, python for iot, python for web development. What are you using python for??
+ Hello there. A few days ago it was my sister's birthday, so I made this small animation for her:
+
+&amp;#x200B;
+
+https://i.redd.it/o6csg7ju8ql81.gif
+
+Here's the [GitHub link](https://github.com/BrickSigma/Happy-Birthday-Animation). Feel free to mess around with it and let me know what else I could add in to it. Have a great day!
+Anyone having a [educative.io](https://educative.io) annual subscription willing to share with me by splitting the costs?
