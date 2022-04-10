@@ -1,3 +1,6 @@
+[core]
+        excludesfile = ~/.gitignore_global
+
 # Compiled source #
 ###################
 *.com
@@ -35,3 +38,6 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# Pycache #
+*.pyc
