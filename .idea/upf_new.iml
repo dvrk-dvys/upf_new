@@ -17,6 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/Data Driven Social Analytics/Data" />
       <excludeFolder url="file://$MODULE_DIR$/Machine Learning/data" />
       <excludeFolder url="file://$MODULE_DIR$/Natural Language Processing/data" />
+      <excludeFolder url="file://$MODULE_DIR$/Autonomous Systems/Assignment 3/PDDL-docker" />
     </content>
     <orderEntry type="jdk" jdkName="Python 3.10 (upf_new) (2)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
