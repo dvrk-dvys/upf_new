@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a54194-22b0-49fd-9837-d867740ca575" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/demo-submission" beforeDir="false" afterPath="$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/demo-submission" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Web Intelligence/hSBM_Topicmodel" beforeDir="false" afterPath="$PROJECT_DIR$/Web Intelligence/hSBM_Topicmodel" afterDir="false" />
     </list>
@@ -84,7 +86,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.DirectoryMappings" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
