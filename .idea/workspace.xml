@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93a54194-22b0-49fd-9837-d867740ca575" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/upf_new.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/upf_new.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -33,27 +34,15 @@
     </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/pdbs/utils.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/demo-submission/fast-downward.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file:///opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tkinter/__init__.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/pdbs/cegar.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Web Intelligence/WI_Final.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/c2b/sokoban.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/pui-test-set/sokoban/domain.pddl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKO_C3/C3_Solve_All.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKO_C3/out_soko_4" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/pdbs/types.h" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKO_C3/out_soko_3" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/lp/lp_solver.cc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/pui-test-set/sokoban/domain.pddl" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Notes/AS_HW3_Pattarone_Mancheno/Question 2/part_b/sokoban-domain.pddl" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKO_C3/out_soko_4" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl/autograder.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Notes/AS_HW3_Pattarone_Mancheno/Question 2/part_b/sokoban-domain.pddl" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Autonomous Systems/Notes/AS_HW3_Pattarone_Mancheno/Question 2/part_b/sokoban.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/lp/lp_internals.cc" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/ext/tree_util.hh" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/lp/lp_internals.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/lp/lp_solver.h" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b/sokoban.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/ext/optional.hh" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Autonomous Systems/Assignment 3/planners_solvers/DIRNAME/src/search/ext/tree.hh" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Web Intelligence/WI_Final.py" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -69,23 +58,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="ASKED_MARK_IGNORED_FILES_AS_EXCLUDED" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Web Intelligence/data" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.tslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jordanharris/Code/PycharmProjects/UPF_NEW",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="ReadonlyStatusHandler">
     <option name="SHOW_DIALOG" value="false" />
   </component>
@@ -105,7 +90,7 @@
       <recent name="$PROJECT_DIR$/Autonomous Systems/Assignment 3/benchmarks" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.twitter_bots">
+  <component name="RunManager" selected="Python.pacman">
     <configuration name="autograder" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="upf_new" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -194,7 +179,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="max" type="PythonConfigurationType" factoryName="Python" temporary="true">
+    <configuration name="pacman" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="upf_new" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -202,13 +187,35 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Autonomous Systems/Assignment 1/search" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/max.py" />
-      <option name="PARAMETERS" value="./pui-test-set/test/pfile.strips '' ''" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Autonomous Systems/Assignment 1/search/pacman.py" />
+      <option name="PARAMETERS" value="-l mediumMaze -p SearchAgent" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="pacman_2" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="upf_new" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Autonomous Systems/Assignment 1/search 2" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Autonomous Systems/Assignment 1/search 2/pacman.py" />
+      <option name="PARAMETERS" value="-l mediumMaze -p SearchAgent" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
       <option name="MODULE_MODE" value="false" />
@@ -282,28 +289,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="upf_new" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Thesis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Thesis/test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <configuration name="text_generation" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="upf_new" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -348,28 +333,6 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="twurl" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="upf_new" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Thesis" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Thesis/twurl.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
     <list>
       <item itemvalue="Python.max _testing" />
       <item itemvalue="Python.sokoban" />
@@ -377,20 +340,19 @@
       <item itemvalue="Python.reddit_api" />
       <item itemvalue="Python.google_trends_api" />
       <item itemvalue="Python.max pddl" />
-      <item itemvalue="Python.max" />
-      <item itemvalue="Python.twurl" />
-      <item itemvalue="Python.test" />
+      <item itemvalue="Python.pacman" />
+      <item itemvalue="Python.pacman_2" />
       <item itemvalue="Python.twitter_bots" />
       <item itemvalue="Python.text_generation" />
       <item itemvalue="Python.sentiment_analysis" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.pacman" />
+        <item itemvalue="Python.pacman_2" />
+        <item itemvalue="Python.pacman" />
         <item itemvalue="Python.twitter_bots" />
         <item itemvalue="Python.sentiment_analysis" />
-        <item itemvalue="Python.text_generation" />
-        <item itemvalue="Python.test" />
-        <item itemvalue="Python.twurl" />
       </list>
     </recent_temporary>
   </component>
@@ -463,6 +425,7 @@
       <workItem from="1649582923401" duration="755000" />
       <workItem from="1649592941638" duration="1099000" />
       <workItem from="1649594274125" duration="375000" />
+      <workItem from="1683649141423" duration="867000" />
     </task>
     <servers />
   </component>
@@ -805,44 +768,46 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/README_md$reddit_api.coverage" NAME="reddit_api Coverage Results" MODIFIED="1647609418086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$C3_Solve_All.coverage" NAME="C3_Solve_All Coverage Results" MODIFIED="1648176607952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKO_C3" />
-    <SUITE FILE_PATH="coverage/upf_new$max__testing.coverage" NAME="max _testing Coverage Results" MODIFIED="1647016402796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI/Planner" />
-    <SUITE FILE_PATH="coverage/upf_new$personalized_rec_virtual_assistant.coverage" NAME="personalized rec virtual assistant Coverage Results" MODIFIED="1643240193375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Natural Language Processing" />
-    <SUITE FILE_PATH="coverage/README_md$sokoban__1_.coverage" NAME="sokoban (1) Coverage Results" MODIFIED="1647380971449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/c2b" />
-    <SUITE FILE_PATH="coverage/README_md$google_trends_api.coverage" NAME="google_trends_api Coverage Results" MODIFIED="1647600550631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data Driven Social Analytics" />
-    <SUITE FILE_PATH="coverage/README_md$twitter_pin_auth.coverage" NAME="twurl Coverage Results" MODIFIED="1648707393891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
-    <SUITE FILE_PATH="coverage/upf_new$build.coverage" NAME="build Coverage Results" MODIFIED="1646854270998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/DIRNAME" />
-    <SUITE FILE_PATH="coverage/upf_new$stream_twitter.coverage" NAME="stream-twitter Coverage Results" MODIFIED="1646743772989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/upf_new$sentiment_analysis.coverage" NAME="sentiment_analysis Coverage Results" MODIFIED="1646803363491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$lmcut.coverage" NAME="lmcut Coverage Results" MODIFIED="1647108520412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI/Planner" />
-    <SUITE FILE_PATH="coverage/README_md$sokoban_gen.coverage" NAME="sokoban_gen Coverage Results" MODIFIED="1647468745978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/c2b" />
-    <SUITE FILE_PATH="coverage/README_md$stream_search_twitter_v3.coverage" NAME="stream_search_twitter_v4 Coverage Results" MODIFIED="1647576392414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$sokoban__gen__1_.coverage" NAME="sokoban_ gen (1) Coverage Results" MODIFIED="1647181257682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b/c2b_module" />
-    <SUITE FILE_PATH="coverage/README_md$.coverage" NAME=" Coverage Results" MODIFIED="1647106192409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/pddl-parser" />
-    <SUITE FILE_PATH="coverage/README_md$solver.coverage" NAME="solver Coverage Results" MODIFIED="1647104507036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Notes/AS_HW3_Pattarone_Mancheno/Question 2/part_b/mini_sat_solver" />
-    <SUITE FILE_PATH="coverage/README_md$stream_twitter.coverage" NAME="stream-twitter Coverage Results" MODIFIED="1647576259760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data Driven Social Analytics/Assignment 5" />
-    <SUITE FILE_PATH="coverage/README_md$gridworld__1_.coverage" NAME="gridworld Coverage Results" MODIFIED="1647892436717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl" />
-    <SUITE FILE_PATH="coverage/README_md$gridworld.coverage" NAME="gridworld Coverage Results" MODIFIED="1647912115927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl" />
-    <SUITE FILE_PATH="coverage/upf_new$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1647015237340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 2/autonomous-systems-21-22-main/lab2" />
-    <SUITE FILE_PATH="coverage/README_md$WI_Final.coverage" NAME="WI_Final Coverage Results" MODIFIED="1647611122190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$autograder.coverage" NAME="autograder Coverage Results" MODIFIED="1647927988095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl/" />
-    <SUITE FILE_PATH="coverage/README_md$test.coverage" NAME="test Coverage Results" MODIFIED="1648719601715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
-    <SUITE FILE_PATH="coverage/upf_new$max.coverage" NAME="max Coverage Results" MODIFIED="1647024625149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI/Planner" />
-    <SUITE FILE_PATH="coverage/README_md$text_generation.coverage" NAME="text_generation Coverage Results" MODIFIED="1648833598197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
-    <SUITE FILE_PATH="coverage/upf_new$stream_twitter__1_.coverage" NAME="stream-twitter (1) Coverage Results" MODIFIED="1646725708123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$max__testing.coverage" NAME="max _testing Coverage Results" MODIFIED="1647158321362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c3" />
-    <SUITE FILE_PATH="coverage/README_md$sokoban_gen__1_.coverage" NAME="sokoban_gen (1) Coverage Results" MODIFIED="1647380954749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b" />
-    <SUITE FILE_PATH="coverage/upf_new$max__1_.coverage" NAME="max_test Coverage Results" MODIFIED="1646879750590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI" />
-    <SUITE FILE_PATH="coverage/README_md$max__1_.coverage" NAME="max Coverage Results" MODIFIED="1648192606243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2" />
-    <SUITE FILE_PATH="coverage/README_md$sentiment_analysis.coverage" NAME="sentiment_analysis Coverage Results" MODIFIED="1649600385507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$max.coverage" NAME="max Coverage Results" MODIFIED="1648178798943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/cvut-PlanningAI" />
     <SUITE FILE_PATH="coverage/README_md$twitter_bots.coverage" NAME="twitter_bots Coverage Results" MODIFIED="1649600403219" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
-    <SUITE FILE_PATH="coverage/README_md$sokoban.coverage" NAME="sokoban Coverage Results" MODIFIED="1647468771128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b/" />
-    <SUITE FILE_PATH="coverage/README_md$max_pddl.coverage" NAME="max pddl Coverage Results" MODIFIED="1648578924242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2" />
-    <SUITE FILE_PATH="coverage/README_md$stream_search_twitter_v4.coverage" NAME="stream_search_twitter_v4 Coverage Results" MODIFIED="1647596204907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
     <SUITE FILE_PATH="coverage/upf_new$stream_twitter_v3.coverage" NAME="stream_twitter_v3 Coverage Results" MODIFIED="1646802206658" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
-    <SUITE FILE_PATH="coverage/README_md$fast_downward.coverage" NAME="fast-downward Coverage Results" MODIFIED="1647106027699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/" />
+    <SUITE FILE_PATH="coverage/upf_new$personalized_rec_virtual_assistant.coverage" NAME="personalized rec virtual assistant Coverage Results" MODIFIED="1643240193375" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Natural Language Processing" />
+    <SUITE FILE_PATH="coverage/README_md$reddit_api.coverage" NAME="reddit_api Coverage Results" MODIFIED="1647609418086" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$sokoban__1_.coverage" NAME="sokoban (1) Coverage Results" MODIFIED="1647380971449" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/c2b" />
     <SUITE FILE_PATH="coverage/README_md$sokoban__gen.coverage" NAME="sokoban_ gen Coverage Results" MODIFIED="1647178431005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/README_md$pacman.coverage" NAME="pacman Coverage Results" MODIFIED="1683650000506" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 1/search" />
+    <SUITE FILE_PATH="coverage/upf_new$stream_twitter__1_.coverage" NAME="stream-twitter (1) Coverage Results" MODIFIED="1646725708123" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$google_trends_api.coverage" NAME="google_trends_api Coverage Results" MODIFIED="1647600550631" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data Driven Social Analytics" />
+    <SUITE FILE_PATH="coverage/README_md$C3_Solve_All.coverage" NAME="C3_Solve_All Coverage Results" MODIFIED="1648176607952" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKO_C3" />
+    <SUITE FILE_PATH="coverage/README_md$sokoban_gen.coverage" NAME="sokoban_gen Coverage Results" MODIFIED="1647468745978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2/c2b" />
+    <SUITE FILE_PATH="coverage/README_md$autograder.coverage" NAME="autograder Coverage Results" MODIFIED="1647927988095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl/" />
+    <SUITE FILE_PATH="coverage/README_md$fast_downward.coverage" NAME="fast-downward Coverage Results" MODIFIED="1647106027699" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/" />
+    <SUITE FILE_PATH="coverage/README_md$stream_search_twitter_v4.coverage" NAME="stream_search_twitter_v4 Coverage Results" MODIFIED="1647596204907" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$max__testing.coverage" NAME="max _testing Coverage Results" MODIFIED="1647158321362" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c3" />
+    <SUITE FILE_PATH="coverage/README_md$max.coverage" NAME="max Coverage Results" MODIFIED="1648178798943" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/cvut-PlanningAI" />
+    <SUITE FILE_PATH="coverage/README_md$text_generation.coverage" NAME="text_generation Coverage Results" MODIFIED="1648833598197" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
+    <SUITE FILE_PATH="coverage/README_md$WI_Final.coverage" NAME="WI_Final Coverage Results" MODIFIED="1647611122190" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/upf_new$max__1_.coverage" NAME="max_test Coverage Results" MODIFIED="1646879750590" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI" />
+    <SUITE FILE_PATH="coverage/upf_new$sentiment_analysis.coverage" NAME="sentiment_analysis Coverage Results" MODIFIED="1646803363491" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$sokoban__gen__1_.coverage" NAME="sokoban_ gen (1) Coverage Results" MODIFIED="1647181257682" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b/c2b_module" />
+    <SUITE FILE_PATH="coverage/README_md$lmcut.coverage" NAME="lmcut Coverage Results" MODIFIED="1647108520412" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI/Planner" />
+    <SUITE FILE_PATH="coverage/README_md$.coverage" NAME=" Coverage Results" MODIFIED="1647106192409" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/pddl-parser" />
+    <SUITE FILE_PATH="coverage/upf_new$sudoku.coverage" NAME="sudoku Coverage Results" MODIFIED="1647015237340" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 2/autonomous-systems-21-22-main/lab2" />
+    <SUITE FILE_PATH="coverage/README_md$sentiment_analysis.coverage" NAME="sentiment_analysis Coverage Results" MODIFIED="1649600385507" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$stream_search_twitter_v3.coverage" NAME="stream_search_twitter_v4 Coverage Results" MODIFIED="1647576392414" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$gridworld__1_.coverage" NAME="gridworld Coverage Results" MODIFIED="1647892436717" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl" />
+    <SUITE FILE_PATH="coverage/README_md$sokoban_gen__1_.coverage" NAME="sokoban_gen (1) Coverage Results" MODIFIED="1647380954749" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b" />
+    <SUITE FILE_PATH="coverage/upf_new$build.coverage" NAME="build Coverage Results" MODIFIED="1646854270998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/DIRNAME" />
+    <SUITE FILE_PATH="coverage/README_md$max__1_.coverage" NAME="max Coverage Results" MODIFIED="1648192606243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2" />
+    <SUITE FILE_PATH="coverage/upf_new$max.coverage" NAME="max Coverage Results" MODIFIED="1647024625149" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI/Planner" />
+    <SUITE FILE_PATH="coverage/upf_new$stream_twitter.coverage" NAME="stream-twitter Coverage Results" MODIFIED="1646743772989" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Web Intelligence" />
+    <SUITE FILE_PATH="coverage/README_md$solver.coverage" NAME="solver Coverage Results" MODIFIED="1647104507036" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Notes/AS_HW3_Pattarone_Mancheno/Question 2/part_b/mini_sat_solver" />
+    <SUITE FILE_PATH="coverage/README_md$max_pddl.coverage" NAME="max pddl Coverage Results" MODIFIED="1648578924242" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/SOKOBAN_C2" />
+    <SUITE FILE_PATH="coverage/upf_new$max__testing.coverage" NAME="max _testing Coverage Results" MODIFIED="1647016402796" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/PlanningAI/Planner" />
+    <SUITE FILE_PATH="coverage/README_md$gridworld.coverage" NAME="gridworld Coverage Results" MODIFIED="1647912115927" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 4/rl" />
+    <SUITE FILE_PATH="coverage/README_md$twitter_pin_auth.coverage" NAME="twurl Coverage Results" MODIFIED="1648707393891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
+    <SUITE FILE_PATH="coverage/README_md$test.coverage" NAME="test Coverage Results" MODIFIED="1648719601715" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Thesis" />
+    <SUITE FILE_PATH="coverage/README_md$pacman__1_.coverage" NAME="pacman_2 Coverage Results" MODIFIED="1683649833968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 1/search 2" />
+    <SUITE FILE_PATH="coverage/README_md$stream_twitter.coverage" NAME="stream-twitter Coverage Results" MODIFIED="1647576259760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Data Driven Social Analytics/Assignment 5" />
+    <SUITE FILE_PATH="coverage/README_md$sokoban.coverage" NAME="sokoban Coverage Results" MODIFIED="1647468771128" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Autonomous Systems/Assignment 3/sokoban_c2/c2b/" />
   </component>
 </project>
