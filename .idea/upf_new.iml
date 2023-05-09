@@ -19,13 +19,12 @@
       <excludeFolder url="file://$MODULE_DIR$/Natural Language Processing/data" />
       <excludeFolder url="file://$MODULE_DIR$/Autonomous Systems/Assignment 3/PDDL-docker" />
     </content>
-    <orderEntry type="jdk" jdkName="Python 3.10 (upf_new) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (adsense)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>
   <component name="PyNamespacePackagesService">
     <option name="namespacePackageFolders">
       <list>
-        <option value="$MODULE_DIR$/venv/opt/homebrew/lib/python3.10/site-packages/graph-tool" />
         <option value="$MODULE_DIR$/Autonomous Systems/Assignment 3/cvut-PlanningAI/Planner" />
       </list>
     </option>
